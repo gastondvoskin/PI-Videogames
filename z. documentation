@@ -2,3 +2,15 @@ Documentation of the development process.
 
 I copied the whole project as z. BLANK PI-Videogames inside the project just as a backup. 
 git commit -m "First commit: Blank project" 
+
+Back-end. 
+Created .env. 
+Created DB through psql. 
+Created Videogame.js model. Checked in PG Admin. 
+Created user in rawg and copied the API_KEY to .env. 
+Deleted unnecesary files: videogames.png, commentsEamples.jpg.
+Added axios to package.json. Excecuted npm i. npm start works properly. 
+Request to rawg to check names for DB. 
+Created Genre.js model. 
+Established relation between models. 
+--- git commit -m "Created Videogame and Genre models. Made basic configurations."

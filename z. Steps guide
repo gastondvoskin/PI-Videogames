@@ -1,0 +1,27 @@
+Starting
+1. General plan / Diagram / Readme.
+2. git, gitHub. 
+3. See PI Food as reference. 
+
+Resumen de pasos aplicación Back-end con NodeJS, Express y Sequelize:
+npm i, npm start, consologuear. 
+1. Configuración DB. Creación DB, creación tablas, archivo .env, archivo db.js instanciar Sequelize, desestructurar models y relacionarlos. models. 
+2. routes, controllers, handlers, helpers modularizados. handlers ejecutan controllers, envían respuesta estándar y controller consologuea. chequear con Postman. 
+3. Implementar lógica para cada ruta en controllers y/o helpers. 
+4. Dibujar un diagrama básico del flujo. 
+5. tests. 
+
+Resumen de pasos aplicación Front-end con React y Redux:
+1. Configuración: CRA, npm i, borrar lo innecesario. Probar renderizar un <div> en App. 
+2. Rutas. BrowserRouter en index.js y App.jsx. views. Landing, Home, Detail, Form. 
+3. NavBar. Link. para desarrollar: todas las views. 
+ components. 
+4. CardsContainer. Mapear array (de recipes, videogames, pokemons, countries, etc). Renderizar una Card por cada objeto mapeado pasándole por props las propiedades del objeto que se quieran renderizar. Antes de usar Redux, probarlo con un array de objetos inventado (copiarlo de api externa o de Postman). 
+5. Card. Renderizar props recibidas. link a Detail. 
+6. css básico. margin, border, display, flex-direction, flex-wrap. En Nav, CardsContainer, Card. 
+7. redux store. store (copiar configuración básica), reducer, actions, actions-types. En index.js, Envolver BrowserRouter (o App si no hay BrowserRouter) dentro de Provider pasándole el store. Chequear que haya global state en redux devtools (browser). Probar agregar el array de objetos hardcodeado al globalState y traerlo con useSelector desde CardsContainer para mapearlo. 
+8. actions y reducer. request al server. En componente, useSelector y useDispatch. 
+9. Form. initialState, useState. form, label, input, button. value controlado por el localState. Chequear con Components en el browser. handleChange modifica el localState. handleSubmit hace dispatch. Validaciones. 
+10. Dibujar un diagrama básico del flujo. 
+11. CSS con mayor detalle. 
+12. tests. 
