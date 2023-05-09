@@ -19,14 +19,14 @@ const handleGetVg = async (req, res) => {
     };
 };
 
-const handleGetVgById = (req, res) => {
+const handleGetVgById = async (req, res) => {
     try {
-        const id = req.params.idVideogame;
-        const vg = getVgById(id);
+        let id = req.params.idVideogame;
+        const vg = await getVgById(id);
         res.status(200).send(vg);   
     } catch (error) {
         console.log('catch de handleGetVgById'); 
-        res.status(400).send({error: error.message})      // 400? 
+        res.status(404).send({error: error.message})  
     };
 };
 

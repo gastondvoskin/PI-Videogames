@@ -25,5 +25,13 @@ Created Postman request to post based on some data copied from the videogame wit
 Added response with status 400 in the four catchs of the handlers. 
 Implemented postVg controller including association with Genre model. 
 Implemented getGenres. First request to rawg and execute findOrCreate. After first request, findAll in DB.
-git commit -m "Implemented postVg and getGenres controllers"
+--- git commit -m "Implemented postVg and getGenres controllers"
 
+Implemented getVgById controller. It searchs in the DB or in rawg according to the id. 
+Added validations to postVg controller. 
+--- git commit -m "Implemented getVgById controller"
+
+Next steps: 
+
+- Implement getAllVg controller 
+- Implement getVgByName controller
