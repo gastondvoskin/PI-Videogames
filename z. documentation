@@ -14,3 +14,10 @@ Request to rawg to check names for DB.
 Created Genre.js model. 
 Established relation between models. 
 --- git commit -m "Created Videogame and Genre models. Made basic configurations."
+
+Created indexRouter.jsx, handlers.jsx, controllers.js.
+Copied to the res.send of each handler the steps without implementing them.Checked routes modularized in browser. 
+Created Postman requests to test the four handlers. 
+Checked controllers modularized. 
+Created Postman request to post based on some data copied from the videogame with id 1 in the rawg api. 
+--- git commit -m "Created indexRouter.js, handlers.js and controllers.js. Routes properly working modularized, yet without logic implementation". 
