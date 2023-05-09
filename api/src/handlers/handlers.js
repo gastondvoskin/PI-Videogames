@@ -7,13 +7,15 @@ const {
 } = require('../controllers/controllers.js');
 
 
-const handleGetVg = (req, res) => {
+const handleGetVg = async (req, res) => {
     try {
         const { name } = req.query;
-        const vg = name ? getVgByName(name) : getAllVg();
+        const vg = name ? getVgByName(name) : await getAllVg();
+        console.log(vg);
         res.status(200).send(vg);   
     } catch (error) {
         console.log('catch de handleGetVg');
+        res.status(400).send({error: error.message})      // 400? 
     };
 };
 
@@ -23,26 +25,29 @@ const handleGetVgById = (req, res) => {
         const vg = getVgById(id);
         res.status(200).send(vg);   
     } catch (error) {
-        console.log('catch de handleGetVgById');        
+        console.log('catch de handleGetVgById'); 
+        res.status(400).send({error: error.message})      // 400? 
     };
 };
 
-const handleGetGenres = (req, res) => {
+const handleGetGenres = async (req, res) => {
     try {
-        const genres = getGenres();
+        const genres = await getGenres();
         res.status(200).send(genres);   
     } catch (error) {
         console.log('catch de handleGetGenres');
+        res.status(400).send({error: error.message})      // 400? 
     };
 };
 
-const handlePostVg = (req, res) => {
+const handlePostVg = async (req, res) => {
     try {
-        const { name, background_image, platforms, released, rating, description } = req.body;
-        const newVg = postVg(name, background_image, platforms, released, rating, description);
-        res.status(200).send(newVg);   
+        const { name, background_image, platforms, released, rating, description, genres } = req.body;
+        const vgCreated = await postVg(name, background_image, platforms, released, rating, description, genres);
+        res.status(201).send(vgCreated);   
     } catch (error) {
-        console.log('catch de handlePostVg');        
+        console.log('catch de handlePostVg');
+        res.status(400).send({error: error.message})      // 400? 
     }
 };
 
