@@ -4,7 +4,7 @@ const {
     getVgById,
     getGenres,
     postVg
-} = require('../controllers/controllers.js');
+} = require('../controllers/controllersIndex.js');
 
 
 const handleGetVg = async (req, res) => {
