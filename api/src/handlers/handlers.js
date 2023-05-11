@@ -10,7 +10,7 @@ const {
 const handleGetVg = async (req, res) => {
     try {
         const { name } = req.query;
-        const vg = name ? getVgByName(name) : await getAllVg();
+        const vg = name ? await getVgByName(name) : await getAllVg();
         console.log(vg);
         res.status(200).send(vg);   
     } catch (error) {

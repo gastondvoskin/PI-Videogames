@@ -38,6 +38,8 @@ Added code to check that there are no duplicate elements in the final array.
 In the future, the code may be refactored using Promise.all. 
 --- git commit -m "Implemented getAllVg controller. Modularized controllers."
 
-Next steps: 
-- Implement getVgByName controller. search in DB. search in rawg. Concat. 
-(take part of getVgByIdController controller which has useful logic)
+Implemented logic for rawg data in getVgByName controller. 
+Implemented logic for db data in getVgByName controller. 
+Finished getVgByName. In the future, controllers may be remodularized with helpers. 
+Refactored getAllVg controller with Promise.all to fetch the data more quickly
+--- git commit -m "Implemented getVgByName controller. Refactored getAllVg controller"
