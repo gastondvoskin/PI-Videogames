@@ -1,0 +1,76 @@
+.mainContainer {
+    background-color: black;
+    color: rgba(255, 255, 255, 0.919);
+    width: 100%;
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    /* border: solid white 1px; */
+}
+
+.leftSide {
+    /* border: solid red 10px; */
+    max-width: 50%;
+    text-align: left;
+    margin: 10px;
+}
+
+.image {
+    /* max-width: 600px; */
+    /* max-width: fit-content */
+    max-width: 100%;
+    object-fit: cover;
+}
+
+.id {
+    font-size: 10px;
+}
+
+
+
+.rightContainer {
+    margin: 10px;
+    text-align: left;
+}
+
+.description {
+    margin: 10px;
+    font-size: 12px;
+    /* background-color: red; */
+}
+
+
+.description li {
+    font-size: 10px;
+    list-style-type: circle;
+    list-style-position: inside
+    /* 
+    
+    color: rgba(255, 255, 255, 0.919); */
+    /* list-style-type: circle; */
+    /* list-style-position: inside; */
+}
+
+
+/* .description b {
+    font-weight: bold;
+    color: red;
+}
+
+.description strong {
+    font-weight: bold;
+    color: red;
+}
+
+  
+.description a {
+    text-decoration: underline;
+    color: #00bfffcd;
+} */
+
+
+.description ul {
+
+}
+

@@ -1,13 +1,15 @@
 body {
+  background-color: black;
   background-image: url("./assets/bg.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   height: 100vh;
 
-  color: white;
+  color: rgba(255, 255, 255, 0.919);
   margin: 10px;
   text-align: center;
 
   font-family: 'Roboto', sans-serif;
+  font-size: 12px; 
 }
