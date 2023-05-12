@@ -41,5 +41,18 @@ In the future, the code may be refactored using Promise.all.
 Implemented logic for rawg data in getVgByName controller. 
 Implemented logic for db data in getVgByName controller. 
 Finished getVgByName. In the future, controllers may be remodularized with helpers. 
-Refactored getAllVg controller with Promise.all to fetch the data more quickly
+Refactored getAllVg controller with Promise.all to fetch the data more quickly.
+Finished back-end. 
 --- git commit -m "Implemented getVgByName controller. Refactored getAllVg controller"
+
+
+-----------------------------------------
+
+Front-end. 
+Basic configuration:
+- package.json. Added axios. Updated some dependencies: react, react-dom, react-router-dom, react-redux, react-scripts. npm i. npm start. 
+- index.js. Replaced deprectaed ReactDom for createRoot. Deleted reportWebVitals. Envolved App into BrowserRouter. 
+- index.css. B&W. 
+- Deleted App.css and ReportWebVitals.jsx, App.test.js, setupTests.js.
+---git commit -m "Configured basic project. Created a basic structure with views, components, routes and links."
+

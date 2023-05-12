@@ -31,6 +31,7 @@ const getGenres = async () => {
         });
         await Promise.all(promises);
         genresAreLoaded = true; 
+        console.log('genresClean.length: ', genresClean.length);
         return genresClean;    
     };
 
