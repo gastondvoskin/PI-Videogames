@@ -1,11 +1,15 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import { Landing, Home, Detail, Form } from "./views/viewsIndex.js";
 import Nav from "./components/Nav/Nav.jsx";
 
 const App = () => {
+  const location = useLocation();
+  // console.log("location.pathname !== '/' : ", location.pathname !== '/');
+  const renderNav = location.pathname !== '/';
+
   return (
     <div>
-      <Nav />
+      {renderNav && <Nav />}
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="/home" element={<Home />} />

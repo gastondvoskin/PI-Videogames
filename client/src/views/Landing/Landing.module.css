@@ -1,0 +1,31 @@
+.mainContainer {
+    /* background-image: url(https://thumbs.gfycat.com/SomberDarkAmericanbulldog-size_restricted.gif); */
+    background-image: url("../../assets/landingBg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    width: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    color: white;
+    font-size: 30px;
+}
+
+.developer {
+    color: white;
+    font-size: 10px;
+    font-style: italic;
+}
+
+.navLink {
+    font-size: 25px;
+    color: rgb(135, 141, 228);
+}
+
+.navLink:hover {
+    color: rgb(96, 104, 214);
+}

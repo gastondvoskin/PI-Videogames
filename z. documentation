@@ -54,5 +54,24 @@ Basic configuration:
 - index.js. Replaced deprectaed ReactDom for createRoot. Deleted reportWebVitals. Envolved App into BrowserRouter. 
 - index.css. B&W. 
 - Deleted App.css and ReportWebVitals.jsx, App.test.js, setupTests.js.
----git commit -m "Configured basic project. Created a basic structure with views, components, routes and links."
+--- git commit -m "Configured project. Created basic NIY views, components, routes and links."
 
+Implemented Landing.jsx. 
+Implemented Landing.module.css. 
+--- git commit -m "Implemented Landing.jsx and Landing.module.css."
+
+
+Next steps: 
+Contiune with the general layout. 
+
+- view Home. components Cards, Card. 
+- Card: render a hardcoded object. 
+- Cards: map a hardcoded array. implement redus. replace hardcoded array. (only display 3 results). Don't implement filters neither pagination nor searchbar. 
+
+- view Detail. render a hardcoded object. create a dinamic route with the hook Navigate. replace the hardcoded object with axios (not with redux). 
+
+
+- Filters, sortings, SearchBar, Pagination: don't implement yet. 
+- view Form. Don't implement yet. 
+
+Implemented Landing. gif source: https://thumbs.gfycat.com/SomberDarkAmericanbulldog-size_restricted.gif
