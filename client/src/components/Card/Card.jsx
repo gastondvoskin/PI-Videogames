@@ -5,13 +5,22 @@ const Card = ({id, name, background_image, genres}) => {
 
     return (
         <div className={styles.mainContainer}>
-            <h3>{name}</h3>
+            <h3>{`${name} 🔥`}</h3>
+
             <img className={styles.image} src={background_image} />
-            <h5>
-                {genres.map((genre, index) => <li key={index}>{genre}</li>)}
-            </h5>
+
+            <p> Genres:{" "}
+                {genres.map((genre, index) => {
+                    return(
+                        genres.length - 1 === index ?
+                        <span key={index}>{genre}</span>
+                        : <span key={index}>{`${genre} | `}</span>
+                    ) 
+                })}
+            </p>
+
             <Link to={`/detail/${id}`}>
-                <button>See more</button>
+                <button className={styles.seeMoreButton}>See more</button>
             </Link>
         </div>
     );

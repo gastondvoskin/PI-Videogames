@@ -73,7 +73,7 @@ const Detail = () => {
                 <br />
 
                 <Link to={`/home`}>
-                    <button>Go back home</button>
+                    <button className={styles.goBackButton}>Go back home</button>
                 </Link>
 
             </div>

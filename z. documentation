@@ -64,21 +64,18 @@ Implemented Card.jsx and Detail.jsx using a hardcoded videogame object.
 Implemented Card.module.css and Detail.module.css. 
 --- git commit -m "Implemented Card.jsx and Detail.jsx using a hardcoded videogame object. Implemented Card.module.css and Detail.module.css."
 
+
+Styled Nav, Card, and Detail
+--- git commit -m "Styled Nav, Card, and Detail. Added logo."
+
+
+
 Next steps: 
-replace Nav for NavLink in Card component. 
-implement Detail view with the same harcoded Object. 
-map a hardcoded array of two elements in Cards to pass data to Card component. 
+Cards and Card components. map a hardcoded array of two elements in Cards to pass data to Card component. 
+Detail. dinamic with the hardcoded array. 
 
 
-- view Home. components Cards, Card. 
-
-- Card: render a hardcoded object. 
 - Cards: map a hardcoded array. implement redus. replace hardcoded array. (only display 3 results). Don't implement filters neither pagination nor searchbar. 
-
 - view Detail. render a hardcoded object. create a dinamic route with the hook Navigate. replace the hardcoded object with axios (not with redux). 
-
-
 - Filters, sortings, SearchBar, Pagination: don't implement yet. 
 - view Form. Don't implement yet. 
-
-Implemented Landing. gif source: https://thumbs.gfycat.com/SomberDarkAmericanbulldog-size_restricted.gif
