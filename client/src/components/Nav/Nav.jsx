@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Filters from "../Filters/Filters.jsx";
 import SearchBar from "../SearchBar/SearchBar.jsx";
 import styles from "./Nav.module.css";

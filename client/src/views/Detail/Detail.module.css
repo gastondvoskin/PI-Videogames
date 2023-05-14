@@ -1,5 +1,14 @@
 .mainContainer {
     background-color: black;
+}
+
+
+.loadingContainer {
+    font-size: 25px;
+}
+
+.dataContainer {
+    background-color: black;
     color: rgba(255, 255, 255, 0.919);
     width: 100%;
     margin: 10px;
@@ -9,9 +18,11 @@
     /* border: solid white 1px; */
 }
 
-.leftSide {
+
+
+.leftContainer {
     /* border: solid red 10px; */
-    max-width: 50%;
+    max-width: 40%;
     text-align: left;
     margin: 10px;
 }
@@ -27,11 +38,23 @@
     font-size: 10px;
 }
 
+.goBackButton {
+    background-color: rgba(0, 225, 255, 0.929);
+    font-size: 12px;
+    width: fit-content;
+}
+
+.goBackButton:hover {
+    background-color: rgba(91, 236, 255, 0.899);
+    color: rgb(56, 121, 56);
+}
+
 
 
 .rightContainer {
+    max-width: 60%;
     margin: 10px;
-    text-align: left;
+    text-align: justify;
 }
 
 .description {
@@ -49,16 +72,6 @@
 }
 
 
-.goBackButton {
-    background-color: rgba(0, 225, 255, 0.929);
-    font-size: 12px;
-    width: fit-content;
-}
-
-.goBackButton:hover {
-    background-color: rgba(91, 236, 255, 0.899);
-    color: rgb(56, 121, 56);
-}
 
 /* .description b {
     font-weight: bold;

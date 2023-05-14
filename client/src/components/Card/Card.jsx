@@ -7,7 +7,7 @@ const Card = ({id, name, background_image, genres}) => {
         <div className={styles.mainContainer}>
             <h3>{`${name} 🔥`}</h3>
 
-            <img className={styles.image} src={background_image} />
+            <img className={styles.image} src={background_image} alt="Videogame"/>
 
             <p> Genres:{" "}
                 {genres.map((genre, index) => {

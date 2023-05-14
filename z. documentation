@@ -68,14 +68,21 @@ Implemented Card.module.css and Detail.module.css.
 Styled Nav, Card, and Detail
 --- git commit -m "Styled Nav, Card, and Detail. Added logo."
 
+Detail.jsx. CHanged the render return to a conditional rendering. Added a local state videogameDetail. useEffect is executed after the render, so to render data that is loaded in a state (local or from redux), it is required to do a conditional rendering: if the state wasn't updadted, it render "Loading" or something equivalente. When the state changes (is updated through useEffect), the component is rerendered, now with the new data fetched. 
+Implemented Detail.jsx fetching data from the server. 
+Added NotFound.jsx and NetworkError.jsx components. Handled errors in the useEffect to navigate to the proper error component. 
+Implemented validations in Detail.jsx. The states initializes as {}, so I can destructure it, since {}.name is undefined. 
+git commit -m "Implemented Detail.jsx, including validations and errors handlers."
 
 
 Next steps: 
-Cards and Card components. map a hardcoded array of two elements in Cards to pass data to Card component. 
-Detail. dinamic with the hardcoded array. 
+- add objects to the hardcoded array, modularize it. wrap into the Cards.module.css.
+- Implement redux. useSelector in Cards.jsx. receive a hardcodedArray from redux (import ir from the file with the hardcoded array). useDispatch in Home. 
+- Replace hardcoded array with redux.  
 
 
-- Cards: map a hardcoded array. implement redus. replace hardcoded array. (only display 3 results). Don't implement filters neither pagination nor searchbar. 
-- view Detail. render a hardcoded object. create a dinamic route with the hook Navigate. replace the hardcoded object with axios (not with redux). 
+
+
+
 - Filters, sortings, SearchBar, Pagination: don't implement yet. 
 - view Form. Don't implement yet. 
