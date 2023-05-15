@@ -72,15 +72,22 @@ Detail.jsx. CHanged the render return to a conditional rendering. Added a local 
 Implemented Detail.jsx fetching data from the server. 
 Added NotFound.jsx and NetworkError.jsx components. Handled errors in the useEffect to navigate to the proper error component. 
 Implemented validations in Detail.jsx. The states initializes as {}, so I can destructure it, since {}.name is undefined. 
-git commit -m "Implemented Detail.jsx, including validations and errors handlers."
+--- git commit -m "Implemented Detail.jsx, including validations and errors handlers."
+
+
+Modularized hardcodedObjects and hardcodedArray into hardcodedVideogames.js. Imported into Cards.jsx and Detail.jsx. 
+Added Provider to index.js. Created rootReducer.js with an initialState and returning a default. Created store.js. Checked Redux devtools. Created actions-types.js and actions.js. 
+Copied validations from Detail.jsx to Card.jsx. 
+Implemented Cards.module.css. 
+Implemented getAllVg action with the request to the server. 
+Detail.jsx would have a simpler implementation if I initialized the state with empty properties, because it would need less validations. 
+Implemented Loading.jsx rendered in Detail.jsx and in Cards.jsx. 
+NIY: Error handler with redux for getAllVg action. 
+--- git commit -m "Implemented redux. Configured store, implemented getAllVg action, implemented case GET_ALL_VG in reducer. Implemented useSelector in Cards.jsx. Implmented useDispatch in Home.jsx. Implemented Loading.jsx"
 
 
 Next steps: 
-- add objects to the hardcoded array, modularize it. wrap into the Cards.module.css.
-- Implement redux. useSelector in Cards.jsx. receive a hardcodedArray from redux (import ir from the file with the hardcoded array). useDispatch in Home. 
-- Replace hardcoded array with redux.  
-
-
+Add Loading and Errors to Cards copying from Detail.jsx. 
 
 
 

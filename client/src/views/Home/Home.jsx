@@ -1,7 +1,25 @@
 import Cards from "../../components/Cards/Cards.jsx";
 import styles from "./Home.module.css";
+import { useDispatch } from "react-redux";
+import { getAllVg } from "../../redux/actions.js";
+import { useEffect } from "react";
+import { useSelector } from 'react-redux';
+
 
 const Home = () => {
+
+    // implement redux to dispatch action through useDispatch (action.type GET_ALL_VG)
+    const dispatch = useDispatch();
+
+    // to avoid a dispatch each time the componen mounts
+    const allVg = useSelector(state => state.allVg);
+
+    useEffect(() => {
+        // to avoid a dispatch each time the componen mounts
+        if (!allVg.length) dispatch(getAllVg());
+    }, [dispatch, allVg]);
+    
+
     return (
         <div className={styles.mainContainer}>
             <Cards />

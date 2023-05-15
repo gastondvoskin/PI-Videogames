@@ -1,22 +1,35 @@
 import { Link } from "react-router-dom";
 import styles from "./Card.module.css";
+import noImage from "../../assets/noImage.png";
 
 const Card = ({id, name, background_image, genres}) => {
 
     return (
         <div className={styles.mainContainer}>
-            <h3>{`${name} 🔥`}</h3>
+            {
+                !name 
+                ? <h3>No name provided</h3>
+                : <h3>{`${name} 🔥`}</h3>
+            }
 
-            <img className={styles.image} src={background_image} alt="Videogame"/>
+            <img 
+                className={styles.image} 
+                src={background_image ? background_image : noImage} 
+                alt="Videogame" 
+            />               
 
             <p> Genres:{" "}
-                {genres.map((genre, index) => {
-                    return(
-                        genres.length - 1 === index ?
-                        <span key={index}>{genre}</span>
-                        : <span key={index}>{`${genre} | `}</span>
-                    ) 
-                })}
+                {
+                    !genres?.length
+                    ? <span>No genres provided</span>
+                    : genres.map((genre, index) => {
+                        return(
+                            genres.length - 1 === index ?
+                            <span key={index}>{genre}</span>
+                            : <span key={index}>{`${genre} | `}</span>
+                        ) 
+                    })
+                }
             </p>
 
             <Link to={`/detail/${id}`}>

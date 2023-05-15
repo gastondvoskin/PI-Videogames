@@ -1,0 +1,1 @@
+export const GET_ALL_VG = 'GET_ALL_VG';

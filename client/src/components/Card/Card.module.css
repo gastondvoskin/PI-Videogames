@@ -1,6 +1,7 @@
 .mainContainer {
     background-color: black;
     border: solid white 2px;
+    margin: 10px;
     width: 250px;
     height: 280px;
     border-radius: 5%;
