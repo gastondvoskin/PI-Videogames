@@ -15,8 +15,8 @@ export const getAllVg = () => {
                 payload: allVg 
             });
         } catch (error) {
-            // NIY: handle potential network connection error
             console.log(error);
+            alert(error.message);
         };
     };
 };

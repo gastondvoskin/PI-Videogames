@@ -10,11 +10,8 @@ import { useSelector } from 'react-redux';
 
 const Cards = () => {
     const currentVg = useSelector(state => state.currentVg);
-    console.log('currentVg: ', currentVg);
-    // const emptyArr = [];
-    // const newArr = emptyArr.map(el => el.id);
-    // console.log('newArr: ', newArr);
-
+    // console.log('currentVg: ', currentVg);
+    
     return (
         <div className={styles.mainContainer}>   
             {

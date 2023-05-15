@@ -2,7 +2,7 @@ import { Link, useParams } from "react-router-dom";
 import styles from "./Detail.module.css";
 import axios from 'axios';
 import { useState, useEffect } from "react";
-import NotFound from "../../Errors/NotFound/NotFound.jsx";
+import PageNotFound from "../../Errors/PageNotFound/PageNotFound";
 import NetworkError from "../../Errors/NetworkError/NetworkError.jsx";
 import Loading from "../../components/Loading/Loading";
 import noImage from "../../assets/noImage.png";
@@ -43,7 +43,7 @@ const Detail = () => {
     return (
         errorState 
             ? errorState === 'ERR_BAD_REQUEST' 
-                ? <NotFound />
+                ? <PageNotFound />
                 : <NetworkError />
             : !Object.keys(vgDetail).length  
                 ? <Loading />

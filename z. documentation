@@ -86,9 +86,12 @@ NIY: Error handler with redux for getAllVg action.
 --- git commit -m "Implemented redux. Configured store, implemented getAllVg action, implemented case GET_ALL_VG in reducer. Implemented useSelector in Cards.jsx. Implmented useDispatch in Home.jsx. Implemented Loading.jsx"
 
 
-Next steps: 
-Add Loading and Errors to Cards copying from Detail.jsx. 
+Implemented PageNotFound for all other routes. 
+Replace NotFound.jsx with PageNotFound.jsx. 
+--- git commit -m "Implemented PageNotFound.jsx."
 
+Next steps: 
+Filters. Start with searchBar. 
 
 
 - Filters, sortings, SearchBar, Pagination: don't implement yet. 

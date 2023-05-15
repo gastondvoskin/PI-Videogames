@@ -2,6 +2,7 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import { Landing, Home, Detail, Form } from "./views/viewsIndex.js";
 import Nav from "./components/Nav/Nav.jsx";
 import Loading from "./components/Loading/Loading.jsx";
+import PageNotFound from "./Errors/PageNotFound/PageNotFound.jsx";
 
 const App = () => {
   const location = useLocation();
@@ -17,6 +18,7 @@ const App = () => {
         <Route path="/detail/:id" element={<Detail />} />
         <Route path="/form" element={<Form />} />
         <Route path="/devloading" element={<Loading />} />
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
     </div>
   );
