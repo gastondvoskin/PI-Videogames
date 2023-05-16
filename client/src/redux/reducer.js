@@ -1,8 +1,10 @@
-import { GET_ALL_VG, SORT_BY_ALPHABET, SORT_BY_RATING } from "./actions-types"; 
+import { GET_ALL_VG, SORT_BY_ALPHABET, SORT_BY_RATING, FILTER_BY_CREATOR} from "./actions-types"; 
 import { hardcodedArray, bigHardcodedArray, hardcodedSmallArray } from "../hardcodedVideogames";
 
 const initialState = {
     allVg: [],
+    filteredByCreator: [],
+    filteredByGenres: [],
     currentVg: []
 }
 
@@ -15,11 +17,52 @@ const rootReducer = (state = initialState, action) => {
             return {
                 ...state, 
                 allVg: [...allVg],
+                filteredByCreator: [...allVg],
+                filteredByGenres: [...allVg],
                 currentVg: [...allVg]
                 // allVg: [...hardcodedSmallArray],
                 // currentVg: [...hardcodedSmallArray]
             };
         };
+
+        
+
+        case FILTER_BY_CREATOR: {
+            // console.log('in FILTER_BY_CREATOR case');
+            const creator = action.payload;
+            // console.log('creator in FILTER_BY_CREATOR case: ', creator);
+
+            // console.log('delayed state.filteredByCreator.length', state.filteredByCreator.length);
+
+            let filteredByCreator;
+
+            if (creator === 'all') {
+                filteredByCreator = [...state.allVg];
+            } else if (creator === 'client') {
+                filteredByCreator = [...state.allVg].filter(vg => {
+                    return isNaN(vg.id)
+                })
+            } else if (creator === 'api') {
+                filteredByCreator = [...state.allVg].filter(vg => {
+                    return !isNaN(vg.id)
+                })
+            };
+
+            const currentVg = filteredByCreator.filter(vg => {
+                return state.filteredByGenres.includes(vg)
+            });
+
+            // console.log('delayed state.filteredByCreator.length', state.filteredByCreator.length);
+
+            return {
+                ...state,
+                filteredByCreator: filteredByCreator,
+                currentVg: currentVg        
+            };
+        };
+
+
+
 
         case SORT_BY_ALPHABET: {
             // console.log('here in SORT_BY_ALPHABET case')
@@ -49,7 +92,7 @@ const rootReducer = (state = initialState, action) => {
 
 
         case SORT_BY_RATING: {
-            console.log('here in SORT_BY_RATING case');
+            // console.log('here in SORT_BY_RATING case');
             const order = action.payload;       // 'ratingAsc' or 'ratingDesc'
             const compareFunction = ((a, b) => {
                 return a.rating - b.rating;
@@ -65,9 +108,8 @@ const rootReducer = (state = initialState, action) => {
         };
 
 
-
         default: 
-            return state;
+            return {...state};
     };
 };
 

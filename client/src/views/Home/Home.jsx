@@ -1,6 +1,7 @@
 import Cards from "../../components/Cards/Cards.jsx";
 import Filters from "../../components/Filters/Filters.jsx";
 import Sortings from "../../components/Sortings/Sortings.jsx";
+import Pagination from "../../components/Pagination/Pagination.jsx";
 import styles from "./Home.module.css";
 import { useDispatch } from "react-redux";
 import { getAllVg } from "../../redux/actions.js";
@@ -28,6 +29,7 @@ const Home = () => {
                 <Filters />
                 <Sortings />
             </div>
+            <Pagination />
             <Cards />
         </div>
     );

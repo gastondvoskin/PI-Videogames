@@ -98,24 +98,16 @@ Implemented sortByRating action, SORT_BY_RATING case in reducer, controlled sele
 --- git commit -m "Implemented sortByRating action, SORT_BY_RATING case in reducer, controlled select box to dispatch the sortByRating action. Modularized Filters.jsx into Filters.jsx and Sortings.jsx. Unified select box of alphabet and rating sortings. Moved renderiing of Filters and Sortings from Nav to Home."
 
 
+Created Pagination.jsx with a hardcoded array. 
+Implemented handleFilterByCreator handler, filterByCreator action, FILTER_BY_CREATOR case in reducer modifying the global initialState to combine the filters (added filteredByCreator and filteredByGenres properties). Modified GET_ALL_VG case to combine filters. 
+--- git commit -m "Implemented Filter by creator: filterByCreator action, FILTER_BY_CREATOR case in reducer, handleFilterByCreator handler. Adapted global initialState and GET_ALL_VG case in reducer in order to combine filters. Created Pagination NIY."
 
-Next steps: 
-- Filters. 
-
-
-globalState: {
-allVg: [], 
-vgFilteredByGenre
-vgFilteredBySource, 
-currentVg: []
-}
-currentVg es Set(vgFilteredBy con 
-el otro filter). 
-El dispatch de Home guardar el payload en las cuatro propiedades. 
-Cada filtro modifica su vgFilteredBy y ejecuta un Set para definir currentVg. Si el value es all, setea el valor de su filtro con el valor de allVg. 
-Sort simplemente actúa sobre currentVg. 
-Searchbar actúa solo sobre currentVg. 
-
+Next step: 
+Filter by genres: 
+- action-type
+- action
+- case in reducer
+- handler in Filters.jsx. 
 
 
 
@@ -123,6 +115,7 @@ Searchbar actúa solo sobre currentVg.
 
 Other day: 
 SearchBar. 
+- It only modifies currentVg property in the global State. 
 - Add an action with a harcodedArray in the payload. Add the case in the reducer, this case filters allVg (global state property) to update currentVg. First send all the hardcodedArray. 
 - useDispatch in SearchBar.jsx. First filter in the same way independtly of the changes. After, handleChanges. 
 - useSelector in Home.jsx. Check if the data is rendered properly. 
@@ -133,7 +126,3 @@ SearchBar.
 
 - Pagination: don't implement yet. 
 - view Form. Don't implement yet. 
-
-
-- Filter by 
-- Sortings. 

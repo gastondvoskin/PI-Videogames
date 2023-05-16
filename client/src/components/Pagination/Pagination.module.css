@@ -1,0 +1,11 @@
+.mainContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.button {
+    margin: 3px;
+}

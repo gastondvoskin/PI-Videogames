@@ -1,6 +1,7 @@
 import { sortByAlphabet, sortByRating } from "../../redux/actions";
 import { useDispatch } from 'react-redux'; 
 import { useState } from "react";
+import styles from "./Sortings.module.css";
 
 const Sortings = () => {
     const [ order, setOrder ] = useState('');
@@ -26,7 +27,7 @@ const Sortings = () => {
     };
 
     return (
-        <div>
+        <div className={styles.mainContainer}>
             <span>Sort by alphabet or rating {' '}</span>
             <select 
                 name="Sort" 
@@ -48,10 +49,5 @@ export default Sortings;
 
 
 // OLD
-{/* <select name="sortByRating">
-    <option disabled>Sort by rating </option>
-    <option value="Hardcoded value 2">Highest first</option>
-    <option value="Hardcoded value 2">Lowest first</option>
-</select>  */}
 // ↑↑ ↓↓    {'\u2192'}
 

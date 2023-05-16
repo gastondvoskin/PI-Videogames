@@ -1,4 +1,4 @@
-import { GET_ALL_VG, SORT_BY_ALPHABET, SORT_BY_RATING } from "./actions-types"; 
+import { GET_ALL_VG, SORT_BY_ALPHABET, SORT_BY_RATING, FILTER_BY_CREATOR } from "./actions-types"; 
 import { hardcodedArray } from "../hardcodedVideogames";
 import axios from 'axios';
 
@@ -21,17 +21,26 @@ export const getAllVg = () => {
     };
 };
 
+export const filterByCreator = (creator) => {
+    // console.log('in filterByCreator action');
+    return {
+        type: FILTER_BY_CREATOR,
+        payload: creator
+    };
+};
+
 export const sortByAlphabet = (order) => {
     return {
         type: SORT_BY_ALPHABET,
         payload: order
-    }
+    };
 };
 
 export const sortByRating = (order) => {
-    console.log('action sortByRating');
+    // console.log('in sortByRating action');
     return {
         type: SORT_BY_RATING,
         payload: order
-    }
+    };
 };
+

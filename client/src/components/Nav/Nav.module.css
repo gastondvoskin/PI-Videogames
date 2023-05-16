@@ -7,23 +7,27 @@
     margin: 10px;
     margin-bottom: 30px;
     padding: 10px;
+    align-items: center;
 }
 
 .logo {
     max-height: 100%;
+    max-height: 35px;
 }
 
 .addGameButton {
     background-color: rgb(166, 216, 166);
+    border: solid white 1px;
     /* color: white; */
     /* background-color: rgba(0, 225, 255, 0.929); */
-    font-size: 13px;
+    font-size: 12px;
     font-weight: bold;
-    width: fit-content;
+    font-style: italic;
+    width: 95px;
+    height: 25px;
 }
 
 .addGameButton:hover {
-    
-    /* background-color: rgba(91, 236, 255, 0.899);
-    color: rgb(56, 121, 56); */
+    /* background-color: rgba(91, 236, 255, 0.899); */
+    color: rgb(56, 121, 56); 
 }
