@@ -53,11 +53,61 @@ export const dbHardcodedObject =     {
     ]
 };
 
+export const hardcodedSmallObject1 = {
+    "id": "1",
+    "name": "AAAA",
+    "background_image": "https://media.rawg.io/media/screenshots/5c4/5c41cb3b0d15ef0974f930898cedbc6c.jpg",
+    "platforms": [
+        "Xbox One"
+    ],
+    "released": "2015-10-23",
+    "rating": 0,
+    "genres": [
+        "Adventure",
+    ],
+    "description": "The year"
+}; 
+
+export const hardcodedSmallObject2 = {
+    "id": "1",
+    "name": "ZZZZ",
+    "background_image": "https://media.rawg.io/media/screenshots/5c4/5c41cb3b0d15ef0974f930898cedbc6c.jpg",
+    "platforms": [
+        "Xbox One"
+    ],
+    "released": "2015-10-23",
+    "rating": 0,
+    "genres": [
+        "Adventure",
+    ],
+    "description": "The year"
+}; 
+
+export const hardcodedSmallObject3 = {
+    "id": "1",
+    "name": "JJJJ",
+    "background_image": "https://media.rawg.io/media/screenshots/5c4/5c41cb3b0d15ef0974f930898cedbc6c.jpg",
+    "platforms": [
+        "Xbox One"
+    ],
+    "released": "2015-10-23",
+    "rating": 0,
+    "genres": [
+        "Adventure",
+    ],
+    "description": "The year"
+}; 
+
+export const hardcodedSmallArray = [
+    hardcodedSmallObject1, hardcodedSmallObject2, hardcodedSmallObject3
+]
+
 
 
 export const hardcodedArray = [
     hardcodedObject, secondHardcodedObject, dbHardcodedObject
 ]
+
 
 
 export const bigHardcodedArray = [

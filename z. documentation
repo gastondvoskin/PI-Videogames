@@ -90,9 +90,45 @@ Implemented PageNotFound for all other routes.
 Replace NotFound.jsx with PageNotFound.jsx. 
 --- git commit -m "Implemented PageNotFound.jsx."
 
+Implemented sortByAlphabet action, SORT_BY_ALPHABET case in reducer, controlled select box to dispatchs the sortByAlphabet action. 
+--- git commit -m "Implemented sortByAlphabet action, SORT_BY_ALPHABET case in reducer, controlled select box to dispatchs the sortByAlphabet action."
+
+
 Next steps: 
-Filters. Start with searchBar. 
+Sort by rating
+May be Sorting Filters and Search should go in Home.jsx instead of the Nav. 
+
+globalState: {
+allVg: [], 
+vgFilteredByGenre
+vgFilteredBySource, 
+currentVg: []
+}
+currentVg es Set(vgFilteredBy con 
+el otro filter). 
+El dispatch de Home guardar el payload en las cuatro propiedades. 
+Cada filtro modifica su vgFilteredBy y ejecuta un Set para definir currentVg. Si el value es all, setea el valor de su filtro con el valor de allVg. 
+Sort simplemente actúa sobre currentVg. 
+Searchbar actúa solo sobre currentVg. 
 
 
-- Filters, sortings, SearchBar, Pagination: don't implement yet. 
+
+
+
+
+Other day: 
+SearchBar. 
+- Add an action with a harcodedArray in the payload. Add the case in the reducer, this case filters allVg (global state property) to update currentVg. First send all the hardcodedArray. 
+- useDispatch in SearchBar.jsx. First filter in the same way independtly of the changes. After, handleChanges. 
+- useSelector in Home.jsx. Check if the data is rendered properly. 
+
+- Implement handleChange and dubmit in Searchbar to send a differente argument according to the input value. 
+- Filter properly in the reducer. 
+- Make a real request with axios.  
+
+- Pagination: don't implement yet. 
 - view Form. Don't implement yet. 
+
+
+- Filter by 
+- Sortings. 

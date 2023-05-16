@@ -1,4 +1,4 @@
-import { GET_ALL_VG } from "./actions-types"; 
+import { GET_ALL_VG, SORT_BY_ALPHABET } from "./actions-types"; 
 import { hardcodedArray } from "../hardcodedVideogames";
 import axios from 'axios';
 
@@ -19,4 +19,11 @@ export const getAllVg = () => {
             alert(error.message);
         };
     };
+};
+
+export const sortByAlphabet = (order) => {
+    return {
+        type: SORT_BY_ALPHABET,
+        payload: order
+    }
 };

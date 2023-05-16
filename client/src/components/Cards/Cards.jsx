@@ -3,6 +3,7 @@ import Loading from "../Loading/Loading.jsx";
 import styles from "./Cards.module.css";
 import { hardcodedObject, secondHardcodedObject, dbHardcodedObject, hardcodedArray } from "../../hardcodedVideogames";
 import { useSelector } from 'react-redux';
+import { useEffect } from "react";
 
 
 
@@ -10,7 +11,7 @@ import { useSelector } from 'react-redux';
 
 const Cards = () => {
     const currentVg = useSelector(state => state.currentVg);
-    // console.log('currentVg: ', currentVg);
+    console.log('currentVg in Cards: ', currentVg);
     
     return (
         <div className={styles.mainContainer}>   
