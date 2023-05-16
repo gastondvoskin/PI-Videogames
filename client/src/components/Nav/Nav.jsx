@@ -19,12 +19,10 @@ const Nav = () => {
 
             {/* <button> <Link to="/detail/1">/detail/1 (dev)</Link> </button> */}
 
-            <Filters />
-
             <SearchBar />
             
             <Link to={`/form`}>
-                <button>Add game</button>
+                <button className={styles.addGameButton}>+ Add game</button>
             </Link>
 
 

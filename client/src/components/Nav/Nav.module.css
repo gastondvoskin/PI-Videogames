@@ -13,3 +13,17 @@
     max-height: 100%;
 }
 
+.addGameButton {
+    background-color: rgb(166, 216, 166);
+    /* color: white; */
+    /* background-color: rgba(0, 225, 255, 0.929); */
+    font-size: 13px;
+    font-weight: bold;
+    width: fit-content;
+}
+
+.addGameButton:hover {
+    
+    /* background-color: rgba(91, 236, 255, 0.899);
+    color: rgb(56, 121, 56); */
+}

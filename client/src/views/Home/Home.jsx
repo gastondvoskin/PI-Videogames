@@ -1,4 +1,6 @@
 import Cards from "../../components/Cards/Cards.jsx";
+import Filters from "../../components/Filters/Filters.jsx";
+import Sortings from "../../components/Sortings/Sortings.jsx";
 import styles from "./Home.module.css";
 import { useDispatch } from "react-redux";
 import { getAllVg } from "../../redux/actions.js";
@@ -22,6 +24,10 @@ const Home = () => {
 
     return (
         <div className={styles.mainContainer}>
+            <div className={styles.filtersAndSortingsContainer}>
+                <Filters />
+                <Sortings />
+            </div>
             <Cards />
         </div>
     );

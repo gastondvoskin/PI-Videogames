@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import styles from "./Card.module.css";
 import noImage from "../../assets/noImage.png";
 
-const Card = ({id, name, background_image, genres}) => {
+const Card = ({id, name, background_image, genres, rating}) => {
 
     return (
         <div className={styles.mainContainer}>
@@ -31,6 +31,8 @@ const Card = ({id, name, background_image, genres}) => {
                     })
                 }
             </p>
+
+            <p>{`★ ${rating}`}</p>
 
             <Link to={`/detail/${id}`}>
                 <button className={styles.seeMoreButton}>See more</button>

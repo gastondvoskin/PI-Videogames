@@ -90,13 +90,18 @@ Implemented PageNotFound for all other routes.
 Replace NotFound.jsx with PageNotFound.jsx. 
 --- git commit -m "Implemented PageNotFound.jsx."
 
-Implemented sortByAlphabet action, SORT_BY_ALPHABET case in reducer, controlled select box to dispatchs the sortByAlphabet action. 
+Implemented sortByAlphabet action, SORT_BY_ALPHABET case in reducer, controlled select box to dispatch the sortByAlphabet action. 
 --- git commit -m "Implemented sortByAlphabet action, SORT_BY_ALPHABET case in reducer, controlled select box to dispatchs the sortByAlphabet action."
 
 
+Implemented sortByRating action, SORT_BY_RATING case in reducer, controlled select box to dispatch the sortByRating action. Unified select box of alphabet and rating sortings. Moved renderiing of Filters and Sortings from Nav to Home. 
+--- git commit -m "Implemented sortByRating action, SORT_BY_RATING case in reducer, controlled select box to dispatch the sortByRating action. Modularized Filters.jsx into Filters.jsx and Sortings.jsx. Unified select box of alphabet and rating sortings. Moved renderiing of Filters and Sortings from Nav to Home."
+
+
+
 Next steps: 
-Sort by rating
-May be Sorting Filters and Search should go in Home.jsx instead of the Nav. 
+- Filters. 
+
 
 globalState: {
 allVg: [], 

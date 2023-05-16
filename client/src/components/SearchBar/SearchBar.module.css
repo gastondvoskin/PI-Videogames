@@ -1,0 +1,17 @@
+.mainContainer {
+    display: flex;
+    direction: row;
+    width: 300px;
+}
+
+.input {
+    width: 250px;
+    height: 20px;
+    border-radius: 0%;
+}
+
+.button {
+    font-size: 12px;
+    height: 26px;
+    width: 35px;
+}

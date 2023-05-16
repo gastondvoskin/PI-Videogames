@@ -11,21 +11,22 @@ import { useEffect } from "react";
 
 const Cards = () => {
     const currentVg = useSelector(state => state.currentVg);
-    console.log('currentVg in Cards: ', currentVg);
+    // console.log('currentVg in Cards: ', currentVg);
     
     return (
         <div className={styles.mainContainer}>   
             {
                 !currentVg.length ? 
                 <Loading />
-                : currentVg.map((element, index) => {
+                : currentVg.map((vg, index) => {
                     return (
                         <Card 
                             key={index}
-                            id={element.id}
-                            name={element.name}
-                            background_image={element.background_image}
-                            genres={element.genres}
+                            id={vg.id}
+                            name={vg.name}
+                            background_image={vg.background_image}
+                            genres={vg.genres}
+                            rating={vg.rating}
                         />        
                     )
                 })

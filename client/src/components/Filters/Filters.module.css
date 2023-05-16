@@ -1,8 +1,4 @@
 .mainContainer {
-    margin: 10px;
-}
-
-.filtersAndSortingsContainer {
     display: flex;
     flex-direction: row;
 }
