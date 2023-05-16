@@ -1,4 +1,4 @@
-import { filterByCreator } from "../../redux/actions";
+import { filterByCreator, filterByGenre } from "../../redux/actions";
 import { useDispatch } from 'react-redux'; 
 import { useState } from "react";
 import hardcodedGenres from "../../hardcodedGenres";
@@ -6,7 +6,7 @@ import styles from "./Filters.module.css";
 
 const Filters = () => {
     const [ creator, setCreator ] = useState('');
-    const [ genres, setgenres ] = useState('');
+    const [ genre, setGenre ] = useState('');
 
     const dispatch = useDispatch();
     
@@ -19,10 +19,21 @@ const Filters = () => {
         dispatch(filterByCreator(creator));
     };
 
+    const handleFilterByGenre = (event) => {
+        // console.log('inside handleFilterByCreator handler');
+        const genre = event.target.value;
+        setGenre(genre);
+        // console.log('genre: ', genre);
+        // genre refers to the updated value inside handleFilterByCreator, not to the localState 
+        dispatch(filterByGenre(genre));
+    };
+
+
     return (
         <div className={styles.mainContainer}>
             
             <span>Filter by {' '}</span>
+
             <select 
                 name="filterByCreator"
                 value={creator}
@@ -35,11 +46,11 @@ const Filters = () => {
             </select> 
 
             <select 
-                name="filterByGenres"
-                value={genres}
-                /* onChange={handleFilterByGenres} */
+                name="filterByGenre"
+                value={genre}
+                onChange={handleFilterByGenre}
             >
-                <option disabled value="">Genres</option>
+                <option disabled value="">Genre</option>
                 <option value="allGenres">All genres</option>
                 {/* replace hardcoded array */}
                 {

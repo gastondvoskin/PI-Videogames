@@ -1,4 +1,4 @@
-import { GET_ALL_VG, SORT_BY_ALPHABET, SORT_BY_RATING, FILTER_BY_CREATOR } from "./actions-types"; 
+import { GET_ALL_VG, FILTER_BY_CREATOR, FILTER_BY_GENRE, SORT_BY_ALPHABET, SORT_BY_RATING } from "./actions-types"; 
 import { hardcodedArray } from "../hardcodedVideogames";
 import axios from 'axios';
 
@@ -26,6 +26,14 @@ export const filterByCreator = (creator) => {
     return {
         type: FILTER_BY_CREATOR,
         payload: creator
+    };
+};
+
+export const filterByGenre = (genres) => {
+    // console.log('in filterByGenre action');
+    return {
+        type: FILTER_BY_GENRE,
+        payload: genres
     };
 };
 

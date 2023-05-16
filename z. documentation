@@ -102,13 +102,10 @@ Created Pagination.jsx with a hardcoded array.
 Implemented handleFilterByCreator handler, filterByCreator action, FILTER_BY_CREATOR case in reducer modifying the global initialState to combine the filters (added filteredByCreator and filteredByGenres properties). Modified GET_ALL_VG case to combine filters. 
 --- git commit -m "Implemented Filter by creator: filterByCreator action, FILTER_BY_CREATOR case in reducer, handleFilterByCreator handler. Adapted global initialState and GET_ALL_VG case in reducer in order to combine filters. Created Pagination NIY."
 
-Next step: 
-Filter by genres: 
-- action-type
-- action
-- case in reducer
-- handler in Filters.jsx. 
 
+Implemented Filter by genre. With each filter I update first the individual property in the global state, and after that I update the currentVg in order to combine the filters. 
+To improve: if there is no videogame with the specified filters, Cards renders Loading. To change this, I should initialize the globalState in the reducer with currentVg: null, and adapt the validation in Cards.jsx to render Loading or the videogames. 
+--- git commit -m "Implemented Filter by genre: handler, action, reducer"
 
 
 

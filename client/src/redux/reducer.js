@@ -1,10 +1,10 @@
-import { GET_ALL_VG, SORT_BY_ALPHABET, SORT_BY_RATING, FILTER_BY_CREATOR} from "./actions-types"; 
+import { GET_ALL_VG, FILTER_BY_CREATOR, FILTER_BY_GENRE, SORT_BY_ALPHABET, SORT_BY_RATING} from "./actions-types"; 
 import { hardcodedArray, bigHardcodedArray, hardcodedSmallArray } from "../hardcodedVideogames";
 
 const initialState = {
     allVg: [],
     filteredByCreator: [],
-    filteredByGenres: [],
+    filteredByGenre: [],
     currentVg: []
 }
 
@@ -18,14 +18,14 @@ const rootReducer = (state = initialState, action) => {
                 ...state, 
                 allVg: [...allVg],
                 filteredByCreator: [...allVg],
-                filteredByGenres: [...allVg],
+                filteredByGenre: [...allVg],
                 currentVg: [...allVg]
                 // allVg: [...hardcodedSmallArray],
                 // currentVg: [...hardcodedSmallArray]
             };
         };
 
-        
+
 
         case FILTER_BY_CREATOR: {
             // console.log('in FILTER_BY_CREATOR case');
@@ -49,7 +49,7 @@ const rootReducer = (state = initialState, action) => {
             };
 
             const currentVg = filteredByCreator.filter(vg => {
-                return state.filteredByGenres.includes(vg)
+                return state.filteredByGenre.includes(vg)
             });
 
             // console.log('delayed state.filteredByCreator.length', state.filteredByCreator.length);
@@ -57,6 +57,35 @@ const rootReducer = (state = initialState, action) => {
             return {
                 ...state,
                 filteredByCreator: filteredByCreator,
+                currentVg: currentVg        
+            };
+        };
+
+
+        // NEW
+        case FILTER_BY_GENRE: {
+            // console.log('inside FILTER_BY_GENRE case');
+            const genre = action.payload;
+            console.log('genre in FILTER_BY_GENRE: ', genre);
+
+            let filteredByGenre;
+
+            if (genre === 'allGenres') {
+                filteredByGenre = [...state.allVg];
+            } else {
+                filteredByGenre = [...state.allVg].filter(vg => {
+                    console.log('vg.genres: ', vg.genres);
+                    return vg.genres.includes(genre);
+                })
+            }; 
+
+            const currentVg = filteredByGenre.filter(vg => {
+                return state.filteredByCreator.includes(vg)
+            });
+
+            return {
+                ...state,
+                filteredByGenre: filteredByGenre,
                 currentVg: currentVg        
             };
         };
