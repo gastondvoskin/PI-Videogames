@@ -1,7 +1,7 @@
 .mainContainer {
     display: flex;
     flex-wrap: wrap;
-    margin: 0px;
+    margin: 15px;
 }
 
 .loadingContainer {

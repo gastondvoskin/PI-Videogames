@@ -4,7 +4,7 @@
     justify-content: space-evenly;
     border: solid white 1px;
     height: 25px;
-    margin: 10px;
+    margin: 20px;
     margin-bottom: 30px;
     padding: 10px;
     align-items: center;
@@ -16,8 +16,9 @@
 }
 
 .addGameButton {
-    background-color: rgb(166, 216, 166);
+    background-color: rgb(135, 141, 228);;
     border: solid white 1px;
+    color: white;
     /* color: white; */
     /* background-color: rgba(0, 225, 255, 0.929); */
     font-size: 12px;

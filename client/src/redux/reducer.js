@@ -1,4 +1,4 @@
-import { GET_ALL_VG, FILTER_BY_CREATOR, FILTER_BY_GENRE, SORT_BY_ALPHABET, SORT_BY_RATING} from "./actions-types"; 
+import { GET_ALL_VG, SEARCH_BY_NAME, RESET_FILTERS, FILTER_BY_CREATOR, FILTER_BY_GENRE, SORT_BY_ALPHABET, SORT_BY_RATING} from "./actions-types"; 
 import { hardcodedArray, bigHardcodedArray, hardcodedSmallArray } from "../hardcodedVideogames";
 
 const initialState = {
@@ -25,7 +25,22 @@ const rootReducer = (state = initialState, action) => {
             };
         };
 
+        case SEARCH_BY_NAME: {
+            // console.log('inside SEARCH_BY_NAME case');
+            const filteredByName = action.payload;
+            // console.log('filteredByName: ', filteredByName);
+            return {
+                ...state,
+                currentVg: filteredByName
+            };
+        };
 
+        case RESET_FILTERS: {
+            return {
+                ...state,
+                currentVg: state.allVg
+            }
+        }
 
         case FILTER_BY_CREATOR: {
             // console.log('in FILTER_BY_CREATOR case');
@@ -48,7 +63,7 @@ const rootReducer = (state = initialState, action) => {
                 })
             };
 
-            const currentVg = filteredByCreator.filter(vg => {
+            const currentVg = [...filteredByCreator].filter(vg => {
                 return state.filteredByGenre.includes(vg)
             });
 
@@ -79,7 +94,7 @@ const rootReducer = (state = initialState, action) => {
                 })
             }; 
 
-            const currentVg = filteredByGenre.filter(vg => {
+            const currentVg = [...filteredByGenre].filter(vg => {
                 return state.filteredByCreator.includes(vg)
             });
 

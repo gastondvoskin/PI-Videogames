@@ -1,5 +1,9 @@
 export const GET_ALL_VG = 'GET_ALL_VG';
 
+export const SEARCH_BY_NAME = 'SEARCH_BY_NAME';
+
+export const RESET_FILTERS = 'RESET_FILTERS';
+
 export const FILTER_BY_CREATOR = 'FILTER_BY_CREATOR';
 
 export const FILTER_BY_GENRE = 'FILTER_BY_GENRE';

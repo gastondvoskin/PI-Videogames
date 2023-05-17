@@ -1,4 +1,4 @@
-import { GET_ALL_VG, FILTER_BY_CREATOR, FILTER_BY_GENRE, SORT_BY_ALPHABET, SORT_BY_RATING } from "./actions-types"; 
+import { GET_ALL_VG, SEARCH_BY_NAME, RESET_FILTERS, FILTER_BY_CREATOR, FILTER_BY_GENRE, SORT_BY_ALPHABET, SORT_BY_RATING } from "./actions-types"; 
 import { hardcodedArray } from "../hardcodedVideogames";
 import axios from 'axios';
 
@@ -21,8 +21,31 @@ export const getAllVg = () => {
     };
 };
 
+export const searchByName = (vgName) => {
+    const API_URL = `http://localhost:3001/videogames?name=${vgName}`;
+    return async (dispatch) => {
+        try {
+            const response = await axios.get(API_URL);
+            const vgByName = response.data;
+            // console.log('vgByName: ', vgByName);
+            dispatch({
+                type: SEARCH_BY_NAME,
+                payload: vgByName
+            });
+        } catch (error) {
+            alert(error.message);
+        }
+    };
+};
+
+export const resetFilters = () => {
+    return {
+        type: RESET_FILTERS
+    };
+};
+
 export const filterByCreator = (creator) => {
-    // console.log('in filterByCreator action');
+    // console.log('inside filterByCreator action');
     return {
         type: FILTER_BY_CREATOR,
         payload: creator

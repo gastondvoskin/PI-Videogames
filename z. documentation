@@ -114,24 +114,24 @@ Styles Loading and Filters.
 --- git commit -m "Unified Filters.jsx, Sortings.jsx and Searchbar.jsx into Filters.jsx. Updated styles to Loading, Card, and Filters."
 
 
-Next step: 
-- SEARCHBAR!!
+Implemented SearchBar. I can't combine this filter with the other ones because with the getAllVg filteredByCreator and FilteredByGenre only saves 150 videogames, while the searchBar searchs in all the DB. If getAllVg searched in all the DB, the code would be: 
+const currentVg = [...filteredByName].filter((vg) => {
+    console.log(state.filteredByCreator.includes(vg) && state.filteredByGenre.includes(vg))
+    return state.filteredByCreator.includes(vg) && state.filteredByGenre.includes(vg)
+});
+Currently, the code just returns {...state, currentVg: filteredByName}
+On the handleSearchSubmit, I reset the filters and sortings after submiting. 
+--- git commit -m "Implemented SearchBar in Filters.jsx.
+
+
+
+Next steps: 
+- Adapt the back-end to make a stricter search by name in rawg.
 - Replace the hardcoded array of genres in Filters.jsx dispatching an action. 
-- SearchBar. When dispatching the action, the filters should reset. So I could handle the state through redux or simply move the SearchBar into Filters.jsx. Also, when dispatching FilterbyCreator or filterByGenres, the SearchBar should reset. 
-- Add a button to reset all the filters. 
+- Replace the logic of the loading, so if after the filter currentVg === [], it renders <p>No videogames found</p>
 
 
 
-Other day: 
-SearchBar. 
-- It only modifies currentVg property in the global State. 
-- Add an action with a harcodedArray in the payload. Add the case in the reducer, this case filters allVg (global state property) to update currentVg. First send all the hardcodedArray. 
-- useDispatch in SearchBar.jsx. First filter in the same way independtly of the changes. After, handleChanges. 
-- useSelector in Home.jsx. Check if the data is rendered properly. 
-
-- Implement handleChange and dubmit in Searchbar to send a differente argument according to the input value. 
-- Filter properly in the reducer. 
-- Make a real request with axios.  
-
+Future: 
 - Pagination: don't implement yet. 
 - view Form. Don't implement yet. 

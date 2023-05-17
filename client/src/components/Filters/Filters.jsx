@@ -1,3 +1,4 @@
+import { searchByName, resetFilters } from "../../redux/actions";
 import { filterByCreator, filterByGenre } from "../../redux/actions";
 import { sortByAlphabet, sortByRating } from "../../redux/actions";
 import { useDispatch } from 'react-redux'; 
@@ -6,11 +7,36 @@ import styles from "./Filters.module.css";
 import hardcodedGenres from "../../hardcodedGenres";
 
 const Filters = () => {
+    const [ vgName, setVgName ] = useState('');
     const [ creator, setCreator ] = useState('');
     const [ genre, setGenre ] = useState('');
     const [ order, setOrder ] = useState('');
 
     const dispatch = useDispatch();
+
+    // add searchbar input and button handlers. 
+    const handleSearchInput = (event) => {
+        const inputValue = event.target.value;
+        setVgName(inputValue);
+    };
+
+    const handleSearchSubmit = (event) => {
+        event.preventDefault();
+        dispatch(searchByName(vgName));
+        setCreator('');
+        setGenre('');
+        setOrder(''); 
+    };
+
+    const handleResetFilters = (event) => {
+        event.preventDefault();
+        dispatch(resetFilters());
+        setVgName('');
+        setCreator('');
+        setGenre('');
+        setOrder(''); 
+    };
+
     
     const handleFilterByCreator = (event) => {
         // console.log('inside handleFilterByCreator handler');
@@ -44,13 +70,33 @@ const Filters = () => {
     return (
         <div className={styles.mainContainer}>
 
-            <div className={styles.searchBar}>
-                <input 
-                    className={styles.searchInput}
-                    type="text"
-                    placeholder="Search..."
-                />
-                <button className={styles.searchButton}>🔍</button>
+            <div className={styles.formAndResetContainer}>
+                <form 
+                    className={styles.searchBar}
+                    onSubmit={handleSearchSubmit}
+                >
+                    <input 
+                        className={styles.searchInput}
+                        type="text"
+                        placeholder="Search by name..."
+                        value={vgName}
+                        onChange={handleSearchInput}
+                    />
+
+                    <button 
+                        className={styles.searchSubmitButton}
+                        type="submit"
+                        >
+                        🔍
+                    </button>
+                </form>
+
+                <button
+                    className={styles.resetButton}
+                    onClick={handleResetFilters}
+                >
+                    Reset filters
+                </button>
             </div>
 
             <div className={styles.filters}>
