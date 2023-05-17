@@ -39,10 +39,16 @@ const getVgByName = async (name) => {
     // data from rawg
     const API_URL = `https://api.rawg.io/api/games?key=${API_KEY}&search=${name}`;
     const apiData = await axios.get(API_URL);
-    const apiVgByNameRaw = apiData.data.results;
+    const apiVgByNameRawFirstFilt = apiData.data.results;
+    console.log('apiVgByNameRawFirstFilt: ', apiVgByNameRawFirstFilt);
+
+    // second filter to unify criteria with db search
+    const apiVgByNameRawSecondFilt = apiVgByNameRawFirstFilt.filter(vg => { 
+        return vg.name.toLowerCase().includes(name.toLowerCase())
+    });
     // in case rawg doesn't find any videogame with the provided name, apiVgByNameRaw will be []
     // what happens if name, background_image, etc are empty for a rawg mistake? Should I verify?
-    const apiVgByNameClean = apiVgByNameRaw.map((vg) => {
+    const apiVgByNameClean = apiVgByNameRawSecondFilt.map((vg) => {                         // changed
         const { id, name, background_image, platforms, released, rating, genres } = vg;
         return {
             id, 

@@ -121,12 +121,22 @@ const currentVg = [...filteredByName].filter((vg) => {
 });
 Currently, the code just returns {...state, currentVg: filteredByName}
 On the handleSearchSubmit, I reset the filters and sortings after submiting. 
---- git commit -m "Implemented SearchBar in Filters.jsx.
+--- git commit -m "Implemented SearchBar in Filters.jsx."
 
 
+Back-end. Adapted getvgByNameController.js to make stricter searchs in rawg api, including only the results with the same filter used for the db. (lines 46 and 52).
+Refactored handleFilters to reset searchBar input value. Capabilities of the app: 
+- render 150 videogames and videogames from DB. 
+- filter by name ALL the videogames and sort the results. 
+- view more information about ALL the videogames.
+- filter by creator, and genres the 150 videogames (set in the back-end for performance) combining this two filters, and sort the results. 
+- sort the 150 videogames chosing one criteria out of four. 
+- reset filters to render the 150 videogames. 
+- add a videogame to the database and render it like any other videogame. 
+--- git commit -m "Refactored getvgByNameController.js (back-end) to unify search criteria for rawg api and db". 
 
 Next steps: 
-- Adapt the back-end to make a stricter search by name in rawg.
+- Filters by creator and genre" allow them as filter after the search by name. 
 - Replace the hardcoded array of genres in Filters.jsx dispatching an action. 
 - Replace the logic of the loading, so if after the filter currentVg === [], it renders <p>No videogames found</p>
 

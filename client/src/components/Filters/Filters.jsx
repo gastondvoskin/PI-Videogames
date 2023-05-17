@@ -23,6 +23,7 @@ const Filters = () => {
     const handleSearchSubmit = (event) => {
         event.preventDefault();
         dispatch(searchByName(vgName));
+        setVgName('');
         setCreator('');
         setGenre('');
         setOrder(''); 
@@ -45,6 +46,7 @@ const Filters = () => {
         setCreator(creator);
         // creator refers to the updated value inside handleFilterByCreator, not to the localState 
         dispatch(filterByCreator(creator));
+        setVgName('');
         setOrder('');
     };
 
@@ -53,6 +55,7 @@ const Filters = () => {
         const genre = event.target.value;
         setGenre(genre);
         dispatch(filterByGenre(genre));
+        setVgName('');
         setOrder('');
     };
 
