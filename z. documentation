@@ -105,8 +105,20 @@ Implemented handleFilterByCreator handler, filterByCreator action, FILTER_BY_CRE
 
 Implemented Filter by genre. With each filter I update first the individual property in the global state, and after that I update the currentVg in order to combine the filters. 
 To improve: if there is no videogame with the specified filters, Cards renders Loading. To change this, I should initialize the globalState in the reducer with currentVg: null, and adapt the validation in Cards.jsx to render Loading or the videogames. 
+To improve: Sortings act in currentVg, but if I apply a filter, the sort is lost. To change this, I should add a property in the global initialState sort: '', and when dispatching a sort action, set it with the payload, eg 'z_a' and, when filtering add code in the reducer to dispatch an action to sort again after filtering. An easier implementation is to clarify that the sort is reset after the filter action is dispatched. To dos this, change the local state of the sort. The issue is that Sorting.jsx and Filters.jsx ar in different files, then they have differente localStates. Maybe I should reunify them and add a reset button that affects the trhee selects. 
 --- git commit -m "Implemented Filter by genre: handler, action, reducer"
 
+
+Unified Filters.jsx, Sortings.jsx and Searchbar.jsx into Filters.jsx in order to share a localState. Added setOrder('') to filters after dispatching an action. 
+Styles Loading and Filters. 
+--- git commit -m "Unified Filters.jsx, Sortings.jsx and Searchbar.jsx into Filters.jsx. Updated styles to Loading, Card, and Filters."
+
+
+Next step: 
+- SEARCHBAR!!
+- Replace the hardcoded array of genres in Filters.jsx dispatching an action. 
+- SearchBar. When dispatching the action, the filters should reset. So I could handle the state through redux or simply move the SearchBar into Filters.jsx. Also, when dispatching FilterbyCreator or filterByGenres, the SearchBar should reset. 
+- Add a button to reset all the filters. 
 
 
 

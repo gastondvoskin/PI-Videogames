@@ -1,6 +1,5 @@
 import Cards from "../../components/Cards/Cards.jsx";
 import Filters from "../../components/Filters/Filters.jsx";
-import Sortings from "../../components/Sortings/Sortings.jsx";
 import Pagination from "../../components/Pagination/Pagination.jsx";
 import styles from "./Home.module.css";
 import { useDispatch } from "react-redux";
@@ -25,10 +24,7 @@ const Home = () => {
 
     return (
         <div className={styles.mainContainer}>
-            <div className={styles.filtersAndSortingsContainer}>
-                <Filters />
-                <Sortings />
-            </div>
+            <Filters />
             <Pagination />
             <Cards />
         </div>

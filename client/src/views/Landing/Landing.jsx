@@ -5,12 +5,13 @@ const Landing = () => {
     return (
         <div className={styles.mainContainer}>
             <h1 className={styles.title}>Welcome to the Videogames Project!</h1>
-            <h5 className={styles.developer}>developer: Gastón Dvoskin</h5>
+            <p className={styles.clickBelow}>Click below</p>
+
             <NavLink 
                 to="/home"
                 className={styles.navLink}
             > 
-                --- GET STARTED ---
+                GET STARTED
             </NavLink>
         </div>
     );

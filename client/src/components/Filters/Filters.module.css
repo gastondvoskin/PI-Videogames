@@ -1,7 +1,64 @@
 .mainContainer {
     display: flex;
+    flex-direction: column;
+    /* align-items: end; */
+}
+
+
+.searchBar {
+    display: flex;
+    direction: row;
+    width: 100%;
+    justify-content: center;
+}
+
+.searchInput {
+    width: 400px;
+    height: 20px;
+    border: 1px solid black;
+}
+
+.searchButton {
+    font-size: 12px;
+    height: 24px;
+    width: 35px;
+}
+
+.searchButton:hover {
+    background-color: rgba(170, 230, 238, 0.899);
+    color: rgb(56, 121, 56);
+}
+
+
+
+.filters {
+    display: flex;
     flex-direction: row;
-    margin: 5px;
+    margin-top: 10px;
+    margin-bottom: 1px;
+    margin-right: 20px;
     font-size: 10px;
     align-items: center;
+    justify-content: end;
+}
+
+.creatorSelect {
+    width: 100px;
+}
+
+.genreSelect {
+    width: 100px;
+}
+
+.sortings {
+    display: flex;
+    flex-direction: row;
+    margin-right: 20px;
+    font-size: 10px;
+    align-items: center;
+    justify-content: end;
+} 
+
+.sortSelect {
+    width: 120px;
 }
