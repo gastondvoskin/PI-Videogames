@@ -1,11 +1,12 @@
-import { GET_ALL_VG, SEARCH_BY_NAME, RESET_FILTERS, FILTER_BY_CREATOR, FILTER_BY_GENRE, SORT_BY_ALPHABET, SORT_BY_RATING} from "./actions-types"; 
+import { GET_ALL_VG, SEARCH_BY_NAME, RESET_FILTERS, FILTER_BY_CREATOR, FILTER_BY_GENRE, SORT_BY_ALPHABET, SORT_BY_RATING, UPDATE_PAGE_NUMBER} from "./actions-types"; 
 import { hardcodedArray, bigHardcodedArray, hardcodedSmallArray } from "../hardcodedVideogames";
 
 const initialState = {
     allVg: [],
     filteredByCreator: [],
     filteredByGenre: [],
-    currentVg: []
+    currentVg: [],
+    pageNumber: 1
 }
 
 const rootReducer = (state = initialState, action) => {
@@ -63,11 +64,16 @@ const rootReducer = (state = initialState, action) => {
                 })
             };
 
-            const currentVg = [...filteredByCreator].filter(vg => {
+            let currentVg = [...filteredByCreator].filter(vg => {
                 return state.filteredByGenre.includes(vg)
             });
 
             // console.log('delayed state.filteredByCreator.length', state.filteredByCreator.length);
+            // new
+            if (!currentVg.length) {
+                currentVg = "No videogames were found with the provided filters."
+            };
+
 
             return {
                 ...state,
@@ -77,7 +83,6 @@ const rootReducer = (state = initialState, action) => {
         };
 
 
-        // NEW
         case FILTER_BY_GENRE: {
             // console.log('inside FILTER_BY_GENRE case');
             const genre = action.payload;
@@ -94,9 +99,14 @@ const rootReducer = (state = initialState, action) => {
                 })
             }; 
 
-            const currentVg = [...filteredByGenre].filter(vg => {
+            let currentVg = [...filteredByGenre].filter(vg => {
                 return state.filteredByCreator.includes(vg)
             });
+
+            // new
+            if (!currentVg.length) {
+                currentVg = "No videogames were found with the provided filters."
+            };
 
             return {
                 ...state,
@@ -150,6 +160,16 @@ const rootReducer = (state = initialState, action) => {
                 currentVg: sortedVg
             }
         };
+
+
+        case UPDATE_PAGE_NUMBER: {
+            const pageNumber = action.payload;
+            return {
+                ...state,
+                pageNumber
+            }
+        }
+
 
 
         default: 

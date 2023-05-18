@@ -1,4 +1,4 @@
-import { GET_ALL_VG, SEARCH_BY_NAME, RESET_FILTERS, FILTER_BY_CREATOR, FILTER_BY_GENRE, SORT_BY_ALPHABET, SORT_BY_RATING } from "./actions-types"; 
+import { GET_ALL_VG, SEARCH_BY_NAME, RESET_FILTERS, FILTER_BY_CREATOR, FILTER_BY_GENRE, SORT_BY_ALPHABET, SORT_BY_RATING, UPDATE_PAGE_NUMBER } from "./actions-types"; 
 import { hardcodedArray } from "../hardcodedVideogames";
 import axios from 'axios';
 
@@ -75,3 +75,9 @@ export const sortByRating = (order) => {
     };
 };
 
+export const updatePageNumber = (page) => {
+    return {
+        type: UPDATE_PAGE_NUMBER,
+        payload: page
+    };
+};

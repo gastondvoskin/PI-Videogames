@@ -11,3 +11,5 @@ export const FILTER_BY_GENRE = 'FILTER_BY_GENRE';
 export const SORT_BY_ALPHABET = 'SORT_BY_ALPHABET';
 
 export const SORT_BY_RATING = 'SORT_BY_RATING';
+
+export const UPDATE_PAGE_NUMBER = 'UPDATE_PAGE_NUMBER'; 

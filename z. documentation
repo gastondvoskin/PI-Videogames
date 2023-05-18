@@ -125,7 +125,8 @@ On the handleSearchSubmit, I reset the filters and sortings after submiting.
 
 
 Back-end. Adapted getvgByNameController.js to make stricter searchs in rawg api, including only the results with the same filter used for the db. (lines 46 and 52).
-Refactored handleFilters to reset searchBar input value. Capabilities of the app: 
+Refactored handleFilters to reset searchBar input value. 
+Capabilities of the app: 
 - render 150 videogames and videogames from DB. 
 - filter by name ALL the videogames and sort the results. 
 - view more information about ALL the videogames.
@@ -133,15 +134,23 @@ Refactored handleFilters to reset searchBar input value. Capabilities of the app
 - sort the 150 videogames chosing one criteria out of four. 
 - reset filters to render the 150 videogames. 
 - add a videogame to the database and render it like any other videogame. 
---- git commit -m "Refactored getvgByNameController.js (back-end) to unify search criteria for rawg api and db". 
+--- git commit -m "Refactored getvgByNameController.js (back-end) to unify search criteria for rawg api and db. Refactored handleFilters to reset searchBar input value." 
+
+
+Pagination. Implemented setPage action (action-types, actions, reducer). Added page to the initial global state. Implemented Pagination.jsx. It receives numberOfPages through props and renders buttons accordingly. When a button is clicked, it dispatchs an action to update the pageNumber (this property is not relevant for Pagination.jsx but for Cards.jsx). 
+Cards.jsx. Conditionally rendered: if typeof currentVg === 'string', it renders that no videogames were found. This works because of the backend in the getVgByName controller. Adapt what is neededto get the same response with the filters. 
+redecer.js. Added: if (!currentVg.length) {currentVg = "No videogames were found with the provided filters."} in FILTER_BY_CREATOR and in FILTER_BY_GENRE cases. 
+--- git commit -m "Implemented Pagination.jsx and the updatePageNumber action. Improved Cards.jsx and reducer's FILTER_BY_CREATOR and FILTER_BY_GENRE cases to conditionally render No videogames found with the provided filters."
+
 
 Next steps: 
-- Filters by creator and genre" allow them as filter after the search by name. 
+- Pagination in Cards.jsx. Or in Home.jsx? 
+
 - Replace the hardcoded array of genres in Filters.jsx dispatching an action. 
-- Replace the logic of the loading, so if after the filter currentVg === [], it renders <p>No videogames found</p>
+
 
 
 
 Future: 
-- Pagination: don't implement yet. 
-- view Form. Don't implement yet. 
+- view Form.
+- Replace the logic of the loading, so if after the filter currentVg === [], it renders <p>No videogames found</p>

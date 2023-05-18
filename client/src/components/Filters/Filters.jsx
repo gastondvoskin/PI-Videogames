@@ -1,7 +1,7 @@
 import { searchByName, resetFilters } from "../../redux/actions";
 import { filterByCreator, filterByGenre } from "../../redux/actions";
 import { sortByAlphabet, sortByRating } from "../../redux/actions";
-import { useDispatch } from 'react-redux'; 
+import { useDispatch, useSelector } from 'react-redux'; 
 import { useState } from "react";
 import styles from "./Filters.module.css";
 import hardcodedGenres from "../../hardcodedGenres";

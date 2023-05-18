@@ -20,12 +20,19 @@ const Home = () => {
         // to avoid a dispatch each time the componen mounts
         if (!allVg.length) dispatch(getAllVg());
     }, [dispatch, allVg]);
+
+    const currentVg = useSelector(state => state.currentVg);
     
+    
+    const VG_PER_PAGE = 15;
+    const currentVgLength = currentVg.length;       // eg 160
+    console.log('currentVgLength: ', currentVgLength);
+    const numberOfPages = Math.ceil(currentVgLength / VG_PER_PAGE);     // eg Math.ceil (160 / 15) = 11
 
     return (
         <div className={styles.mainContainer}>
             <Filters />
-            <Pagination />
+            <Pagination numberOfPages={numberOfPages}/>
             <Cards />
         </div>
     );

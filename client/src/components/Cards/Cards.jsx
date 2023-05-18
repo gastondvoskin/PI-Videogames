@@ -11,10 +11,16 @@ import { useEffect } from "react";
 
 const Cards = () => {
     const currentVg = useSelector(state => state.currentVg);
-    // console.log('currentVg in Cards: ', currentVg);
+    console.log('currentVg in Cards: ', currentVg);
+
+    // add logic to render the slice of currentVg according to the page. Replace currentVg.map in the render for renderedVg.map. 
+    
+    // const renderedVg
     
     return (
-        <div className={styles.mainContainer}>   
+        typeof currentVg === 'string' 
+        ? <h1 className={styles.notFoundText}>{currentVg}</h1> 
+        : <div className={styles.mainContainer}>   
             {
                 !currentVg.length ? 
                 <Loading />

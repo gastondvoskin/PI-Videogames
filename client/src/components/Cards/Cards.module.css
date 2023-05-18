@@ -8,3 +8,8 @@
     font-size: 25px;
     margin: auto;
 }
+
+.notFoundText {
+    color: rgba(255, 208, 0, 0.794);
+    margin-top: 100px;
+}
