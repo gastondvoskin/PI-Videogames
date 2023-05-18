@@ -143,14 +143,18 @@ redecer.js. Added: if (!currentVg.length) {currentVg = "No videogames were found
 --- git commit -m "Implemented Pagination.jsx and the updatePageNumber action. Improved Cards.jsx and reducer's FILTER_BY_CREATOR and FILTER_BY_GENRE cases to conditionally render No videogames found with the provided filters."
 
 
-Next steps: 
-- Pagination in Cards.jsx. Or in Home.jsx? 
+Cards.jsx. Implemented logic to map renderedVg instead of currentVg to render Card.jsx. 
+Made diagram in diagrams.app of React-redux Videogames flow. 
+Filters.jsx. Added dispatch(updatePageNumber(1)) to the six handlers to reset the pageNumber to 1 after filtering or sorting. 
+To improve: When searching by name lef and no videogames are found, Pagination shoudln't render any number. 
+--- git commit -m "Implemented logic to map renderedVg instead of currentVg (components Home.jsx and Cards.jsx). Added dispatch(updatePageNumber(1)) to Filters.jsx handlers. Added basic Client flow diagram". 
 
-- Replace the hardcoded array of genres in Filters.jsx dispatching an action. 
+
+
 
 
 
 
 Future: 
 - view Form.
-- Replace the logic of the loading, so if after the filter currentVg === [], it renders <p>No videogames found</p>
+- Replace the hardcoded array of genres in Filters.jsx dispatching an action. 

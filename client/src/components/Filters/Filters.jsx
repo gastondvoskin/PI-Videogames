@@ -1,6 +1,7 @@
 import { searchByName, resetFilters } from "../../redux/actions";
 import { filterByCreator, filterByGenre } from "../../redux/actions";
 import { sortByAlphabet, sortByRating } from "../../redux/actions";
+import { updatePageNumber } from "../../redux/actions";
 import { useDispatch, useSelector } from 'react-redux'; 
 import { useState } from "react";
 import styles from "./Filters.module.css";
@@ -18,6 +19,7 @@ const Filters = () => {
     const handleSearchInput = (event) => {
         const inputValue = event.target.value;
         setVgName(inputValue);
+        dispatch(updatePageNumber(1));
     };
 
     const handleSearchSubmit = (event) => {
@@ -26,7 +28,8 @@ const Filters = () => {
         setVgName('');
         setCreator('');
         setGenre('');
-        setOrder(''); 
+        setOrder('');
+        dispatch(updatePageNumber(1));
     };
 
     const handleResetFilters = (event) => {
@@ -36,6 +39,7 @@ const Filters = () => {
         setCreator('');
         setGenre('');
         setOrder(''); 
+        dispatch(updatePageNumber(1));
     };
 
     
@@ -48,6 +52,7 @@ const Filters = () => {
         dispatch(filterByCreator(creator));
         setVgName('');
         setOrder('');
+        dispatch(updatePageNumber(1));
     };
 
     const handleFilterByGenre = (event) => {
@@ -57,6 +62,7 @@ const Filters = () => {
         dispatch(filterByGenre(genre));
         setVgName('');
         setOrder('');
+        dispatch(updatePageNumber(1));
     };
 
     const handleSort = (event) => {
@@ -66,7 +72,8 @@ const Filters = () => {
             dispatch(sortByAlphabet(order));
         } else if (order === 'ratingAsc' || order === 'ratingDesc') {
             dispatch(sortByRating(order));
-        }
+        };
+        dispatch(updatePageNumber(1));
     };
 
 

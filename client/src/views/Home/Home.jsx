@@ -29,11 +29,12 @@ const Home = () => {
     console.log('currentVgLength: ', currentVgLength);
     const numberOfPages = Math.ceil(currentVgLength / VG_PER_PAGE);     // eg Math.ceil (160 / 15) = 11
 
+
     return (
         <div className={styles.mainContainer}>
             <Filters />
             <Pagination numberOfPages={numberOfPages}/>
-            <Cards />
+            <Cards VG_PER_PAGE={VG_PER_PAGE} />
         </div>
     );
 };

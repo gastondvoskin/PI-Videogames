@@ -9,14 +9,21 @@ import { useEffect } from "react";
 
 // copy loading, validations and errors from Detail.jsx
 
-const Cards = () => {
-    const currentVg = useSelector(state => state.currentVg);
-    console.log('currentVg in Cards: ', currentVg);
+const Cards = (props) => {
+    const { VG_PER_PAGE } = props;
 
-    // add logic to render the slice of currentVg according to the page. Replace currentVg.map in the render for renderedVg.map. 
-    
-    // const renderedVg
-    
+    const currentVg = useSelector(state => state.currentVg);
+    // console.log('currentVg in Cards: ', currentVg);
+    const pageNumber = useSelector(state => state.pageNumber);
+    // console.log('pageNumber: ', pageNumber);
+    const firstVgRenderedIndex = (pageNumber - 1) * VG_PER_PAGE;  // eg. 0, 15, 30, 45
+    // console.log('firstVgRenderedIndex: ', firstVgRenderedIndex);
+    const lastVgRenderedIndex = firstVgRenderedIndex + VG_PER_PAGE - 1 // eg. 14, 29, 44
+    // console.log('lastVgRenderedIndex: ', lastVgRenderedIndex);
+    const renderedVg = currentVg.slice(firstVgRenderedIndex, lastVgRenderedIndex + 1);  
+    // eg [slice(0, 15)], slice(15, 29)
+    // console.log('renderedVg: ', renderedVg);
+
     return (
         typeof currentVg === 'string' 
         ? <h1 className={styles.notFoundText}>{currentVg}</h1> 
@@ -24,7 +31,7 @@ const Cards = () => {
             {
                 !currentVg.length ? 
                 <Loading />
-                : currentVg.map((vg, index) => {
+                : renderedVg.map((vg, index) => {
                     return (
                         <Card 
                             key={index}

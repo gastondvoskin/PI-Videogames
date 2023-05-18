@@ -19,7 +19,7 @@ const Pagination = (props) => {
     };
 
 
-    /* return (
+    return (
         <div className={styles.mainContainer}>
             {
                 pageNumbersArray.map((pageNumber) => {
@@ -36,7 +36,7 @@ const Pagination = (props) => {
                 })
             }
         </div>
-    ); */
+    );
 };
 
 export default Pagination;
