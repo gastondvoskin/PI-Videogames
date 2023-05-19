@@ -33,7 +33,9 @@ const Home = () => {
     return (
         <div className={styles.mainContainer}>
             <Filters />
-            <Pagination numberOfPages={numberOfPages}/>
+            {
+                typeof currentVg !== 'string' && <Pagination numberOfPages={numberOfPages}/>
+            }
             <Cards VG_PER_PAGE={VG_PER_PAGE} />
         </div>
     );

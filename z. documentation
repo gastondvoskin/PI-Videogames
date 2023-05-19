@@ -152,13 +152,19 @@ Filters.jsx. Added dispatch(updatePageNumber(1)) to the six handlers to reset th
 Implemented getGenres action: actions-types, actions, reducer (makes a request to the server). Dispatched action in Home.jsx inside the useEffect. useSelector in Filters.jsx. Replaced hardcodedGenres array for genres from the server, when mapping genres for the genres filter. 
 --- git commit -m "Implemented getGenres action: actions-types, actions, reducer, dispatch in Home.jsx, useSelector in Filters.jsx, replaced hardcodedGenres array for genres."
 
-Next step: 
-Form.jsx. useSelector in Form.jsx and dispatch(getGenres) in case !genres.length (this would happen if the user types directly '/form' instead of entering through the Loading page). 
 
-
+Replaced the render of Pagination for a conditional render: typeof currentVg !== 'string' && <Pagination numberOfPages={numberOfPages}/>
+Started Form.jsx. Created basic labels, inputs, submitButton and changeHandlers. 
+Next steps: 
+- change input types: rating to number, released to date. 
+- change localState platforms and genres to array. platforms input: add "+" and "-" buttons to add or delete inputs (see PI Food). 
+- genres input. const genres = useSelector(state=> state.genres). add a useEffect to Form.jsx. Inside the useEffect, if (!genres.length) dispatch(getGenres). map the result to render <option> elements instead if an input. 
+- Add validations to each handler. 
+- Check if it would be better to modularize the handlers. 
+- submitButton. Add an axios.post(vg). Also create an updateVg action which does const allVg = {...state.allVg, vg}, and then returns {...state, allVg, filteredByCreator: allVg, filteredByGenre: allVg, currentVg: allVg}.  
+--- git commit -m "Started Form.jsx: basic labels, inputs, submitButton, changeHandlers, Form.module.css. Conditionally rendered Pagination in Home.jsx." 
 
 Future: 
 - Analyze VideogamesClientFlow.png (https://app.diagrams.net/).
-- To improve: When searching by name lef and no videogames are found, Pagination shoudln't render any number. 
 - Add back-end flow diagram. 
 - Add testing to api and to client. 

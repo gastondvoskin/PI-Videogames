@@ -1,0 +1,70 @@
+.mainContainer {
+    /* background-color: red; */
+    font-family: roboto;
+    display: flex;
+    flex-direction: row;
+    align-items: left;
+    /* justify-content:flex-start; */
+    margin: 50px;
+}
+
+.formContainer {
+    background-color: rgb(46, 41, 42);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+}
+
+.label {
+    background-color: rgb(85, 85, 85);
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 10px;
+}
+
+.input {
+    font-family: roboto;
+    /* background-color: green; */
+    /* height: 2px; */
+}
+
+
+.submitButton {
+    background-color: rgba(0, 225, 255, 0.929);
+    font-size: 18px;
+    width: fit-content;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-family: roboto;
+}
+
+.submitButton:hover {
+    background-color: rgba(91, 236, 255, 0.899);
+    color: rgb(56, 121, 56);
+}
+
+
+.goBackButton {
+    background-color: rgba(232, 192, 127, 0.73);
+    font-size: 12px;
+    width: fit-content;
+    margin-top: 50px;
+}
+
+.goBackButton:hover {
+    background-color: rgba(233, 202, 154, 0.73);
+    color: rgb(22, 58, 22);
+}
+
+
+
+.preview {
+    background-color: rgb(56, 53, 54);
+    width: 50%;
+}
+
+.imagePreview {
+    max-width: 70%;
+}
