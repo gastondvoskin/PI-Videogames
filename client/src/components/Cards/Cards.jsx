@@ -1,9 +1,8 @@
 import Card from "../Card/Card.jsx";
 import Loading from "../Loading/Loading.jsx";
 import styles from "./Cards.module.css";
-import { hardcodedObject, secondHardcodedObject, dbHardcodedObject, hardcodedArray } from "../../hardcodedVideogames";
 import { useSelector } from 'react-redux';
-import { useEffect } from "react";
+// import { hardcodedObject, secondHardcodedObject, dbHardcodedObject, hardcodedArray } from "../../hardcodedVideogames";
 
 
 

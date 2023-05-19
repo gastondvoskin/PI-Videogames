@@ -5,7 +5,7 @@ import { updatePageNumber } from "../../redux/actions";
 import { useDispatch, useSelector } from 'react-redux'; 
 import { useState } from "react";
 import styles from "./Filters.module.css";
-import hardcodedGenres from "../../hardcodedGenres";
+// import hardcodedGenres from "../../hardcodedGenres";
 
 const Filters = () => {
     const [ vgName, setVgName ] = useState('');
@@ -14,6 +14,8 @@ const Filters = () => {
     const [ order, setOrder ] = useState('');
 
     const dispatch = useDispatch();
+
+    const genres = useSelector(state => state.genres);
 
     // add searchbar input and button handlers. 
     const handleSearchInput = (event) => {
@@ -132,9 +134,8 @@ const Filters = () => {
                 >
                     <option disabled value="">Genre</option>
                     <option value="allGenres">All genres</option>
-                    {/* replace hardcoded array */}
                     {
-                        hardcodedGenres.map((genre, index) => {
+                        genres.map((genre, index) => {
                             return (
                                 <option 
                                     key={index}

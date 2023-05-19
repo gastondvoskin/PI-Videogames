@@ -1,12 +1,13 @@
-import { GET_ALL_VG, SEARCH_BY_NAME, RESET_FILTERS, FILTER_BY_CREATOR, FILTER_BY_GENRE, SORT_BY_ALPHABET, SORT_BY_RATING, UPDATE_PAGE_NUMBER} from "./actions-types"; 
-import { hardcodedArray, bigHardcodedArray, hardcodedSmallArray } from "../hardcodedVideogames";
+import { GET_ALL_VG, SEARCH_BY_NAME, RESET_FILTERS, FILTER_BY_CREATOR, FILTER_BY_GENRE, SORT_BY_ALPHABET, SORT_BY_RATING, UPDATE_PAGE_NUMBER, GET_GENRES} from "./actions-types"; 
+// import { hardcodedArray, bigHardcodedArray, hardcodedSmallArray } from "../hardcodedVideogames";
 
 const initialState = {
     allVg: [],
     filteredByCreator: [],
     filteredByGenre: [],
     currentVg: [],
-    pageNumber: 1
+    pageNumber: 1,
+    genres: []
 }
 
 const rootReducer = (state = initialState, action) => {
@@ -37,11 +38,12 @@ const rootReducer = (state = initialState, action) => {
         };
 
         case RESET_FILTERS: {
+            const currentVg = state.allVg;
             return {
                 ...state,
-                currentVg: state.allVg
-            }
-        }
+                currentVg
+            };
+        };
 
         case FILTER_BY_CREATOR: {
             // console.log('in FILTER_BY_CREATOR case');
@@ -158,7 +160,7 @@ const rootReducer = (state = initialState, action) => {
             return {
                 ...state,
                 currentVg: sortedVg
-            }
+            };
         };
 
 
@@ -167,13 +169,24 @@ const rootReducer = (state = initialState, action) => {
             return {
                 ...state,
                 pageNumber
+            };
+        };
+
+
+        case GET_GENRES: {
+            const genres = action.payload;
+            return {
+                ...state,
+                genres
             }
         }
 
 
 
         default: 
-            return {...state};
+            return {
+                ...state
+            };
     };
 };
 

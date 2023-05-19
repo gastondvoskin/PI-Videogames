@@ -2,26 +2,26 @@ import Cards from "../../components/Cards/Cards.jsx";
 import Filters from "../../components/Filters/Filters.jsx";
 import Pagination from "../../components/Pagination/Pagination.jsx";
 import styles from "./Home.module.css";
-import { useDispatch } from "react-redux";
-import { getAllVg } from "../../redux/actions.js";
 import { useEffect } from "react";
+import { useDispatch } from "react-redux";
 import { useSelector } from 'react-redux';
+import { getAllVg, getGenres } from "../../redux/actions.js";
 
 
 const Home = () => {
-
-    // implement redux to dispatch action through useDispatch (action.type GET_ALL_VG)
     const dispatch = useDispatch();
 
     // to avoid a dispatch each time the componen mounts
     const allVg = useSelector(state => state.allVg);
+    const genres = useSelector(state => state.genres);
+    const currentVg = useSelector(state => state.currentVg);
 
     useEffect(() => {
-        // to avoid a dispatch each time the componen mounts
+        // to avoid a dispatch each time the component mounts
         if (!allVg.length) dispatch(getAllVg());
-    }, [dispatch, allVg]);
-
-    const currentVg = useSelector(state => state.currentVg);
+        if(!genres.length) dispatch(getGenres());
+    }, [dispatch, allVg, genres]);
+    
     
     
     const VG_PER_PAGE = 15;

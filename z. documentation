@@ -146,15 +146,19 @@ redecer.js. Added: if (!currentVg.length) {currentVg = "No videogames were found
 Cards.jsx. Implemented logic to map renderedVg instead of currentVg to render Card.jsx. 
 Made diagram in diagrams.app of React-redux Videogames flow. 
 Filters.jsx. Added dispatch(updatePageNumber(1)) to the six handlers to reset the pageNumber to 1 after filtering or sorting. 
-To improve: When searching by name lef and no videogames are found, Pagination shoudln't render any number. 
 --- git commit -m "Implemented logic to map renderedVg instead of currentVg (components Home.jsx and Cards.jsx). Added dispatch(updatePageNumber(1)) to Filters.jsx handlers. Added basic Client flow diagram". 
 
 
+Implemented getGenres action: actions-types, actions, reducer (makes a request to the server). Dispatched action in Home.jsx inside the useEffect. useSelector in Filters.jsx. Replaced hardcodedGenres array for genres from the server, when mapping genres for the genres filter. 
+--- git commit -m "Implemented getGenres action: actions-types, actions, reducer, dispatch in Home.jsx, useSelector in Filters.jsx, replaced hardcodedGenres array for genres."
 
-
+Next step: 
+Form.jsx. useSelector in Form.jsx and dispatch(getGenres) in case !genres.length (this would happen if the user types directly '/form' instead of entering through the Loading page). 
 
 
 
 Future: 
-- view Form.
-- Replace the hardcoded array of genres in Filters.jsx dispatching an action. 
+- Analyze VideogamesClientFlow.png (https://app.diagrams.net/).
+- To improve: When searching by name lef and no videogames are found, Pagination shoudln't render any number. 
+- Add back-end flow diagram. 
+- Add testing to api and to client. 

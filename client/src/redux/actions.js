@@ -1,10 +1,9 @@
-import { GET_ALL_VG, SEARCH_BY_NAME, RESET_FILTERS, FILTER_BY_CREATOR, FILTER_BY_GENRE, SORT_BY_ALPHABET, SORT_BY_RATING, UPDATE_PAGE_NUMBER } from "./actions-types"; 
-import { hardcodedArray } from "../hardcodedVideogames";
+import { GET_ALL_VG, SEARCH_BY_NAME, RESET_FILTERS, FILTER_BY_CREATOR, FILTER_BY_GENRE, SORT_BY_ALPHABET, SORT_BY_RATING, UPDATE_PAGE_NUMBER, GET_GENRES } from "./actions-types"; 
 import axios from 'axios';
+// import { hardcodedArray } from "../hardcodedVideogames";
 
-// change it to return an action which makes a request
+
 export const getAllVg = () => {
-    // replace this code for a request to the server
     const API_URL = 'http://localhost:3001/videogames';
     return async (dispatch) => {
         try {
@@ -79,5 +78,17 @@ export const updatePageNumber = (page) => {
     return {
         type: UPDATE_PAGE_NUMBER,
         payload: page
+    };
+};
+
+export const getGenres = () => {
+    return async (dispatch) => {
+        const API_URL = 'http://localhost:3001/genres';
+        const response = await axios.get(API_URL);
+        const genres = response.data;
+        dispatch({
+            type: GET_GENRES,
+            payload: genres
+        });
     };
 };
