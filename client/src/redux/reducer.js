@@ -1,4 +1,4 @@
-import { GET_ALL_VG, SEARCH_BY_NAME, RESET_FILTERS, FILTER_BY_CREATOR, FILTER_BY_GENRE, SORT_BY_ALPHABET, SORT_BY_RATING, UPDATE_PAGE_NUMBER, GET_GENRES} from "./actions-types"; 
+import { GET_ALL_VG, SEARCH_BY_NAME, RESET_FILTERS, FILTER_BY_CREATOR, FILTER_BY_GENRE, SORT_BY_ALPHABET, SORT_BY_RATING, UPDATE_PAGE_NUMBER, GET_GENRES, UPDATE_VG} from "./actions-types"; 
 // import { hardcodedArray, bigHardcodedArray, hardcodedSmallArray } from "../hardcodedVideogames";
 
 const initialState = {
@@ -178,9 +178,21 @@ const rootReducer = (state = initialState, action) => {
             return {
                 ...state,
                 genres
-            }
-        }
+            };
+        };
 
+
+        case UPDATE_VG: {
+            const newVg = action.payload;
+            const allVg = [newVg, ...state.allVg];
+            return {
+                ...state,
+                allVg: [...allVg],
+                filteredByCreator: [...allVg],
+                filteredByGenre: [...allVg],
+                currentVg: [...allVg]
+            };
+        };
 
 
         default: 

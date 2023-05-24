@@ -166,19 +166,31 @@ Next step: genres input.
 --- git commit -m "Implemented Form validations for name, image, description, released, rating and platforms."
 
 
+Added genres inputs with checkbox type.
+Added genresCheckboxs localState. 
+Implemented handleGenresChange. It controls the ckecked property, it sets genres property from vg and it validates genres. 
+Implemented handleSubmit.
+Implemented uptadeWithNewVg action dispatched in submitHandler. 
+Implemented validateSubmit. If it is ok, window.alert("created OK"). Reset after submitting. 
+Conditionally rendered specific errors when submitting. This errors will persist until next submit. 
+--- git commit -m "Implemented Form.jsx genres checkboxs and validations. Implemented Form.jsx submit validations and handlers."
+
+ 
+
 Next steps: 
-- genres input. const genres = useSelector(state=> state.genres). add a useEffect to Form.jsx. Inside the useEffect, if (!genres.length) dispatch(getGenres). map the result to render <option> elements instead if an input. 
-- Check if it would be better to modularize the handlers. 
-- submitButton. Add an axios.post(vg). Also create an updateVg action which does const allVg = {...state.allVg, vg}, and then returns {...state, allVg, filteredByCreator: allVg, filteredByGenre: allVg, currentVg: allVg}.  
+- Check if Form.jsx is working properly. 
+- Replace hardcodedGenres with a useSelector. 
 
-
-
-
-Future: 
-- Add About.jsx with a description of the app's functions. 
-- Add Footer. Developed by Gaston Dvoskin. 
 - Analyze VideogamesClientFlow.png (https://app.diagrams.net/).
 - Add back-end flow diagram. 
 - Add testing to api and to client. 
 - Deploy
 - Record a presentation to upload to Youtube and to be prepared for the PI presentation in Henry. 
+
+
+Ideas for the future: 
+- Form.jsx. Add a "See your last created videogame" in the right side.
+- Check if it is possible to modularize the handlers in Form.jsx. 
+- style the Form.jsx window alert. 
+- Add About.jsx with a description of the app's functions. 
+- Add Footer. Developed by Gaston Dvoskin. 

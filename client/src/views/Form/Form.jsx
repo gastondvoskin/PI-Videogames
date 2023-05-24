@@ -1,10 +1,26 @@
 import styles from "./Form.module.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getGenres } from "../../redux/actions";
 import { Link } from "react-router-dom";
-import { hardcodedSmallArray } from "../../hardcodedVideogames";
+import { hardcodedSmallArray } from "../../hardcodedVideogames.js";
+import hardcodedGenres from "../../hardcodedGenres.js";
+import axios from "axios";
+import { updateWithNewVg } from "../../redux/actions";
+
 
 const Form = () => {
+    const dispatch = useDispatch();
 
+    // allGenres from redux
+    // UNCOMMENT to replace hardcodedGenres for allGenres
+    // const allGenres = useSelector(state => state.genres);
+    // useEffect(() => {
+    //     // in case the user types by hand the "/form" route 
+    //     if (!allGenres.length) dispatch(getGenres());
+    // }, [dispatch, allGenres]);
+
+    // localState
     const emptyVg = {
         name: '',
         image: '',
@@ -24,9 +40,18 @@ const Form = () => {
         platforms: '', 
         genres: ''
     };
+    
 
     const [ vg, setVg ] = useState(emptyVg);
     const [ errors, setErrors ] = useState(emptyForm);
+    // replace hardcodedGenres for allGenres
+    const [ genresCheckboxs, setGenresCheckboxs ] = useState(
+        new Array(hardcodedGenres.length).fill(false)
+    );
+
+    const [ completeError, setCompleteError ] = useState('');
+    const [ fixError, setFixError ] = useState('');
+
 
     // name validation and changeHandler
     const validateName = (name) => {
@@ -187,17 +212,97 @@ const Form = () => {
         validatePlatforms(platforms);
     };
 
+    // genres validation and changeHandler
+    const validateGenres = (updatedGenres) => {
+        // console.log(updatedGenres);
+        if (!updatedGenres.length) {
+            setErrors({...errors, genres: "Chose at least one genre."});
+        } else {
+            setErrors({...errors, genres: ""});
+        };
+    };
 
     const handleGenresChange = (event) => {
-        const genres = event.target.value;
-        setVg({...vg, genres});
+        const index = event.target.id;     // 0, 1, 2, 3, 4 ... 
+        // console.log(index);
+        const genreName = event.target.name;
+        // console.log(genreName);
+        // console.log(genresCheckboxs[index])  // false or true
+        const updatedValue = !genresCheckboxs[index]; 
+        
+        let updatedGenres = []
+        if (updatedValue) {
+            updatedGenres = [...vg.genres, genreName];
+            setVg({...vg, genres: updatedGenres});
+            validateGenres(updatedGenres);
+        } else{
+            updatedGenres = [...vg.genres.filter(genre => genre !== genreName)];
+            setVg({...vg, genres: updatedGenres});
+            validateGenres(updatedGenres);
+        };
+        
+        const updatedGenresCheckboxs = [...genresCheckboxs];
+        updatedGenresCheckboxs[index] = updatedValue;
+        setGenresCheckboxs(updatedGenresCheckboxs);
+    };
+
+    // const [ completeError, setCompleteError ] = useState('Complete all the fields.');
+    // const [ fixError, setFixError ] = useState('Fix the errors.');
+
+    // validateSubmit and submitHandler
+    const validateSubmit = (vg) => {
+        // const noEmptyFields = vg.name !== '' && vg.image !== '' && vg.description !== '' && vg.released !== '' && vg.rating !== '' && vg.platforms[0] !== '' && vg.genres.length !== 0;
+        // const noErrors = Object.values(errors).every(error => error === '');
+        // return noEmptyFields && noErrors    // true or false
+        let noEmptyFields = false;
+        let noErrors = false;
+        if (vg.name === '' || vg.image === '' || vg.description === '' || vg.released === '' || vg.rating === '' || vg.platforms[0] === '' || vg.genres.length === 0) {
+            noEmptyFields = false;
+            setCompleteError("Submit again after completing all the fields.");
+        } else {
+            noEmptyFields = true;
+            setCompleteError("");// when there is no error, we get an empty string in the state 
+        };
+        if (Object.values(errors).some(error => error !== '')) {
+            noErrors = false;
+            setFixError("Submit again after fixing the errors.");
+        } else {
+            noErrors = true;
+            setFixError(""); // when there is no error, we get an empty string in the state
+        };
+        return noEmptyFields && noErrors; 
+    };
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        const validated = validateSubmit(vg); 
+        console.log("validated: ", validated); // true or false
+
+        if (validated) {
+            const newVg = {...vg, background_image: vg.image}
+            const API_URL = "http://localhost:3001/videogames"
+            axios.post(API_URL, newVg)
+                .then((response) => {console.log(response)})
+                .catch((error) => {console.log(error)})
+            dispatch(updateWithNewVg(newVg));
+            window.alert("Videogame added to the Database");
+            setVg(emptyVg);
+        } else {
+            console.log('in the else')
+            // controlled by validateSubmit
+        };
     };
 
 
 
+
+    // return
     return (
         <div className={styles.mainContainer}>
-            <form className={styles.formContainer}>
+            <form 
+                className={styles.formContainer}
+                onSubmit={handleSubmit}
+            >
                 <label className={styles.label}>
                     Name: *{' '} 
                     <input 
@@ -240,7 +345,6 @@ const Form = () => {
                         value={vg.released}
                         onChange={handleReleasedChange}
                         max="9999-12-31"
-                        required
                     />
                     {errors.released && <p className={styles.errorMessage}>{errors.released}</p>}
                 </label>
@@ -258,16 +362,19 @@ const Form = () => {
                     {errors.rating && <p className={styles.errorMessage}>{errors.rating}</p>}
                 </label>
 
-                <fieldset className={styles.fieldset}>
-                    <legend >Platforms: *{' '} </legend>
+                <fieldset className={styles.platformsContainer}>
+                    <legend>Platforms: *{' '} </legend>
                     {
-                        vg.platforms.map((platform, index) => {
+                        vg.platforms?.map((platform, index) => {
                             return (
-                                <div key={index}>
+                                <div
+                                    className={styles.platformsSubContainer} 
+                                    key={index}
+                                >
                                     <input 
+                                        className={styles.platformInput}
                                         id={index}
                                         type="text"
-                                        className={styles.platformInput}
                                         value={platform}
                                         onChange={handlePlatformsChange}
                                         placeholder={`Platform ${index + 1}...`}
@@ -294,30 +401,38 @@ const Form = () => {
                     {errors.platforms && <p className={styles.errorMessage}>{errors.platforms}</p>}
                 </fieldset>
 
+                <fieldset className={styles.checkboxContainer}>
+                    <legend>Genres: *{' '}</legend>
+                    <div className={styles.checkboxSubcontainer}>
+                        {
+                            /* allGenres.map((genre, index) => { */
+                            hardcodedGenres.map((genre, index) => {
+                                return (
+                                    <div 
+                                        className={styles.checkboxSubSubContainer} 
+                                        key={index}
+                                    >
+                                        <input 
+                                            type="checkbox"
+                                            id={index}
+                                            name={genre}
+                                            checked={genresCheckboxs[index]}
+                                            onChange={handleGenresChange}
+                                        />
+                                        <label 
+                                            htmlFor={index}
+                                        >
+                                            {genre}
+                                        </label>
+                                    </div>
+                                )
+                            })
+                        }
 
+                    </div>
+                    {errors.genres && <p className={styles.errorGenreMessage}>{errors.genres}</p>}
+                </fieldset>
 
-
-
-                {/* <p className={styles.label}>
-                    Genres: *{' '} 
-                    <label>
-                        <input 
-                            type="radio"
-                            className={styles.radio}
-                            value="prueba"
-                            defaultChecked={true}
-                        />
-                        option 1
-                    </label>
-                    <label>
-                        <input 
-                            type="radio"
-                            className={styles.radio}
-                            value="prueba"
-                        />
-                        option 2
-                    </label>
-                </p> */}
 
 
 
@@ -328,7 +443,15 @@ const Form = () => {
                 >
                     ✓ Create videogame
                 </button>
+                {completeError && <span className={styles.errorGenreMessage}>{completeError}</span>}
+                {fixError && <span className={styles.errorGenreMessage}>{fixError}</span>}
+
             </form>
+
+
+
+
+
 
 
             <div className={styles.preview}>

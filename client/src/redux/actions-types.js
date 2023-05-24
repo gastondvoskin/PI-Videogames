@@ -15,3 +15,5 @@ export const SORT_BY_RATING = 'SORT_BY_RATING';
 export const UPDATE_PAGE_NUMBER = 'UPDATE_PAGE_NUMBER'; 
 
 export const GET_GENRES = 'GET_GENRES';
+
+export const UPDATE_VG = 'UPDATE_VG';

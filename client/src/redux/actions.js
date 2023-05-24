@@ -1,4 +1,4 @@
-import { GET_ALL_VG, SEARCH_BY_NAME, RESET_FILTERS, FILTER_BY_CREATOR, FILTER_BY_GENRE, SORT_BY_ALPHABET, SORT_BY_RATING, UPDATE_PAGE_NUMBER, GET_GENRES } from "./actions-types"; 
+import { GET_ALL_VG, SEARCH_BY_NAME, RESET_FILTERS, FILTER_BY_CREATOR, FILTER_BY_GENRE, SORT_BY_ALPHABET, SORT_BY_RATING, UPDATE_PAGE_NUMBER, GET_GENRES, UPDATE_VG } from "./actions-types"; 
 import axios from 'axios';
 // import { hardcodedArray } from "../hardcodedVideogames";
 
@@ -92,3 +92,10 @@ export const getGenres = () => {
         });
     };
 };
+
+export const updateWithNewVg = (newVg) => {
+    return {
+        type: UPDATE_VG,
+        payload: newVg
+    }
+}

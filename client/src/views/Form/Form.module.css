@@ -25,14 +25,23 @@
     margin: 10px;
 }
 
-.fieldset {
+.platformsContainer {                               /* editing */
     background-color: rgb(85, 85, 85);
+    /* background-color: green; */
     display: flex;
     flex-direction: column;
     width: 80%;
-    height: fit-content;
+    /* height: fit-content; */
     margin: 10px; 
-    align-items: start;
+    align-items: center;
+}
+
+.platformsSubContainer {                        /* editing */
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    margin: 2px;
 }
 
 .input {
@@ -41,32 +50,71 @@
     /* height: 2px; */
 }
 
-.platformInput {
-    /* width: 100%;
-    background-color: red; */
+.platformInput {                            /* editing */
+    width: 100%;
+    /* background-color: red; */
 }
 
 .deletePlatformButton {
-    width: fit-content;
+    background-color: rgb(155, 121, 121);
+    font-family: roboto;
+    color: white;
+}
+
+.deletePlatformButton:hover {
+    background-color: rgb(200, 172, 172);
+    color: rgb(23, 21, 21);
 }
 
 .addPlatformButton {
     width: fit-content;
+    background-color: rgb(66, 103, 3);
+    margin-top: 10px;
+    color: white;
+    font-family: roboto;
+    font-size: 12px;
 }
 
-.radio {
-
+.addPlatformButton:hover {
+    background-color: rgb(145, 152, 133);
+    color: rgb(29, 27, 27);
 }
+
+
+.checkboxContainer {
+    background-color: rgb(85, 85, 85);
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 10px; 
+}
+
+.checkboxSubcontainer {
+    display: flex;
+    margin: 2px;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.checkboxSubSubContainer {
+    align-items: center;
+    margin: 1px;
+}
+
 
 .errorMessage {
     font-family: roboto;
     color: rgb(255, 225, 0);
 }
 
+.errorGenreMessage {
+    font-family: roboto;
+    color: rgb(255, 225, 0);
+}
 
 .submitButton {
     background-color: rgba(0, 225, 255, 0.929);
-    font-size: 18px;
+    font-size: 15px;
     width: fit-content;
     margin-top: 30px;
     margin-bottom: 20px;
@@ -74,7 +122,7 @@
 }
 
 .submitButton:hover {
-    background-color: rgba(91, 236, 255, 0.899);
+    background-color: rgba(208, 224, 226, 0.857);
     color: rgb(56, 121, 56);
 }
 
