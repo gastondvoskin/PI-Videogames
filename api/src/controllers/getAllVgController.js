@@ -27,7 +27,7 @@ const getAllVg = async () => {
             id, 
             name, 
             background_image, 
-            platforms,
+            /* platforms, */
             released, 
             rating,
             genres: Genres.map(genre => genre.name)
@@ -39,7 +39,7 @@ const getAllVg = async () => {
     // data from rawg
     const BASE_API_URL = `https://api.rawg.io/api/games?key=${API_KEY}`;
     const numberOfResultsPerPage = 40;            // number of results from rawg
-    const numberOfResultsExpected = 40;           // 150
+    const numberOfResultsExpected = 150;           // 150
     const numberOfRequestsRequired = Math.ceil(numberOfResultsExpected/numberOfResultsPerPage);        // Math.ceil(150/40) // 4
 
     // requests to rawg will be saved in apiPromises
@@ -64,16 +64,16 @@ const getAllVg = async () => {
 
     // apiVideogamesClean will be the final information of each videogame. 
     const apiVideogamesClean = apiVgRaw.map((vg) => {
-        const { id, name, background_image, platforms, released, rating, genres } = vg;
+        const { id, name, background_image, /* parent_platforms,  */released, rating, genres } = vg;
         return {
             id, 
             name, 
             background_image, 
-            platforms: platforms.map(platform => platform.platform.name),
+            /* platforms: parent_platforms.map(parent_platform => parent_platform.platform.name), */
             released, 
             rating,
             genres: genres.map(genre => genre.name),
-        }
+        };
     });
 
     // // Code to check there are no duplicates in the final result (only to debug). 

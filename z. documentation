@@ -175,17 +175,24 @@ Implemented validateSubmit. If it is ok, window.alert("created OK"). Reset after
 Conditionally rendered specific errors when submitting. This errors will persist until next submit. 
 --- git commit -m "Implemented Form.jsx genres checkboxs and validations. Implemented Form.jsx submit validations and handlers."
 
- 
+
+Form.jsx. Replaced hardcodedGenres with a allGenres from the globalState. 
+getAllVgController.js. Replaced const numberOfResultsExpected from 40 to 150. 
+getAllVgController.js and getVgByIdController.js. Replaced platforms for parent_platforms. 
+Form.jsx. Modularized validateFunctions. The functions now return an errorMessage instead of changing the localState. In Form.jsx these functions are excuted, and depending on the result, they change the localState to a string like "Required field" or to "" when there is no error. Replaced handleNameChange, handleDescriptionChange and others with a general handleChange. Replaced it in the return. Added the name property to all the inputs to dinamically controll them and validate them with the handleChange function. Modularized validateSubmit and refactored it. getGenres doen't work properly if the user goes directly to /form, because the localState seems to be initialized as an uncontrolled form. Added autocomplete function in Form for develop purposes. 
+--- git commit -m "Refactored and modularized Form.jsx. Replaced hardcodedGenres. Replaced numberOfResultsExpected from 40 to 150 in getAllVgController. Replaced platforms for parent_platform in getVgByIdController.js" 
+Next step: modularize genres. Currently, it is wrong to have genres in the initial state. 
+
+
 
 Next steps: 
-- Check if Form.jsx is working properly. 
-- Replace hardcodedGenres with a useSelector. 
-
+- Styles: bigger font-size, plaette of colors, change the back-ground, center filters, change + Add game for Admin. Add About, Linkedin and GitHub to the Nav. Add a footer. Card: delete fire.
 - Analyze VideogamesClientFlow.png (https://app.diagrams.net/).
 - Add back-end flow diagram. 
 - Add testing to api and to client. 
 - Deploy
 - Record a presentation to upload to Youtube and to be prepared for the PI presentation in Henry. 
+- Change the color to the button in Pagination when it is selected. 
 
 
 Ideas for the future: 
@@ -194,3 +201,4 @@ Ideas for the future:
 - style the Form.jsx window alert. 
 - Add About.jsx with a description of the app's functions. 
 - Add Footer. Developed by Gaston Dvoskin. 
+- Form.jsx genres controlled by localState even if the user goes directly to /form. Render all videogames in Home after creating a new one (without refreshing the page). 

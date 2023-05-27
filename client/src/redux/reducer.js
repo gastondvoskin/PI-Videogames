@@ -185,12 +185,13 @@ const rootReducer = (state = initialState, action) => {
         case UPDATE_VG: {
             const newVg = action.payload;
             const allVg = [newVg, ...state.allVg];
+
             return {
                 ...state,
-                allVg: [...allVg],
-                filteredByCreator: [...allVg],
-                filteredByGenre: [...allVg],
-                currentVg: [...allVg]
+                allVg,
+                filteredByCreator: allVg,
+                filteredByGenre: allVg,
+                currentVg: allVg
             };
         };
 

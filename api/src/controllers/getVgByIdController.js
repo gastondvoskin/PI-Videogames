@@ -41,12 +41,12 @@ const getVgById = async (id) => {
         const apiData = await axios.get(API_URL);
         const vgByIdRaw = apiData.data;
         // what happens if name, background_image, etc are empty for a rawg mistake? Should I verify?
-        const { name, background_image, platforms, released, rating, genres, description } = vgByIdRaw;
+        const { name, background_image, parent_platforms, released, rating, genres, description } = vgByIdRaw;
         const vgByIdClean = {
             id, 
             name, 
             background_image, 
-            platforms: platforms.map(platform => platform.platform.name),
+            platforms: parent_platforms.map(parent_platform => parent_platform.platform.name),
             released, 
             rating,
             genres: genres.map(genre => genre.name),
