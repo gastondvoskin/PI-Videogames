@@ -17,7 +17,7 @@ const App = () => {
         <Route path="/" element={<Landing />} />
         <Route path="/home" element={<Home />} />
         <Route path="/detail/:id" element={<Detail />} />
-        <Route path="/form" element={<Form />} />
+        <Route path="/admin" element={<Form />} />
         <Route path="about" element={<About />} />
         <Route path="/devloading" element={<Loading />} />
         <Route path="*" element={<PageNotFound />} />
