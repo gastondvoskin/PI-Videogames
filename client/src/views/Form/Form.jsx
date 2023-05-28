@@ -2,12 +2,12 @@ import styles from "./Form.module.css";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getGenres } from "../../redux/actions";
-// import { hardcodedSmallArray } from "../../hardcodedVideogames.js";
-// import hardcodedGenres from "../../hardcodedGenres.js";
 import axios from "axios";
 import { updateWithNewVg } from "../../redux/actions";
-import hardcodedPlatforms from "../../hardcodedPlatforms";
 import validationFunctions, { validateGenres, validatePlatforms, validateSubmit } from "./validateFunctions";
+// import { hardcodedSmallArray } from "../../hardcodedResources/hardcodedVideogames.js";
+// import hardcodedGenres from "../../hardcodedResources/hardcodedGenres.js";
+// import hardcodedPlatforms from "../../hardcodedResources/hardcodedPlatforms";
 
 const Form = () => {
 

@@ -18,17 +18,19 @@
 }   
 
 .searchInput {
-    width: 50%;
-    height: 20px;
+    width: 30%;
+    height: 30px;
     border: 1px solid black;
+    border-radius: 5px;
     justify-content: flex-start; /* new */
 
 }
 
 .searchSubmitButton {
-    font-size: 12px;
-    height: 24px;
+    font-size: 20px;
+    height: 34px;
     width: 35px;
+    border-radius: 5px;
 }
 
 .searchSubmitButton:hover {

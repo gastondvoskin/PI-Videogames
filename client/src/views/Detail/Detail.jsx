@@ -6,9 +6,7 @@ import PageNotFound from "../../Errors/PageNotFound/PageNotFound";
 import NetworkError from "../../Errors/NetworkError/NetworkError.jsx";
 import Loading from "../../components/Loading/Loading";
 import noImage from "../../assets/noImage.png";
-
-import { hardcodedObject, secondHardcodedObject, dbHardcodedObject, hardcodedArray } from "../../hardcodedVideogames";
-
+// import { hardcodedObject, secondHardcodedObject, dbHardcodedObject, hardcodedArray } from "../../hardcodedResources/hardcodedVideogames";
 
 
 const Detail = () => {
@@ -47,7 +45,7 @@ const Detail = () => {
                 : <NetworkError />
             : !Object.keys(vgDetail).length  
                 ? <Loading />
-                : <div className={styles.dataContainer}>
+                : <div className={styles.mainContainer}>
 
                     <div className={styles.leftContainer}>
 
@@ -108,9 +106,9 @@ const Detail = () => {
 
                         <br /> 
 
-                        <Link to={`/home`}>
+                        {/* <Link to={`/home`}>
                             <button className={styles.goBackButton}>Go back home</button>
-                        </Link>
+                        </Link> */}
 
 
                     </div>
@@ -141,13 +139,3 @@ const Detail = () => {
 };
 
 export default Detail; 
-
-// 📍 DETAIL PAGE | en esta vista se deberá mostrar toda la información específica de un videojuego:
-// ID.
-// Nombre.
-// Imagen.
-// Plataformas.
-// Descripción.
-// Fecha de lanzamiento.
-// Rating.
-// Géneros.

@@ -1,9 +1,9 @@
 .mainContainer {
     background-color: black;
-    border: solid white 2px;
+    border: solid rgba(255, 255, 255, 0.381) 3px;
     margin: 10px;
-    width: 200px;
-    height: 270px;
+    width: 250px;
+    height: 300px;
     border-radius: 5%;
 }
 

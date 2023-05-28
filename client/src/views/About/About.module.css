@@ -12,6 +12,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     border: solid 1px white;
+    border-radius: 10px;
 }
 
 .logoContainer {

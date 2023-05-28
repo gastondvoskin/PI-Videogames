@@ -9,8 +9,8 @@ import Footer from "./components/Footer/Footer.jsx";
 const App = () => {
   const location = useLocation();
   // console.log("location.pathname !== '/' : ", location.pathname !== '/');
-  /* const renderNav = location.pathname === '/'; */
-  const renderNavAndFooter = location.pathname === '/home' || location.pathname === '/detail/:id' || location.pathname === '/admin' || location.pathname === '/about' || location.pathname === '/home';
+  const renderNavAndFooter = location.pathname !== '/';
+  /* const renderNavAndFooter = location.pathname === '/home' || location.pathname === '/detail' || location.pathname === '/admin' || location.pathname === '/about' || location.pathname === '/home'; */
 
   return (
     <div>

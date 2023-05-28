@@ -3,21 +3,23 @@
     flex-direction: row;
     justify-content: space-evenly;
     background-color: white;
-    width: 100%;
+    width: 92%;
     height: 40px;
     margin: 30px;
     padding: 10px;
     align-items: center;
+    border-radius: 10px;
 }
 
 .text {
-    font-size: 20px;
+    font-size: 15px;
     color:black;
 }
 
-.logo {
-    /* max-height: 100%; */
+.githubLogo {
     max-height: 50px;
-    margin-right: 100px;
-    /* border: solid 1px white; */
+}
+
+.linkedinLogo {
+    max-height: 27px;
 }

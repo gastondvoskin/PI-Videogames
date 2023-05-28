@@ -194,6 +194,11 @@ Footer.jsx. Implemented Footer.jsx.
 --- git commit -m "Implemented Footer.jsx."
 
 
+Moved harcoded arrays and hardcoded objects to a new folder. 
+WIP: Styled various components. 
+--- git commit -m "Styled various components (WIP)."
+
+
 Next step: 
 - stylesPlan.css. Choose a color for the background. Choose a color and a font-family for the text. Choose font-sizes for h1, h2, h3 and p. Choose font-size for links in the Nav. Choose a color for buttons and hovers. Center filters. Card: delete fire.
 - Change the color to the button in Pagination when it is selected. 

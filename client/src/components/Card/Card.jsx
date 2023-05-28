@@ -9,7 +9,7 @@ const Card = ({id, name, background_image, genres, rating}) => {
             {
                 !name 
                 ? <h3>No name provided</h3>
-                : <h3>{`${name} 🔥`}</h3>
+                : <h3>{name}</h3>
             }
 
             <img 
