@@ -1,7 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
 import styles from "./Nav.module.css";
 import videogamesLogo from "../../assets/videogamesLogo.png";
-import githubLogo from "../../assets/logosNav/githubLogo.png";
+// import githubLogo from "../../assets/logosNav/githubLogo.png";
 
 const Nav = () => {
     return (
@@ -13,6 +13,7 @@ const Nav = () => {
                     alt="Home"
                 />
             </Link>
+
             <nav className={styles.navContainer}>
                 {/* <button> <Link to="/">Landing (dev)</Link> </button> */}
                 {/* <button> <Link to="/detail/1">/detail/1 (dev)</Link> </button> */}
@@ -38,17 +39,6 @@ const Nav = () => {
                 >
                     ABOUT
                 </NavLink>
-
-                {/* <a 
-                    href="https://github.com/gastondvoskin/PI-Videogames"
-                    target="_blank"
-                    >
-                    <img 
-                        className={styles.logo}
-                        src={githubLogo}
-                        alt="GitHub"
-                    />
-                </a> */}
 
             </nav>
         </div>

@@ -185,23 +185,23 @@ Form.jsx. Modularized validateFunctions. The functions now return an errorMessag
 Implemented About.jsx. Added the route in App.js.
 --- git commit -m "Implemented About.jsx."
 
+
 Nav.jsx. Implemented NavLink instead of a Link with a button inside. Replaced + Add game for Admin. Divided the logo and the Nav. Styled the Nav.
 --- git commit -m "Refactored Nav.jsx and Nav.module.css"
 
 
-Next step: testing. 
-- Footer with a Logo of Linkedin and a logo of GitHub and "Developed by Gaston Dvoskin". 
+Footer.jsx. Implemented Footer.jsx. 
+--- git commit -m "Implemented Footer.jsx."
 
 
-- stylesPlan.css. Choose a color for the background. Choose a color and a font-family for the text. Choose font-sizes for h1, h2, h3 and p. Choose font-size for links in the Nav. Choose a color for buttons and hovers. 
-
-
-
-
-Next steps: 
-bigger font-size, plaette of colors, change the back-ground, center filters, change + Add game for Admin. Add About, Linkedin and GitHub to the Nav. Add a footer. Card: delete fire.
+Next step: 
+- stylesPlan.css. Choose a color for the background. Choose a color and a font-family for the text. Choose font-sizes for h1, h2, h3 and p. Choose font-size for links in the Nav. Choose a color for buttons and hovers. Center filters. Card: delete fire.
 - Change the color to the button in Pagination when it is selected. 
 - Change the percentage of the right side in Form.jsx. 
+
+Next step: 
+- Testing
+
 - Analyze VideogamesClientFlow.png (https://app.diagrams.net/).
 - Add back-end flow diagram. 
 - Add testing to api and to client. 

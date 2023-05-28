@@ -4,15 +4,17 @@ import Nav from "./components/Nav/Nav.jsx";
 import Loading from "./components/Loading/Loading.jsx";
 import PageNotFound from "./Errors/PageNotFound/PageNotFound.jsx";
 import About from "./views/About/About.jsx";
+import Footer from "./components/Footer/Footer.jsx";
 
 const App = () => {
   const location = useLocation();
   // console.log("location.pathname !== '/' : ", location.pathname !== '/');
-  const renderNav = location.pathname !== '/';
+  /* const renderNav = location.pathname === '/'; */
+  const renderNavAndFooter = location.pathname === '/home' || location.pathname === '/detail/:id' || location.pathname === '/admin' || location.pathname === '/about' || location.pathname === '/home';
 
   return (
     <div>
-      {renderNav && <Nav />}
+      {renderNavAndFooter && <Nav />}
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="/home" element={<Home />} />
@@ -22,6 +24,7 @@ const App = () => {
         <Route path="/devloading" element={<Loading />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
+      {renderNavAndFooter && <Footer />}
     </div>
   );
 };
