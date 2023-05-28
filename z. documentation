@@ -181,24 +181,39 @@ getAllVgController.js. Replaced const numberOfResultsExpected from 40 to 150.
 getAllVgController.js and getVgByIdController.js. Replaced platforms for parent_platforms. 
 Form.jsx. Modularized validateFunctions. The functions now return an errorMessage instead of changing the localState. In Form.jsx these functions are excuted, and depending on the result, they change the localState to a string like "Required field" or to "" when there is no error. Replaced handleNameChange, handleDescriptionChange and others with a general handleChange. Replaced it in the return. Added the name property to all the inputs to dinamically controll them and validate them with the handleChange function. Modularized validateSubmit and refactored it. getGenres doen't work properly if the user goes directly to /form, because the localState seems to be initialized as an uncontrolled form. Added autocomplete function in Form for develop purposes. 
 --- git commit -m "Refactored and modularized Form.jsx. Replaced hardcodedGenres. Replaced numberOfResultsExpected from 40 to 150 in getAllVgController. Replaced platforms for parent_platform in getVgByIdController.js" 
-Next step: modularize genres. Currently, it is wrong to have genres in the initial state. 
+
+Implemented About.jsx. Added the route in App.js.
+--- git commit -m "Implemented About.jsx."
+
+
+Next step: testing. 
+- Logo of Linkedin and logo of GitHub. 
+- The three go in the Nav. 
+- Replace the "Add game" button for a NavLink with the text "Admin". 
+
+- Footer.jsx. "Developed by Gaston Dvoskin". 
+
+- stylesPlan.css. Choose a color for the background. Choose a color and a font-family for the text. Choose font-sizes for h1, h2, h3 and p. Choose font-size for links in the Nav. Choose a color for buttons and hovers. 
+
 
 
 
 Next steps: 
-- Styles: bigger font-size, plaette of colors, change the back-ground, center filters, change + Add game for Admin. Add About, Linkedin and GitHub to the Nav. Add a footer. Card: delete fire.
+- Styles: 
+
+- Add Footer. Developed by Gaston Dvoskin. 
+bigger font-size, plaette of colors, change the back-ground, center filters, change + Add game for Admin. Add About, Linkedin and GitHub to the Nav. Add a footer. Card: delete fire.
+- Change the color to the button in Pagination when it is selected. 
+- Change the percentage of the right side in Form.jsx. 
 - Analyze VideogamesClientFlow.png (https://app.diagrams.net/).
 - Add back-end flow diagram. 
 - Add testing to api and to client. 
 - Deploy
 - Record a presentation to upload to Youtube and to be prepared for the PI presentation in Henry. 
-- Change the color to the button in Pagination when it is selected. 
 
 
 Ideas for the future: 
 - Form.jsx. Add a "See your last created videogame" in the right side.
-- Check if it is possible to modularize the handlers in Form.jsx. 
 - style the Form.jsx window alert. 
-- Add About.jsx with a description of the app's functions. 
-- Add Footer. Developed by Gaston Dvoskin. 
+
 - Form.jsx genres controlled by localState even if the user goes directly to /form. Render all videogames in Home after creating a new one (without refreshing the page). 
