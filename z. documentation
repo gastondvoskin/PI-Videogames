@@ -215,25 +215,18 @@ Changed the name PageNotFound for Error404. Replaced NetworkError component for 
 Styled Error404.jsx. 
 --- git commit -m "Styles Error404.jsx. Reordered assets files into folders."
 
+
+Styled Landing.jsx. Changed the background image in index.css. Updated color, background-color and border in various components. 
+--- git commit -m "Styled Landing.jsx. Changed the background image in index.css. Updated color, background-color and border in various components."
+
+
 Next step: 
-. Error404. 
-. Landing
+. Detail. 
 . Form.
 . About. 
-. Detail. 
 
-. Image for the background. 
-https://www.google.com/imgres?imgurl=https%3A%2F%2Flookaside.fbsbx.com%2Flookaside%2Fcrawler%2Fmedia%2F%3Fmedia_id%3D843772036142486&tbnid=8rYH9tGtkEW1qM&vet=12ahUKEwjbvo3Fk5n_AhVgpZUCHaa6CRgQMyhBegUIARCFAQ..i&imgrefurl=https%3A%2F%2Fwww.facebook.com%2F591228718063487%2Fposts%2Ffondos-de-pantalla-gamers-al-estilo-de-los-videojuegoscomparte-con-tus-amigos-_%2F843772449475778%2F&docid=zRpDqVFYvJJieM&w=480&h=854&q=fondos%20de%20pantalla%20gamer&hl=es&ved=2ahUKEwjbvo3Fk5n_AhVgpZUCHaa6CRgQMyhBegUIARCFAQ
 
-https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pexels.com%2Fes-es%2Fbuscar%2FFondo%2520de%2520pantalla%25204k%2F&psig=AOvVaw3wyZG6m1GBr79yyO-jFW0l&ust=1685402452410000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCLDNj8aTmf8CFQAAAAAdAAAAABAF
-
-. Image for the Landing background. 
-. Themes. https://paletadecolores.com.ar/
-. Font-sizes for h1, h2, h3 and p. 
-
-. Change the color to the button in Pagination when it is selected. border-radius. 
 . Change the percentage of the right side in Form.jsx. Add other elements. 
-. About. Add linkedin and github. 
 
 
 Next step: 

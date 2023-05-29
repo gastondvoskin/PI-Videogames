@@ -1,38 +1,71 @@
 .mainContainer {
-    /* background-image: url("../../assets/landingBg.png"); */
-    /* background-image: url(https://thumbs.gfycat.com/SomberDarkAmericanbulldog-size_restricted.gif); */
-    /* background-image: url("https://i.pinimg.com/originals/f7/5e/a1/f75ea1618a17a73cb48f951cbd9a0aab.gif"); */
-    background-image: url("../../assets/logo.png");
-
-    background-repeat: no-repeat;
-    /* background-size: cover; */
-    background-position: center;
     height: 100vh;
-    width: auto;
-    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    border: white solid 20px;
+    border-radius: 300px;
+    justify-content:flex-start;
+    
+    padding-right: 10%;
+    padding-top: 5%;
     align-items: center;
+    background-image: url("../../assets/backgrounds/landingBg.gif");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: cover;
 }
 
-.title {
-    color: white;
-    font-size: 30px;
-    margin-top: 100px;
-}
-
-.clickBelow {
-    color: white;
-    font-size: 10px;
-    font-style: italic;
-    margin-bottom: 100px;
-}
 
 .navLink {
     text-decoration: none;
-    font-size: 25px;
+    font-size: 55px;
+    background-color: black;
     color: rgb(135, 141, 228);
+    color: rgb(15, 145, 157);
     font-style: normal;
+    margin-bottom: 20%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 5px solid white;
+    border-radius: 70px;
+    padding: 40px;
+    animation: pulse 2s infinite;
+    /* box-shadow: 9 8px 12px rgba(215, 151, 14, 0.9); */
+    /* transition: font-size 0.3s, color 0.3s; */
+}
+
+@keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
 }
 
 .navLink:hover {
+    font-size: 75px;
     color: rgb(96, 104, 214);
+    color: rgb(95, 209, 219);
+    color: white;
+    background-color: rgb(96, 104, 214);
+    /* transform: translateY(-10px);
+    box-shadow: 9 8px 12px rgba(3, 4, 19, 0.9); */
 }
+
+
+
+
+
+.logo {
+    width: 300px;
+}
+
+
+/* .title {
+    color: white;
+    font-size: 50px;
+    margin-top: 100px;
+} */

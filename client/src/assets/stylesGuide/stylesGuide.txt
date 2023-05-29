@@ -9,6 +9,8 @@ Card background-color: rgb(43, 43, 43);
 reset filter button:hover : rgb(245, 202, 202);
 indexc.css color: rgba(255, 255, 255, 0.855);
 Card text: color: white;
+Landing getStarted button, Nav border, Footer border: rgb(135, 141, 228);
+Landing getSarted:hover: color: rgb(96, 104, 214);
 
 font-size
 NavLinks in the Nav: 23px when active. 18px when inactive;

@@ -1,0 +1,14 @@
+/* html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+ */
+
+.mainContainer {
+    /* background-color: red; */
+    background-image: url("../../assets/logo.png");
+    background-image: url("../../assets/backgrounds/texturedBg.jpg");
+    width: 100%vw;
+    height: 100vh;
+}

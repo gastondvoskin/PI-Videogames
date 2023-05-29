@@ -8,12 +8,17 @@
 .mainContainer {
     /* background-color: black; */
     background-color: rgb(43, 43, 43);
+    background-color: black;
     border: solid rgb(95, 209, 219) 3px;
-    margin: 10px;
+    border: 4px solid rgb(96, 104, 214);
+    border: 4px solid rgb(135, 141, 228);
+    border: 4px solid rgb(15, 145, 157);
+    
+    margin: 30px;
     width: 250px;
     height: 300px;
     border-radius: 5%;
-    color: white;
+    color: rgba(255, 255, 255, 0.855);
 }
 
 .mainContainer:hover {
@@ -21,6 +26,7 @@
     color: rgb(95, 209, 219);
     width: 255px;
     height: 310px;
+    border: 4px solid rgb(95, 209, 219);
 }
 
 

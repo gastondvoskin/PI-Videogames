@@ -6,11 +6,12 @@ import About from "./views/About/About.jsx";
 import Footer from "./components/Footer/Footer.jsx";
 import Filters from "./components/Filters/Filters.jsx";
 import Pagination from "./components/Pagination/Pagination.jsx";
+import Experiment from "./components/Experiments/Experiment.jsx";
 
 const App = () => {
   const location = useLocation();
   // console.log("location.pathname !== '/' : ", location.pathname !== '/');
-  const renderNavAndFooter = location.pathname !== '/';
+  const renderNavAndFooter = location.pathname !== '/' && location.pathname !== '/devexperiment';
   /* const renderNavAndFooter = location.pathname === '/home' || location.pathname === '/detail' || location.pathname === '/admin' || location.pathname === '/about' || location.pathname === '/home'; */
 
   return (
@@ -25,6 +26,7 @@ const App = () => {
         <Route path="/devloading" element={<Loading />} />
         <Route path="/devfilters" element={<Filters />} />
         <Route path="/devpagination" element={<Pagination />} />
+        <Route path="/devexperiment" element={<Experiment />} />
         <Route path="*" element={<Error404 />} />
       </Routes>
       {renderNavAndFooter && <Footer />}

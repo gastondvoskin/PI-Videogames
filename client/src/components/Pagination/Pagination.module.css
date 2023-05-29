@@ -9,11 +9,14 @@
 }
 
 .button {
-    margin: 3px;
+    margin: 5px;
+    margin-top: 20px;
+    padding: 8px;
     background-color: rgb(89, 89, 89);
     color: white;
     height: 100%;
-    border: 2px solid rgb(95, 209, 219);
+    /* border: 2px solid rgb(95, 209, 219); */
+    border: 2px solid black;
     border-radius: 5px;
     font-size: 14px;
 }

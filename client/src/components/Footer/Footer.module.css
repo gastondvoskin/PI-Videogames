@@ -9,7 +9,8 @@
     padding: 10px;
     align-items: center;
     border-radius: 10px;
-    border: 2px solid rgb(95, 209, 219);
+    /* border: 2px solid rgb(95, 209, 219); */
+    border: 4px solid rgb(96, 104, 214);
 }
 
 .text {

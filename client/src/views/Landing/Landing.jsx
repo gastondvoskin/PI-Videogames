@@ -1,18 +1,24 @@
 import { NavLink } from "react-router-dom";
 import styles from "./Landing.module.css";
+import logo from "../../assets/logo.png";
 
 const Landing = () => {
     return (
         <div className={styles.mainContainer}>
-            <h1 className={styles.title}>Welcome to the Videogames Project!</h1>
-            <p className={styles.clickBelow}>Click below</p>
+            
+            {/* TEXT */}
+            {/* <h1 className={styles.title}>Welcome to my Videogames Web Page</h1> */}
 
+            {/* BUTTON */}
             <NavLink 
                 to="/home"
                 className={styles.navLink}
             > 
-                GET STARTED
+                START!
             </NavLink>
+
+            {/* LOGO */}
+            <img className={styles.logo} src={logo} alt="VideogamesLogo"/>
         </div>
     );
 };
