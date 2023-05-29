@@ -1,91 +1,83 @@
+/* MAIN CONTAINER */
 .mainContainer {
     display: flex;
     flex-direction: column;
-    position: relative;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    /* position: relative; */
+    /* background-color: red; */
 }
 
-.formAndResetContainer{
-    display:flex;
-    flex-direction:row;
-    align-items:center;
-}
-
-.searchBar {
+/* SEARCHBAR */
+.searchbarContainer {
+    /* background-color: red; */
     display: flex;
     direction: row;
-    width: 100%;
+    width: 40%;
     justify-content: center;
 }   
 
 .searchInput {
-    width: 30%;
+    width: 100%;
     height: 30px;
-    border: 1px solid black;
     border-radius: 5px;
-    justify-content: flex-start; /* new */
-
+    /* background-color: black; */
+    background-color: rgb(89, 89, 89);
+    border: 2px solid rgb(95, 209, 219);
+    color: white;
 }
+
+.searchInput::placeholder {
+    color: white;
+  }
 
 .searchSubmitButton {
     font-size: 20px;
     height: 34px;
     width: 35px;
     border-radius: 5px;
+    /* background-color: black; */
+    background-color: rgb(89, 89, 89);
+    border: 2px solid rgb(95, 209, 219);
 }
 
 .searchSubmitButton:hover {
-    background-color: rgba(170, 230, 238, 0.899);
-    color: rgb(56, 121, 56);
+    background-color: rgb(95, 209, 219);
 }
 
-.resetButton {
-    /* background-color: rgba(0, 225, 255, 0.929); */
-    /* background-color: rgb(135, 141, 228); */
-    font-size: 12px;
-    height: 24px;
-    justify-content: end;
-    margin-right: 20px;
-    width: 90px;
-    /* position: absolute; */ 
-    /* right: 20px; */ 
+
+/* FILTERS AND SORTS */
+.filtersAndSortsContainer {
+    display: flex;
+    flex-direction: row;
+    width: 40%;
+    height: 30px;
+    border-radius: 5px;
+    background-color: black;
+    /* border: 2px solid rgb(95, 209, 219); */
+    margin-top: 10px;
+    align-items: center;
+    justify-content:space-between;
+    justify-content: center;
+    background-color: black;
+}
+
+
+.creatorSelect, .genreSelect, .sortSelect, .resetButton {
+    background-color: rgb(89, 89, 89);
+    color: white;
+    height: 100%;
+    border: 2px solid rgb(95, 209, 219);
+    border-radius: 5px;
+    margin: 5px;
+}
+
+.creatorSelect:hover, .genreSelect:hover, .sortSelect:hover, .resetButton:hover {
+    font-size: 15.1px;
 }
 
 .resetButton:hover {
-    background-color: rgba(170, 230, 238, 0.899);
-    color: rgb(56, 121, 56);
-}
-
-
-
-
-.filters {
-    display: flex;
-    flex-direction: row;
-    margin-top: 10px;
-    margin-bottom: 1px;
-    margin-right: 20px;
-    font-size: 10px;
-    align-items: center;
-    justify-content: flex-end;
-}
-
-.creatorSelect {
-    width: 100px;
-}
-
-.genreSelect {
-    width: 100px;
-}
-
-.sortings {
-    display: flex;
-    flex-direction: row;
-    margin-right: 20px;
-    font-size: 10px;
-    align-items: center;
-    justify-content: flex-end;
-} 
-
-.sortSelect {
-    width: 120px;
+    color: black;
+    background-color: rgb(245, 202, 202);
 }

@@ -199,10 +199,24 @@ WIP: Styled various components.
 --- git commit -m "Styled various components (WIP)."
 
 
+WIP: Styled Filters.jsx and made minor style changes in other components.
+--- 
+
 Next step: 
-- stylesPlan.css. Choose a color for the background. Choose a color and a font-family for the text. Choose font-sizes for h1, h2, h3 and p. Choose font-size for links in the Nav. Choose a color for buttons and hovers. Center filters. Card: delete fire.
-- Change the color to the button in Pagination when it is selected. 
-- Change the percentage of the right side in Form.jsx. 
+. Image for the background. 
+https://www.google.com/imgres?imgurl=https%3A%2F%2Flookaside.fbsbx.com%2Flookaside%2Fcrawler%2Fmedia%2F%3Fmedia_id%3D843772036142486&tbnid=8rYH9tGtkEW1qM&vet=12ahUKEwjbvo3Fk5n_AhVgpZUCHaa6CRgQMyhBegUIARCFAQ..i&imgrefurl=https%3A%2F%2Fwww.facebook.com%2F591228718063487%2Fposts%2Ffondos-de-pantalla-gamers-al-estilo-de-los-videojuegoscomparte-con-tus-amigos-_%2F843772449475778%2F&docid=zRpDqVFYvJJieM&w=480&h=854&q=fondos%20de%20pantalla%20gamer&hl=es&ved=2ahUKEwjbvo3Fk5n_AhVgpZUCHaa6CRgQMyhBegUIARCFAQ
+
+https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pexels.com%2Fes-es%2Fbuscar%2FFondo%2520de%2520pantalla%25204k%2F&psig=AOvVaw3wyZG6m1GBr79yyO-jFW0l&ust=1685402452410000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCLDNj8aTmf8CFQAAAAAdAAAAABAF
+
+. Image for the Landing background. 
+. index.css: Font-family for the text. 
+. Themes. https://paletadecolores.com.ar/
+. Font-sizes for h1, h2, h3 and p. 
+
+. Change the color to the button in Pagination when it is selected. border-radius. 
+. Change the percentage of the right side in Form.jsx. Add other elements. 
+. About. Add linkedin and github. 
+
 
 Next step: 
 - Testing

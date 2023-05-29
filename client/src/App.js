@@ -5,6 +5,7 @@ import Loading from "./components/Loading/Loading.jsx";
 import PageNotFound from "./Errors/PageNotFound/PageNotFound.jsx";
 import About from "./views/About/About.jsx";
 import Footer from "./components/Footer/Footer.jsx";
+import Filters from "./components/Filters/Filters.jsx";
 
 const App = () => {
   const location = useLocation();
@@ -22,6 +23,7 @@ const App = () => {
         <Route path="/admin" element={<Form />} />
         <Route path="about" element={<About />} />
         <Route path="/devloading" element={<Loading />} />
+        <Route path="/devfilters" element={<Filters />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
       {renderNavAndFooter && <Footer />}

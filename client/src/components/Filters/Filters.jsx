@@ -79,41 +79,35 @@ const Filters = () => {
     };
 
 
-    return (
+    return (    
         <div className={styles.mainContainer}>
 
-            <div className={styles.formAndResetContainer}>
-                <form 
-                    className={styles.searchBar}
-                    onSubmit={handleSearchSubmit}
+            {/* SEARCHBAR */}
+            <form 
+                className={styles.searchbarContainer}
+                onSubmit={handleSearchSubmit}
                 >
-                    <input 
-                        className={styles.searchInput}
-                        type="text"
-                        placeholder="Search by name..."
-                        value={vgName}
-                        onChange={handleSearchInput}
-                    />
+                <input 
+                    className={styles.searchInput}
+                    type="text"
+                    placeholder="Search by name..."
+                    value={vgName}
+                    onChange={handleSearchInput}
+                />
 
-                    <button 
-                        className={styles.searchSubmitButton}
-                        type="submit"
-                        >
-                        🔍
-                    </button>
-                </form>
-
-                <button
-                    className={styles.resetButton}
-                    onClick={handleResetFilters}
-                >
-                    Reset filters
+                <button 
+                    className={styles.searchSubmitButton}
+                    type="submit"
+                    >
+                    🔍
                 </button>
-            </div>
+            </form>
 
-            <div className={styles.filters}>
-                <span>Filter by {' '}</span>
-
+            {/* FILTERS AND SORTS */}
+            <div
+                className={styles.filtersAndSortsContainer}
+                >
+                
                 <select 
                     className={styles.creatorSelect}
                     name="filterByCreator"
@@ -146,10 +140,8 @@ const Filters = () => {
                         })
                     }
                 </select> 
-            </div>
-
-            <div className={styles.sortings}>
-                <span>Sort by {' '}</span>
+            
+                
                 <select 
                     className={styles.sortSelect}
                     name="Sort" 
@@ -161,8 +153,17 @@ const Filters = () => {
                     <option value="z_a">Z-A</option> 
                     <option value="ratingAsc">Rating ↑</option> 
                     <option value="ratingDesc">Rating ↓</option> 
-                </select>
-            </div>                
+                </select>   
+                
+                <button
+                    className={styles.resetButton}
+                    onClick={handleResetFilters}
+                >
+                    Reset
+                </button>             
+                
+            </div>
+
             
         </div>
     );
