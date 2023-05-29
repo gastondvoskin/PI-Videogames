@@ -26,11 +26,16 @@
     background-color: rgb(89, 89, 89);
     border: 2px solid rgb(95, 209, 219);
     color: white;
+    
+}
+
+.searchInput:hover {
+    font-size: 15.1px;
 }
 
 .searchInput::placeholder {
     color: white;
-  }
+}
 
 .searchSubmitButton {
     font-size: 20px;

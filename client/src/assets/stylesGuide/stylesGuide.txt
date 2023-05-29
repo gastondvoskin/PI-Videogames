@@ -1,12 +1,14 @@
 colors
-NavLink active and input borders and resetButton:hover: rgb(95, 209, 219);
+NavLink active and input borders and resetButton:hover Card:hover: rgb(95, 209, 219);
 NavLink hover: rgb(139, 183, 187);
 NavLink inactive: rgb(15, 145, 157);
 Card border: rgba(255, 255, 255, 0.381);
 texts color: rgba(255, 255, 255, 0.855);
 inputs and buttons background-color: rgb(89, 89, 89);
+Card background-color: rgb(43, 43, 43);
 reset filter button:hover : rgb(245, 202, 202);
 indexc.css color: rgba(255, 255, 255, 0.855);
+Card text: color: white;
 
 font-size
 NavLinks in the Nav: 23px when active. 18px when inactive;

@@ -32,10 +32,6 @@ const Pagination = (props) => {
     return (
         <div className={styles.mainContainer}>
             {pageNumbersArray.map((pageNumber) => {
-                console.log('pageNumber: ', pageNumber)
-                console.log(pageNumber === currentPage)
-                console.log(typeof pageNumber)
-                console.log(typeof currentPage)
                 return (
                     <button 
                         className=
