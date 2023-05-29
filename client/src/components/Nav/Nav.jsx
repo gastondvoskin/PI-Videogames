@@ -1,14 +1,14 @@
 import { Link, NavLink } from "react-router-dom";
 import styles from "./Nav.module.css";
-import videogamesLogo from "../../assets/videogamesLogo.png";
+import logo from "../../assets/logo.png";
 
 const Nav = () => {
     return (
         <div className={styles.mainContainer}> 
             <Link to="/home">
                 <img 
-                    className={styles.videogamesLogo}
-                    src={videogamesLogo}
+                    className={styles.logo}
+                    src={logo}
                     alt="Home"
                 />
             </Link>

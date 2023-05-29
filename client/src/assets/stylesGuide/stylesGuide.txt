@@ -1,6 +1,6 @@
 colors
-NavLink active and input borders and resetButton:hover Card:hover: rgb(95, 209, 219);
-NavLink hover: rgb(139, 183, 187);
+NavLink active and input borders and resetButton:hover Card:hover, goBack border: rgb(95, 209, 219);
+NavLink:hover, goBackButton:hover: rgb(139, 183, 187);
 NavLink inactive: rgb(15, 145, 157);
 Card border: rgba(255, 255, 255, 0.381);
 texts color: rgba(255, 255, 255, 0.855);

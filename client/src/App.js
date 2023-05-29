@@ -1,8 +1,7 @@
 import { Routes, Route, useLocation } from "react-router-dom";
-import { Landing, Home, Detail, Form } from "./views/viewsIndex.js";
+import { Landing, Home, Detail, Form, Error404 } from "./views/viewsIndex.js";
 import Nav from "./components/Nav/Nav.jsx";
 import Loading from "./components/Loading/Loading.jsx";
-import PageNotFound from "./Errors/PageNotFound/PageNotFound.jsx";
 import About from "./views/About/About.jsx";
 import Footer from "./components/Footer/Footer.jsx";
 import Filters from "./components/Filters/Filters.jsx";
@@ -26,7 +25,7 @@ const App = () => {
         <Route path="/devloading" element={<Loading />} />
         <Route path="/devfilters" element={<Filters />} />
         <Route path="/devpagination" element={<Pagination />} />
-        <Route path="*" element={<PageNotFound />} />
+        <Route path="*" element={<Error404 />} />
       </Routes>
       {renderNavAndFooter && <Footer />}
     </div>

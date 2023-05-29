@@ -211,9 +211,17 @@ Styled Card.jsx.
 --- git commit -m "Styled Card.jsx and made minor style changes in other components."
 
 
+Changed the name PageNotFound for Error404. Replaced NetworkError component for a simple <div> element. Reordered assets files into folders. 
+Styled Error404.jsx. 
+--- git commit -m "Styles Error404.jsx. Reordered assets files into folders."
+
 Next step: 
+. Error404. 
 . Landing
-. Card
+. Form.
+. About. 
+. Detail. 
+
 . Image for the background. 
 https://www.google.com/imgres?imgurl=https%3A%2F%2Flookaside.fbsbx.com%2Flookaside%2Fcrawler%2Fmedia%2F%3Fmedia_id%3D843772036142486&tbnid=8rYH9tGtkEW1qM&vet=12ahUKEwjbvo3Fk5n_AhVgpZUCHaa6CRgQMyhBegUIARCFAQ..i&imgrefurl=https%3A%2F%2Fwww.facebook.com%2F591228718063487%2Fposts%2Ffondos-de-pantalla-gamers-al-estilo-de-los-videojuegoscomparte-con-tus-amigos-_%2F843772449475778%2F&docid=zRpDqVFYvJJieM&w=480&h=854&q=fondos%20de%20pantalla%20gamer&hl=es&ved=2ahUKEwjbvo3Fk5n_AhVgpZUCHaa6CRgQMyhBegUIARCFAQ
 

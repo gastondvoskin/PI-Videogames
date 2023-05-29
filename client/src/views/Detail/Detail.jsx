@@ -2,8 +2,7 @@ import { Link, useParams } from "react-router-dom";
 import styles from "./Detail.module.css";
 import axios from 'axios';
 import { useState, useEffect } from "react";
-import PageNotFound from "../../Errors/PageNotFound/PageNotFound";
-import NetworkError from "../../Errors/NetworkError/NetworkError.jsx";
+import { Error404 } from "../viewsIndex";
 import Loading from "../../components/Loading/Loading";
 import noImage from "../../assets/noImage.png";
 // import { hardcodedObject, secondHardcodedObject, dbHardcodedObject, hardcodedArray } from "../../hardcodedResources/hardcodedVideogames";
@@ -41,8 +40,8 @@ const Detail = () => {
     return (
         errorState 
             ? errorState === 'ERR_BAD_REQUEST' 
-                ? <PageNotFound />
-                : <NetworkError />
+                ? <Error404 />
+                : <div>Error 404. Not connected to server.</div>
             : !Object.keys(vgDetail).length  
                 ? <Loading />
                 : <div className={styles.mainContainer}>
