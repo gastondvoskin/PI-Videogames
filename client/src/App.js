@@ -6,6 +6,7 @@ import PageNotFound from "./Errors/PageNotFound/PageNotFound.jsx";
 import About from "./views/About/About.jsx";
 import Footer from "./components/Footer/Footer.jsx";
 import Filters from "./components/Filters/Filters.jsx";
+import Pagination from "./components/Pagination/Pagination.jsx";
 
 const App = () => {
   const location = useLocation();
@@ -24,6 +25,7 @@ const App = () => {
         <Route path="about" element={<About />} />
         <Route path="/devloading" element={<Loading />} />
         <Route path="/devfilters" element={<Filters />} />
+        <Route path="/devpagination" element={<Pagination />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
       {renderNavAndFooter && <Footer />}

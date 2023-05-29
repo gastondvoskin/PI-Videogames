@@ -4,8 +4,27 @@
     justify-content: center;
     margin-top: 10px;
     margin-bottom: 20px;
+    flex-wrap: wrap;
+    align-items: center;
 }
 
 .button {
     margin: 3px;
+    background-color: rgb(89, 89, 89);
+    color: white;
+    height: 100%;
+    border: 2px solid rgb(95, 209, 219);
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.button:hover {
+    background-color: rgb(139, 183, 187);
+    color: black;
+    font-size: 15px;
+}
+
+.isActive {
+    background-color: rgb(95, 209, 219);
+    color: black;
 }

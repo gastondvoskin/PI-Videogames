@@ -200,7 +200,12 @@ WIP: Styled various components.
 
 
 WIP: Styled Filters.jsx and made minor style changes in other components.
---- 
+--- git commit -m "WIP: Styled Filters.jsx and made minor style changes in other components."
+
+
+Styled Pagination.jsx. 
+--- git commit -m "Styled Pagination.jsx."
+
 
 Next step: 
 . Image for the background. 
