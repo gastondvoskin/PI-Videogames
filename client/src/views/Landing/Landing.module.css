@@ -2,35 +2,36 @@
     height: 100vh;
     display: flex;
     flex-direction: column;
-    border: white solid 20px;
-    border-radius: 300px;
     justify-content:flex-start;
     
-    padding-right: 10%;
+    /* padding-right: 10%; */
     padding-top: 5%;
     align-items: center;
-    background-image: url("../../assets/backgrounds/landingBg.gif");
-    background-repeat: no-repeat;
-    background-position: right;
-    background-size: cover;
+    background-color: black;
+    background-image: url("../../assets/backgrounds/altBg.gif");
+    background-position: center;
+    background-size: 120%;
+}
+
+
+.logo {
+  width: 250px;
+  margin-bottom: 25%;
+  border: solid 6px white;
+  padding: 30px;
+  border-radius: 70px;
 }
 
 
 .navLink {
     text-decoration: none;
-    font-size: 55px;
-    background-color: black;
-    color: rgb(135, 141, 228);
-    color: rgb(15, 145, 157);
-    font-style: normal;
-    margin-bottom: 20%;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border: 5px solid white;
+    font-size: 35px;
+    background-color: var(--mylightblue);
+    border: 5px solid var(--mywhite);
+    color: var(--myblack);
     border-radius: 70px;
-    padding: 40px;
+    padding: 20px;
     animation: pulse 2s infinite;
-    /* box-shadow: 9 8px 12px rgba(215, 151, 14, 0.9); */
-    /* transition: font-size 0.3s, color 0.3s; */
 }
 
 @keyframes pulse {
@@ -46,26 +47,6 @@
 }
 
 .navLink:hover {
-    font-size: 75px;
-    color: rgb(96, 104, 214);
-    color: rgb(95, 209, 219);
-    color: white;
-    background-color: rgb(96, 104, 214);
-    /* transform: translateY(-10px);
-    box-shadow: 9 8px 12px rgba(3, 4, 19, 0.9); */
+    font-size: 45px;
+    border: 5px solid var(--mylightblue);
 }
-
-
-
-
-
-.logo {
-    width: 300px;
-}
-
-
-/* .title {
-    color: white;
-    font-size: 50px;
-    margin-top: 100px;
-} */

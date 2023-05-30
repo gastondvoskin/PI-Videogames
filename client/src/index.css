@@ -1,10 +1,12 @@
 body {
-  height: 100vh;
-  width: 100vw;
+  height: 95vh;
+  width: 95vw;
+  margin: 30px;
   color: rgba(255, 255, 255, 0.855);
   text-align: center;
-  font-family: 'Roboto', sans-serif;
-  font-size: 15px; 
+  font-family: arial;
+  font-size: 20px; 
+  
   
   background-color: black;
   background-image: url("../src/assets/backgrounds/texturedBg.jpg");
@@ -12,3 +14,43 @@ body {
   background-size:cover;
   /* background-repeat: no-repeat; */  
 }
+
+:root {
+  /* mylightblue is used for: 
+  - background in Landing start button
+  - color in activeLink in Nav. 
+  */
+  --mylightblue: rgb(95, 209, 219);
+  /* mylightblue2 is used for normalLink in Nav */
+  --mylightblue2: rgb(15, 145, 157);
+  /* mylightblue3 is used for normalLink:hover in Nav */
+  --mylightblue3: rgb(139, 183, 187);
+  /* mygrey: Pagination button */
+  --mygrey: rgb(89, 89, 89);
+  /* mywhite is used for background in Nav and Footer */
+  --mywhite: white;
+  --myblack: black; 
+  --myviolet: rgb(135, 141, 228);
+
+  /* mypurple is used for border in Nav and Footer. */
+  --mypurple: rgb(96, 104, 214);
+}
+
+
+/* colors
+NavLink active and input borders and resetButton:hover Card:hover, goBack border: rgb(95, 209, 219);
+NavLink:hover, goBackButton:hover: rgb(139, 183, 187);
+NavLink inactive: rgb(15, 145, 157);
+Card border: rgba(255, 255, 255, 0.381);
+texts color: rgba(255, 255, 255, 0.855);
+inputs and buttons background-color: rgb(89, 89, 89);
+Card background-color: rgb(43, 43, 43);
+reset filter button:hover : rgb(245, 202, 202);
+indexc.css color: rgba(255, 255, 255, 0.855);
+Card text: color: white;
+Landing getStarted button, Nav border, Footer border: rgb(135, 141, 228);
+Landing getSarted:hover: color: rgb(96, 104, 214);
+
+font-size
+NavLinks in the Nav: 23px when active. 18px when inactive;
+index.css font-size: 15px; */

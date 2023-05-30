@@ -8,9 +8,8 @@
     margin: 30px;
     padding: 10px;
     align-items: center;
-    border-radius: 10px;
-    /* border: 2px solid rgb(95, 209, 219); */
-    border: 4px solid rgb(96, 104, 214);
+    border-radius: 25px;
+    border: 5px solid var(--mypurple);
 }
 
 .text {
@@ -22,6 +21,14 @@
     max-height: 50px;
 }
 
+.githubLogo:hover {
+    max-height: 55px;
+}
+
 .linkedinLogo {
     max-height: 27px;
+}
+
+.linkedinLogo:hover {
+    max-height: 31px;
 }

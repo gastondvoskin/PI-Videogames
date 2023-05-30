@@ -220,13 +220,18 @@ Styled Landing.jsx. Changed the background image in index.css. Updated color, ba
 --- git commit -m "Styled Landing.jsx. Changed the background image in index.css. Updated color, background-color and border in various components."
 
 
+Added Show-hide functionality to the sections ins About.jsx. Styled About.jsx. Restyled Landing with a new background-image. WIP: Replaced colors with CSS variables in index.css.
+--- git commit -m "Added Show-hide functionality to the sections ins About.jsx. Styled About.jsx. Restyled Landing with a new background-image. WIP: Replaced colors with CSS variables in index.css."
+
+
 Next step: 
-. Detail. 
-. Form.
-. About. 
+- All: font-family arial. 
+- Pagination.jsx. It shpuld change the number of buttons when filtering by genre. Check currentPage in redux. 
+- Delete ugly cards from DB. 
+. Detail. Delete the fire at the left. Responsive: when the device is smaller than... the right part (description) goes down. Adjust margin and padding, specially left and right. 
+. Form. Reduce the percentage of the right side in Form.jsx. Add other elements to the preview (name...). Increase the font-size and sepcify the font-family and sans serif. Update the colors. 
+. About. Add an avatar or an image of a React code. Update the colors.   
 
-
-. Change the percentage of the right side in Form.jsx. Add other elements. 
 
 
 Next step: 
