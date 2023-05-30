@@ -1,152 +1,217 @@
+/* MAIN CONTAINER */
 .mainContainer {
-    /* background-color: red; */
-    font-family: roboto;
     display: flex;
     flex-direction: row;
-    align-items: left;
-    /* justify-content:flex-start; */
-    margin: 50px;
-    font-family: arial;
+    justify-content: center;
+    max-width: 90%;
+    margin-left: 50px;
+    margin-right: 50px;
 }
 
+/* FORM */
 .formContainer {
-    background-color: rgb(46, 41, 42);
+    background-color: var(--mygreyopaque);
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 50%;
+    width: 70%;    
+    padding-top: 10px;
+    padding-bottom: 40px;
+    /* background-color: red; */
 }
 
 .label {
-    background-color: rgb(85, 85, 85);
     display: flex;
     flex-direction: column;
-    width: 80%;
-    height: fit-content;
     margin: 10px;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    /* background-color: green; */
 }
 
-.platformsContainer {                               /* editing */
-    background-color: rgb(85, 85, 85);
-    /* background-color: green; */
+.input {
+    width: 100%;
+    font-size: 18px;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 20px;
+    /* background-color: yellow; */
+}
+
+.nameInput {
+    width: 300px;
+}
+
+.dateInput {
+    width: fit-content;
+}
+
+.ratingInput {
+    width: 100px;
+}
+
+
+/* PLATFORMS */
+.platformsContainer, .checkboxContainer {
+    background-color: var(--mygreyopaque);
     display: flex;
     flex-direction: column;
-    width: 80%;
-    /* height: fit-content; */
-    margin: 10px; 
     align-items: center;
+    width: 60%;
+    margin: 20px;
+    padding: 10px;
+    border-radius: 20px;
+    border: solid white 2px;
 }
 
-.platformsSubContainer {                        /* editing */
+.platformsSubContainer {   
+    /* background-color: red; */                     /* editing */
     display: flex;
     flex-direction: row;
     width: 100%;
     height: 100%;
     margin: 2px;
-}
-
-.input {
-    font-family: roboto;
-    /* background-color: green; */
-    /* height: 2px; */
+    justify-content: center;
+    align-items: center;
 }
 
 .platformInput {                            /* editing */
-    width: 100%;
+    width: 40%;
     /* background-color: red; */
 }
 
 .deletePlatformButton {
-    background-color: rgb(155, 121, 121);
-    font-family: roboto;
+    background-color: var(--myred);
     color: white;
+    font-weight: bold;
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+    border: solid white 2px;
+    font-size: 25px;
+    margin: 5px;
 }
 
 .deletePlatformButton:hover {
-    background-color: rgb(200, 172, 172);
-    color: rgb(23, 21, 21);
+    background-color: var(--myred2);
+    color: black;
+    height: 50px;
+    width: 50px;
 }
 
 .addPlatformButton {
-    width: fit-content;
-    background-color: rgb(66, 103, 3);
-    margin-top: 10px;
+    background-color: var(--mylightblue3);
     color: white;
-    font-family: roboto;
-    font-size: 12px;
+    font-weight: bold;
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+    border: solid white 2px;
+    font-size: 25px;
+    margin: 5px;
 }
 
 .addPlatformButton:hover {
-    background-color: rgb(145, 152, 133);
-    color: rgb(29, 27, 27);
+    background-color: var(--mylightblue);
+    color: black;
+    height: 50px;
+    width: 50px;
 }
 
 
-.checkboxContainer {
-    background-color: rgb(85, 85, 85);
-    display: flex;
-    flex-direction: column;
-    width: 80%;
-    margin: 10px; 
-}
 
+/* GENRES */
 .checkboxSubcontainer {
     display: flex;
-    margin: 2px;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
+    margin: 2px;
 }
 
-.checkboxSubSubContainer {
+.genreLabel {
     align-items: center;
-    margin: 1px;
+    margin: 5px;
+}
+
+.genreInput {
+    margin: 5px;
 }
 
 
+/* ERROR MESSAGE */
 .errorMessage {
-    font-family: roboto;
-    color: rgb(255, 225, 0);
+    color: var(--myred2);
+    font-weight: bold;
 }
 
-.errorGenreMessage {
-    font-family: roboto;
-    color: rgb(255, 225, 0);
-}
 
+
+/* SUBMIT */
 .submitButton {
-    background-color: rgba(0, 225, 255, 0.929);
-    font-size: 15px;
+    background-color: var(--mylightblue3);
+    font-size: 25px;
     width: fit-content;
+    padding: 30px;
     margin-top: 30px;
     margin-bottom: 20px;
-    font-family: roboto;
+    border-radius: 30px;
+    color: white;
+    border: solid white 7px;
 }
 
 .submitButton:hover {
-    background-color: rgba(208, 224, 226, 0.857);
-    color: rgb(56, 121, 56);
+    background-color: var(--mylightblue);
+    color: black;
+    font-size: 30px;
 }
 
-
-.goBackButton {
-    background-color: rgba(232, 192, 127, 0.73);
-    font-size: 12px;
+/* AUTOCOMPLETE BUTTON */
+.autocompleteButton {
+    background-color: var(--mylightblue3);
+    font-size: 16px;
     width: fit-content;
-    margin-top: 50px;
+    padding: 5px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    border-radius: 30px;
+    color: white;
+    border: solid white 2px;
 }
 
-.goBackButton:hover {
-    background-color: rgba(233, 202, 154, 0.73);
-    color: rgb(22, 58, 22);
+.autocompleteButton:hover {
+    background-color: var(--mylightblue);
+    color: black;
+    font-size: 20px;
 }
 
-
-
+/* PREVIEW*/
 .preview {
-    background-color: rgb(56, 53, 54);
-    width: 50%;
+    background-color: var(--mygrey2opaque);
+    width: 30%;
 }
 
 .imagePreview {
     max-width: 70%;
+}
+
+@media screen and (max-width: 768px) {
+    .mainContainer {
+        flex-direction: column;
+    }
+
+    .formContainer {
+        width: 90%;
+    }
+
+    .preview {
+        width: 90%;
+        margin-top: 30px;
+    }
+
+    /* .preview {
+        display: none;
+    } */
 }

@@ -118,7 +118,7 @@ const Detail = () => {
                         {
                             !name 
                             ? <h1>No name provided</h1>
-                            : <h1>{`🔥🎮 ${name} 🎮🔥`}</h1>
+                            : <h1>{`${name} 🎮🔥`}</h1>
                         }
                         
                         {

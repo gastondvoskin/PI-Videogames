@@ -224,14 +224,14 @@ Added Show-hide functionality to the sections ins About.jsx. Styled About.jsx. R
 --- git commit -m "Added Show-hide functionality to the sections ins About.jsx. Styled About.jsx. Restyled Landing with a new background-image. WIP: Replaced colors with CSS variables in index.css."
 
 
-Next step: 
-- All: font-family arial. 
-- Pagination.jsx. It shpuld change the number of buttons when filtering by genre. Check currentPage in redux. 
-- Delete ugly cards from DB. 
-. Detail. Delete the fire at the left. Responsive: when the device is smaller than... the right part (description) goes down. Adjust margin and padding, specially left and right. 
-. Form. Reduce the percentage of the right side in Form.jsx. Add other elements to the preview (name...). Increase the font-size and sepcify the font-family and sans serif. Update the colors. 
-. About. Add an avatar or an image of a React code. Update the colors.   
+Styled Form.jsx. Added elements to the Form preview. Added simple media queries. Made minor style changes in other components. 
+--- git commit -m "Styled Form.jsx. Added elements to the Form preview. Made minor style changes in other components."
 
+
+Next step: 
+. Detail.jsx. Responsive: when the device is smaller than... the right part (description) goes down. 
+. Fix Pagination bug. 
+. Delete ugly cards from DB. 
 
 
 Next step: 
@@ -247,4 +247,8 @@ Next step:
 Ideas for the future: 
 - Form.jsx. Add a "See your last created videogame" in the right side.
 - style the Form.jsx window alert. 
+- Dark/light themes toggle. 
+
+Bugs. 
+- Pagination.jsx. It shpuld change the number of buttons when filtering by genre. Check currentPage in redux. 
 - Form.jsx genres controlled by localState even if the user goes directly to /form. Render all videogames in Home after creating a new one (without refreshing the page). 

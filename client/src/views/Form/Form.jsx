@@ -105,17 +105,29 @@ const Form = () => {
                 .catch((error) => {console.log(error)})
             dispatch(updateWithNewVg(newVg));
             window.alert("Videogame added to the Database");
-            /* setVg(emptyVg);
-            setGenresBoxes(emptyGenresBoxes); */
+            setVg(emptyVg);
+            setGenresBoxes(emptyGenresBoxes);
         };
     };
 
+    // *** AUTOCOMPLETE ***
     const handleAutocomplete = (event) => {
-        const autocompletedVg = {name: 'Name', image: 'https://media.rawg.io/media/screenshots/5c4/5c41cb3b0d15ef0974f930898cedbc6c.jpg', description: 'Description', released: '2000-11-11', rating: '2', platforms: ['Mac'], genres: ['Action']};
+
+        const autocompletedVg = {
+            name: "Example name to autocomplete", 
+            image: "https://media.rawg.io/media/screenshots/5c4/5c41cb3b0d15ef0974f930898cedbc6c.jpg", 
+            description: "This is an example description to autocomplete.", 
+            released: "2000-11-11", 
+            rating: "2.57", 
+            platforms: ["Mac", "PlayStation", "My own platform"], 
+            genres: ["Action", "Simulation", "Family"]
+        };
         setVg(autocompletedVg);
 
         const updatedGenresBoxes = [...genresBoxes];
-        updatedGenresBoxes[3] = true;
+        updatedGenresBoxes[2] = true;
+        updatedGenresBoxes[5] = true;
+        updatedGenresBoxes[14] = true;
         setGenresBoxes(updatedGenresBoxes);
     };
 
@@ -132,9 +144,9 @@ const Form = () => {
                 
                 {/* NAME */}
                 <label className={styles.label}>
-                    Name: *{' '} 
+                   NAME *{' '} 
                     <input 
-                        className={styles.input}
+                        className={`${styles.input} ${styles.nameInput}`}
                         name="name"
                         value={vg.name}
                         onChange={handleChange}
@@ -146,37 +158,39 @@ const Form = () => {
 
                 {/* IMAGE */}
                 <label className={styles.label}>
-                    Image: *{' '} 
-                    <input 
+                    IMAGE *{' '} 
+                    <textarea 
                         className={styles.input}
                         name="image"
                         value={vg.image}
                         onChange={handleChange}
                         placeholder='Include https://'
+                        rows="3"
                     />
                     {errors.image && <p className={styles.errorMessage}>{errors.image}</p>}
                 </label>
 
                 {/* DESCRIPTION */}
                 <label className={styles.label}>
-                    Description: *{' '} 
+                    DESCRIPTION *{' '} 
                     <textarea 
                         className={styles.input}
                         name="description"
                         value={vg.description}
                         onChange={handleChange}
                         placeholder='Max 1000 characters'
+                        rows="8"
                     />
                     {errors.description && <p className={styles.errorMessage}>{errors.description}</p>}
                 </label>
 
                 {/* RELEASED */}
                 <label className={styles.label}>
-                    Date of release: *{' '} 
+                    DATE OF RELEASE *{' '} 
                     <input 
                         type="date"  /* date format depends on OS settings */
                         name="released"
-                        className={styles.input}
+                        className={`${styles.input} ${styles.dateInput}`}
                         value={vg.released}
                         onChange={handleChange}
                         max="9999-12-31"
@@ -186,14 +200,14 @@ const Form = () => {
 
                 {/* RATING */}
                 <label className={styles.label}>
-                    Rating: *{' '} 
+                    RATING *{' '} 
                     <input 
                         type="number"
-                        className={styles.input}
+                        className={`${styles.input} ${styles.ratingInput}`}
                         name="rating"
                         value={vg.rating}
                         onChange={handleChange}
-                        placeholder='1.00 - 5.00'
+                        placeholder='1.00-5.00'
                         step="0.1"
                     />
                     {errors.rating && <p className={styles.errorMessage}>{errors.rating}</p>}
@@ -202,12 +216,13 @@ const Form = () => {
 
                 {/* PLATFORMS */}
                 <fieldset className={styles.platformsContainer}>
-                    <legend>Platforms: *{' '} </legend>
+                    <legend>PLATFORMS *{' '} </legend>
                     {vg.platforms?.map((platform, index) => {
                         return (
                             <div className={styles.platformsSubContainer} key={index}>
                                 <input 
-                                    className={styles.platformInput}
+                                    /* className={styles.platformInput} */
+                                    className={`${styles.input} ${styles.platformInput}`}
                                     id={index}
                                     type="text"
                                     value={platform}
@@ -219,20 +234,19 @@ const Form = () => {
                                     className={styles.deletePlatformButton} 
                                     type="button" 
                                     onClick={handleDeletePlatform}
-                                >
+                                    >
                                     -
+                                </button>
+                                <button 
+                                    className={styles.addPlatformButton} 
+                                    type="button" 
+                                    onClick={handleAddPlatform}
+                                    >
+                                    +
                                 </button>
                             </div>
                         )
                     })}
-
-                    <button 
-                        className={styles.addPlatformButton} 
-                        type="button" 
-                        onClick={handleAddPlatform}
-                    >
-                        + Add platform
-                    </button>
                     {errors.platforms && <p className={styles.errorMessage}>{errors.platforms}</p>}
 
                 </fieldset>
@@ -240,44 +254,70 @@ const Form = () => {
 
                 {/* GENRES */}
                 <fieldset className={styles.checkboxContainer}>
-                    <legend>Genres: *{' '}</legend>
+                    <legend>GENRES *{' '}</legend>
                     <div className={styles.checkboxSubcontainer}>
                         {allGenres.map((genre, index) => {
                             return (
-                                <div className={styles.checkboxSubSubContainer} key={index}>
-                                    <label>
-                                        {genre}
-                                        <input 
-                                            type="checkbox"
-                                            id={index}
-                                            name={genre}
-                                            checked={genresBoxes[index]}
-                                            onChange={handleGenresChange}
-                                        />
-                                    </label>
-                                </div>
+                                <label className={styles.genreLabel} key={index}>
+                                    {genre}
+                                    <input className={styles.genreInput}
+                                        type="checkbox"
+                                        id={index}
+                                        name={genre}
+                                        checked={genresBoxes[index]}
+                                        onChange={handleGenresChange}
+                                    />
+                                </label>
                             )
                         })}
                     </div>
-                    {errors.genres && <p className={styles.errorGenreMessage}>{errors.genres}</p>}
+                    {errors.genres && <p className={styles.errorMessage}>{errors.genres}</p>}
                 </fieldset>
 
 
                 {/* SUBMIT */}
-                <button type="submit" className={styles.submitButton}>✓ Create videogame</button>
+                <button type="submit" className={styles.submitButton}>✓ ADD TO DATABASE</button>
 
                 {/* AUTOCOMPLETE DEV */}
-                <button type="button" onClick={handleAutocomplete}>Dev: Autocomplete example</button>
+                <button className={styles.autocompleteButton} type="button" onClick={handleAutocomplete}>Autocomplete example (dev)</button>
 
             </form>
 
 
             {/* PREVIEW */}
             <div className={styles.preview}>
-                <h1>Image preview</h1>
-                {
-                    vg.image && <img className={styles.imagePreview} src={vg.image} alt={"Videogame"}/>
-                }
+                <h2>PREVIEW</h2>
+                <p>Name: {errors.name ? errors.name : vg.name}</p>
+                {errors.image ? <p>{errors.image}</p> : <img className={styles.imagePreview} src={vg.image} alt="Videogame not found"/>}
+                <p>Description: {errors.description ? errors.description : vg.description}</p>
+                <p>Released: {errors.released ? errors.released : vg.released}</p>
+                <p>Rating: {errors.rating ? errors.rating : vg.rating}</p>
+                
+                <p>Platforms: {''}
+                    {errors.platforms 
+                        ? <p>{errors.image}</p> 
+                        : vg.platforms.map((plaftorm, index) => {
+                            return(
+                                vg.platforms.length - 1 === index ?
+                                <span key={index}>{plaftorm}</span>
+                                : <span key={index}>{`${plaftorm} | `}</span>
+                            ) 
+                        })
+                    }
+                </p>
+                
+                <p>Genres: {''}
+                    {errors.genres 
+                        ? <p>{errors.genres}</p> 
+                        : vg.genres.map((genre, index) => {
+                            return(
+                                vg.genres.length - 1 === index ?
+                                <span key={index}>{genre}</span>
+                                : <span key={index}>{`${genre} | `}</span>
+                            ) 
+                        })
+                    }                
+                </p>
             </div>
 
         </div>
