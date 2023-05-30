@@ -2,18 +2,15 @@
     display: flex;
     flex-wrap: wrap;
     margin-top: 25px;
-    padding-left: 150px;
-    /* border: 2px solid white; */
-    /* background-color: rgba(0, 0, 0, 0.4); */
-    /* border-radius: 50px; */
+    justify-content: center;
 }
 
 .loadingContainer {
-    font-size: 25px;
-    margin: auto;
+    font-size: 55px;
 }
 
 .notFoundText {
-    color: rgba(255, 208, 0, 0.794);
+    color: var(--myred2);
     margin-top: 100px;
+    margin-bottom: 400px;
 }

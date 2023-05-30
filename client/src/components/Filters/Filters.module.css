@@ -5,6 +5,7 @@
     align-items: center;
     width: 100%;
     justify-content: center;
+    
     /* position: relative; */
     /* background-color: red; */
 }
@@ -25,9 +26,8 @@
     /* background-color: rgb(89, 89, 89); */
     /* border: 2px solid rgb(95, 209, 219); */
     background-color: black;
-    border: 2px solid rgba(255, 255, 255, 0.855);
-    color: white;
-    
+    border: 2px solid var(--mygrey4);
+    color: white;    
 }
 
 .searchInput:hover {
@@ -35,23 +35,24 @@
 }
 
 .searchInput::placeholder {
-    color: white;
+    color: var(--mygrey4);
 }
 
 .searchSubmitButton {
     font-size: 20px;
-    height: 34px;
+    height: 35px;
     width: 35px;
     border-radius: 5px;
-    background-color: rgb(89, 89, 89);
     background-color: black;
-    /* border: 2px solid rgb(95, 209, 219); */
-    /* border: 2px solid rgb(135, 141, 228); */
-    border: 2px solid rgba(255, 255, 255, 0.855);
+    border: 2px solid var(--mygrey4);
 }
 
 .searchSubmitButton:hover {
-    background-color: rgb(95, 209, 219);
+    background-color: var(--mylightblue);
+    height: 40px;
+    width: 40px;
+    font-size: 23px;
+    border: 4px solid white;
 }
 
 
@@ -62,7 +63,6 @@
     width: 40%;
     height: 30px;
     border-radius: 5px;
-    /* border: 2px solid rgb(95, 209, 219); */
     margin-top: 10px;
     align-items: center;
     justify-content:space-between;
@@ -71,21 +71,23 @@
 
 
 .creatorSelect, .genreSelect, .sortSelect, .resetButton {
-    /* background-color: rgb(89, 89, 89); */
-    border: 2px solid rgb(95, 209, 219);
     background-color: black;
-    border: 2px solid rgba(255, 255, 255, 0.855);
-    color: white;
+    border: 2px solid var(--mygrey4);
+    color: var(--mygrey4);
     height: 100%;
     border-radius: 5px;
     margin: 5px;
 }
 
 .creatorSelect:hover, .genreSelect:hover, .sortSelect:hover, .resetButton:hover {
-    font-size: 15.1px;
+    font-size: 16px;
 }
 
 .resetButton:hover {
     color: black;
-    background-color: rgb(245, 202, 202);
+    background-color: var(--myred);
+}
+
+@media screen and (max-width: 768px) {
+    
 }

@@ -228,7 +228,12 @@ Styled Form.jsx. Added elements to the Form preview. Added simple media queries.
 --- git commit -m "Styled Form.jsx. Added elements to the Form preview. Made minor style changes in other components."
 
 
+Styled Detail.jsx. Repositioned elements in Detail.jsx. Added minor style changes and media queries in other components. Replaced hardcoded colors for css variables in some components.
+--- git commit -m "Styled Detail.jsx. Repositioned elements in Detail.jsx. Added minor style changes and media queries in other components. Replaced hardcoded colors for css variables in some components."
+
+
 Next step: 
+. Make The Footer and the Nav responsive. 
 . Detail.jsx. Responsive: when the device is smaller than... the right part (description) goes down. 
 . Fix Pagination bug. 
 . Delete ugly cards from DB. 

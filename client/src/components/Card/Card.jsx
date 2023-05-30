@@ -20,12 +20,12 @@ const Card = ({id, name, background_image, genres, rating}) => {
                 
                 {/* NAME */}
                 {!name 
-                    ? <h3>No name provided</h3>
-                    : <h3>{name}</h3>
+                    ? <h3 className={styles.title}>No name provided</h3>
+                    : <h3 className={styles.title}>{name}</h3>
                 }
 
                 {/* RATING */}
-                <p className={styles.rating}>{`★ ${rating}`}</p>
+                <p className={styles.rating}>{`☆ ${rating}`}</p>
 
                 {/* GENRES */}
                 <p className={styles.genres}> Genres:{" "}

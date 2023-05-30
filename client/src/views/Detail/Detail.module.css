@@ -1,80 +1,89 @@
-.mainContainer {
-    display: flex;
-    flex-direction: row;
-    margin: 50px;
-    /* background-color: black; */
-}
-
-
 .loadingContainer {
     font-size: 25px;
 }
 
-.dataContainer {
-    background-color: black;
-    /* color: rgba(255, 255, 255, 0.919); */
-    width: 100%;
-    margin: 10px;
-    padding: 10px;
+/* MAIN CONTAINER */
+.mainContainer {
     display: flex;
-    flex-direction: row;
-    /* border: solid white 1px; */
+    flex-direction: column;
+    width:100%;
+    align-items:center;
+    background-color: var(--mygrey2opaque);
+    
+}
+
+.name {
+    font-size: 35px;
+}
+
+.line {
+    width: 80%;
 }
 
 
-
-.leftContainer {
-    /* border: solid red 10px; */
-    max-width: 40%;
-    text-align: left;
-    margin: 10px;
-    font-size: 18px;
-}
-
-.image {
-    /* max-width: 600px; */
-    /* max-width: fit-content */
-    max-width: 100%;
-    object-fit: cover;
-}
-
-.id {
-    font-size: 13px;
-}
-
-.goBackButton {
-    background-color: rgba(0, 225, 255, 0.929);
-    font-size: 18px;
-    width: fit-content;
-}
-
-.goBackButton:hover {
-    background-color: rgba(91, 236, 255, 0.899);
-    color: rgb(56, 121, 56);
-}
-
-
-
-.rightContainer {
-    max-width: 60%;
-    margin: 10px;
-    text-align: justify;
-}
-
+/* DESCRIPTION */
 .description {
-    margin: 50px;
-    /* font-size: 12px; */
-    /* background-color: red; */
+    width: 80%;
+    margin: 20px;
+    text-align: justify;
+    font-size: 18px;
 }
-
 
 .description li {
-    font-size: 12px;
+    font-size: 15px;
     list-style-type: circle;
     list-style-position: inside
-    /* list-style-position: inside; */
 }
 
+
+/* IMAGE AND DATA CONTAINER */
+.imageAndDataContainer {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    margin: 20px;
+    border: white solid 5px;
+    border-radius: 30px;
+}
+
+/* IMAGE */
+.image {
+    width: 50%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 30px;
+}
+
+/* DATA CONTAINER */
+.dataContainer {
+    width: 50%;
+    display:flex;
+    flex-direction:column;
+    background-color: var(--mygrey2opaque);
+    justify-content:center;
+    border-radius: 30px;
+}
+
+.data {
+    font-size: 18px;
+    color: white;
+}
+
+
+/* MEDIA QUERIES */
+@media screen and (max-width:768px) {
+    .name {
+        font-size: 25px;
+    }
+
+    .description {
+        font-size: 16px;
+    }
+
+    .dataContainer {
+        font-size: 14px;
+    }
+}
 
 
 /* .description b {
@@ -97,4 +106,6 @@
 /* .description ul {
 
 } */
+
+
 
