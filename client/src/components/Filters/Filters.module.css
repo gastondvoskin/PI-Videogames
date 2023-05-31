@@ -7,16 +7,16 @@
     justify-content: center;
     
     /* position: relative; */
-    /* background-color: red; */
+   /*  background-color: red; */
 }
 
 /* SEARCHBAR */
 .searchbarContainer {
-    /* background-color: red; */
     display: flex;
     direction: row;
     width: 40%;
     justify-content: center;
+    /* background-color: red; */
 }   
 
 .searchInput {
@@ -60,12 +60,10 @@
 .filtersAndSortsContainer {
     display: flex;
     flex-direction: row;
-    width: 40%;
     height: 30px;
     border-radius: 5px;
     margin-top: 10px;
     align-items: center;
-    justify-content:space-between;
     justify-content: center;
 }
 

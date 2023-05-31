@@ -110,9 +110,16 @@ const Form = () => {
         };
     };
 
+
+    // *** RESET ***
+    const handleReset = (event) => {
+        setVg(emptyVg);
+        setErrors(emptyErrors);
+        setGenresBoxes(emptyGenresBoxes);
+    };
+
     // *** AUTOCOMPLETE ***
     const handleAutocomplete = (event) => {
-
         const autocompletedVg = {
             name: "Example name to autocomplete", 
             image: "https://media.rawg.io/media/screenshots/5c4/5c41cb3b0d15ef0974f930898cedbc6c.jpg", 
@@ -141,20 +148,52 @@ const Form = () => {
                 className={styles.formContainer}
                 onSubmit={handleSubmit}
             >
-                
-                {/* NAME */}
-                <label className={styles.label}>
-                   NAME *{' '} 
-                    <input 
-                        className={`${styles.input} ${styles.nameInput}`}
-                        name="name"
-                        value={vg.name}
-                        onChange={handleChange}
-                        placeholder='Max 250 characters'
-                        autoFocus={true}
-                    />
-                    {errors.name && <p className={styles.errorMessage}>{errors.name}</p>}
-                </label>
+                {/* NAME, RELEASED AND RATING */}
+                <div className={styles.nameAndReleasedAndRatingContainer}>
+                    {/* NAME */}
+                    <label className={styles.label}>
+                        NAME *{' '} 
+                        <input 
+                            className={`${styles.input} ${styles.nameInput}`}
+                            name="name"
+                            value={vg.name}
+                            onChange={handleChange}
+                            placeholder='Name...'
+                            autoFocus={true}
+                        />
+                        {errors.name && <p className={styles.errorMessage}>{errors.name}</p>}
+                    </label>
+
+                    {/* RELEASED */}
+                    <label className={styles.label}>
+                        RELEASED *{' '} 
+                        <input 
+                            className={`${styles.input} ${styles.dateInput}`}
+                            type="date"  /* date format depends on OS settings */
+                            name="released"
+                            value={vg.released}
+                            onChange={handleChange}
+                            max="9999-12-31"
+                        />
+                        {errors.released && <p className={styles.errorMessage}>{errors.released}</p>}
+                    </label>
+
+                    {/* RATING */}
+                    <label className={styles.label}>
+                        RATING *{' '} 
+                        <input 
+                            className={`${styles.input} ${styles.ratingInput}`}
+                            type="number"
+                            name="rating"
+                            value={vg.rating}
+                            onChange={handleChange}
+                            placeholder='1.00-5.00'
+                            step="0.1"
+                        />
+                        {errors.rating && <p className={styles.errorMessage}>{errors.rating}</p>}
+                    </label>
+                </div>
+
 
                 {/* IMAGE */}
                 <label className={styles.label}>
@@ -164,8 +203,8 @@ const Form = () => {
                         name="image"
                         value={vg.image}
                         onChange={handleChange}
-                        placeholder='Include https://'
-                        rows="3"
+                        placeholder='https://...'
+                        rows="1"
                     />
                     {errors.image && <p className={styles.errorMessage}>{errors.image}</p>}
                 </label>
@@ -179,40 +218,10 @@ const Form = () => {
                         value={vg.description}
                         onChange={handleChange}
                         placeholder='Max 1000 characters'
-                        rows="8"
+                        rows="5"
                     />
                     {errors.description && <p className={styles.errorMessage}>{errors.description}</p>}
                 </label>
-
-                {/* RELEASED */}
-                <label className={styles.label}>
-                    DATE OF RELEASE *{' '} 
-                    <input 
-                        type="date"  /* date format depends on OS settings */
-                        name="released"
-                        className={`${styles.input} ${styles.dateInput}`}
-                        value={vg.released}
-                        onChange={handleChange}
-                        max="9999-12-31"
-                    />
-                    {errors.released && <p className={styles.errorMessage}>{errors.released}</p>}
-                </label>
-
-                {/* RATING */}
-                <label className={styles.label}>
-                    RATING *{' '} 
-                    <input 
-                        type="number"
-                        className={`${styles.input} ${styles.ratingInput}`}
-                        name="rating"
-                        value={vg.rating}
-                        onChange={handleChange}
-                        placeholder='1.00-5.00'
-                        step="0.1"
-                    />
-                    {errors.rating && <p className={styles.errorMessage}>{errors.rating}</p>}
-                </label>
-
 
                 {/* PLATFORMS */}
                 <fieldset className={styles.platformsContainer}>
@@ -251,7 +260,6 @@ const Form = () => {
 
                 </fieldset>
 
-
                 {/* GENRES */}
                 <fieldset className={styles.checkboxContainer}>
                     <legend>GENRES *{' '}</legend>
@@ -274,12 +282,16 @@ const Form = () => {
                     {errors.genres && <p className={styles.errorMessage}>{errors.genres}</p>}
                 </fieldset>
 
+                <div className={styles.buttonsContainer}>
+                    {/* SUBMIT */}
+                    <button type="submit" className={styles.submitButton}>✓</button>
 
-                {/* SUBMIT */}
-                <button type="submit" className={styles.submitButton}>✓ ADD TO DATABASE</button>
+                    {/* RESET */}
+                    <button className={styles.resetButton} type="button" onClick={handleReset}>X</button>
 
-                {/* AUTOCOMPLETE DEV */}
-                <button className={styles.autocompleteButton} type="button" onClick={handleAutocomplete}>Autocomplete example (dev)</button>
+                    {/* AUTOCOMPLETE DEV */}
+                    <button className={styles.autocompleteButton} type="button" onClick={handleAutocomplete}>↴</button>
+                </div>
 
             </form>
 

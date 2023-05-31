@@ -1,3 +1,4 @@
+/* MAIN CONTAINER */
 .mainContainer {
     display: flex;
     flex-direction: column;
@@ -5,39 +6,48 @@
     background-color: black;
     width: 100vw;
     height: 100vh;
+    color: white;
 }
 
+
+/* ERROR CODE AND MESSAGE */
 .errorCode {
-    font-size: 30px;
+    margin-top: 70px;
+    font-size: 35px;
     margin-bottom: 10px;
 }
 
 .errorMessage {
-    font-size: 40px;
+    font-size: 45px;
     margin-top: 0px;
 }
 
+
+/* GIF */
 .gif {
     width: 300px;
     margin-top: 0px;
     margin-bottom: 50px;
 }
 
+
+/* GO BACK BUTTON */
 .goBackButton {
     margin: 3px;
-    padding: 5px;
-    background-color: rgb(89, 89, 89);
+    padding: 15px;
+    background-color: var(--mygrey2opaque);
     color: white;
     height: 100%;
-    border: 2px solid rgb(95, 209, 219);
-    border-radius: 5px;
-    font-size: 20px;
+    border: 4px solid var(--mylightblue);
+    border-radius: 10px;
+    font-size: 25px;
 }
 
 .goBackButton:hover {
-    background-color: rgb(139, 183, 187);
+    background-color: var(--mylightblue);
     color: black;
-    font-size: 23px;
+    font-size: 30px;
+    border: solid white 5px;
 }
 
 

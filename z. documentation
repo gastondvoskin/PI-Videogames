@@ -232,28 +232,24 @@ Styled Detail.jsx. Repositioned elements in Detail.jsx. Added minor style change
 --- git commit -m "Styled Detail.jsx. Repositioned elements in Detail.jsx. Added minor style changes and media queries in other components. Replaced hardcoded colors for css variables in some components."
 
 
-Next step: 
-. Make The Footer and the Nav responsive. 
-. Detail.jsx. Responsive: when the device is smaller than... the right part (description) goes down. 
-. Fix Pagination bug. 
-. Delete ugly cards from DB. 
-
+Made minor style changes to improve responsiveness. Deleted videogames from DB through PgAdmin4. Added Reset button to Form.jsx. Changed inputs background color in Form.jsx. Changed buttons styles in Form.jsx. Made minor style changes in other components. Reordered inputs in Form.jsx. 
+--- git commit -m "Added Reset button to Form.jsx. Restyled Form.jsx Made minor style changes in other components."
 
 Next step: 
+- Pagination.jsx. Check if I am not rendering a hardcoded array of 13. It shpuld change the number of buttons when filtering by genre. Check currentPage in redux and Home and Pagination components. Eg filter by arcade: there should be less pages.  
 - Testing
 
-- Analyze VideogamesClientFlow.png (https://app.diagrams.net/).
-- Add back-end flow diagram. 
-- Add testing to api and to client. 
-- Deploy
-- Record a presentation to upload to Youtube and to be prepared for the PI presentation in Henry. 
+
+
+
+- Record a presentation to upload to Youtube and to be prepared for the PI presentation in Henry. CHeck diagrams: VideogamesClientFlow.png (https://app.diagrams.net/). Back-end: previous project general diagram. 
+- Deploy.
 
 
 Ideas for the future: 
-- Form.jsx. Add a "See your last created videogame" in the right side.
 - style the Form.jsx window alert. 
 - Dark/light themes toggle. 
+- Responsive for phone. 
 
 Bugs. 
-- Pagination.jsx. It shpuld change the number of buttons when filtering by genre. Check currentPage in redux. 
 - Form.jsx genres controlled by localState even if the user goes directly to /form. Render all videogames in Home after creating a new one (without refreshing the page). 

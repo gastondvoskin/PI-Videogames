@@ -7,7 +7,6 @@ body {
   font-family: arial;
   font-size: 20px; 
   
-  
   background-color: black;
   background-image: url("../src/assets/backgrounds/texturedBg.jpg");
   background-position: center;
@@ -15,42 +14,46 @@ body {
   /* background-repeat: no-repeat; */  
 }
 
+
+/* CSS COLOR VARIABLES */
 :root {
+  /* ---------- MY LIGHTBLUE ---------- */
   /* mylightblue is used for background in Landing start button, color in activeLink in Nav, color in Card hover. */
   --mylightblue: rgb(95, 209, 219);
-  /* mylightblue2 is used for normalLink in Nav */
+  /* MYLIGHTBLUE IS THE CURRENT MAIN COLOR besides black, white and greys. mylightblue2 is used for normalLink in Nav */
   --mylightblue2: rgb(15, 145, 157);
   /* mylightblue3 is used for normalLink:hover in Nav */
   --mylightblue3: rgb(139, 183, 187);
 
-  /* MY GREY */
+  /* ---------- MY GREY ---------- */
   /* mygrey is used for button in Pagination */
   --mygrey: rgb(89, 89, 89);
-
   /* my grey opaque is used for background in Form */
   --mygreyopaque: rgba(89, 89, 89, 0.496);
-  
+  /* mygrey2 */
   --mygrey2: rgb(56, 53, 54);
   /* mygrey2 is used for background preview and genres checkbox container in Form */
   --mygrey2opaque: rgba(56, 53, 54, 0.468);
-
   /*mygrey3 is usedfor background in Card  */
   --mygrey3: rgb(19, 19, 19);
-
   /* mygrey4 is used for color in Card, color and border in Filters */
   --mygrey4: rgb(196, 196, 196);
+    /* mygrey3 is used for input background in Form */
+    --mygrey3opaque: rgba(19, 19, 19, 0.6);
 
-  /* mywhite is used for background in Nav and Footer */
-  --mywhite: white;
-  --myblack: black; 
-  --myviolet: rgb(135, 141, 228);
-
-  /* mypurple is used for border in Nav and Footer. */
-  --mypurple: rgb(96, 104, 214);
-
-  /* MY RED */
+  /* ---------- MY RED ---------- */
   /* myred is used for delete platform in Form */
   --myred: rgb(239, 87, 87);
   /* myred2 is used for error messages in Form, delete platform hover in Form */
   --myred2: rgb(234, 19, 19);
+  /* mywhite is used for background in Nav and Footer */
+
+  /* ---------- MY PURPLE ---------- */
+  --myviolet: rgb(135, 141, 228);
+  /* mypurple is used for border in Nav and Footer. */
+  --mypurple: rgb(96, 104, 214);
+
+  /* ---------- OTHERS ---------- */
+  --mywhite: white;
+  --myblack: black; 
 }
