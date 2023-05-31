@@ -1,7 +1,7 @@
 const validateName = (value) => {
-    console.log(0);
+    // console.log(0);
     if (value === '') return "Required field"; 
-    if (value.length > 200) return "Max 200 characters"; 
+    if (value.length > 100) return "Max 100 characters"; 
     return '';
 };
 
@@ -19,7 +19,7 @@ const validateImage = (value) => {
 
 const validateDescription = (value) => {
     if (value === '') return "Required field"; 
-    if (value.length > 1000) return "Max 1000 characters"; 
+    if (value.length > 1500) return "Max 1500 characters"; 
     return ""; 
 };
 
@@ -59,28 +59,29 @@ export const validateGenres = (updatedGenres) => {
 };
 
 export const validatePlatforms = (platforms) => {
+    console.log('platforms[0]: ', platforms[0]);
     const emptyFields = platforms.includes('');
-    const exceededCharacters = platforms.some(platform => platform.length > 100);
+    const exceededCharacters = platforms.some(platform => platform.length > 50);
     if (platforms[0] === '') return "The first platform cannot be empty.";
     if (emptyFields) return "The platform fields cannot be empty. If needed, delete the platform.";
-    if (exceededCharacters) return "Max 100 characters for each platform";
+    if (exceededCharacters) return "Max 50 characters for each platform";
     return "";
 };
 
 export const validateSubmit = (vg, errors) => {
     const requiredFields = vg.name === '' || vg.image === '' || vg.description === '' || vg.released === '' || vg.rating === '' || vg.platforms[0] === '' || vg.genres.length === 0 
-    ? "Please complete all the fields." 
-    : ""
+        ? "Please complete all the fields." 
+        : ""
 
     const fixErrors = Object.values(errors).some(error => error !== '') 
-    ? "Please fix the errors." 
-    : ""
+        ? "Please fix the errors." 
+        : ""
 
-    const errorMessage = requiredFields || fixErrors ? `${requiredFields} ${fixErrors}` : null;
+    const errorMessage = requiredFields || fixErrors 
+        ? `${requiredFields} ${fixErrors}` 
+        : null;
     return errorMessage; 
 };
-
-
 
 
 const validationFunctions = {

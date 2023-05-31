@@ -12,8 +12,8 @@ const Pagination = (props) => {
 
     let { numberOfPages } = props;
 
-    /* hardcoded numberOfPages for development purposes */
-    numberOfPages = 13;
+    /* hardcoded numberOfPages only for development purposes */
+    /* numberOfPages = 13; */
 
     const pageNumbersArray = [];
     for (let pageNumber = 1; pageNumber <= numberOfPages; pageNumber++) {

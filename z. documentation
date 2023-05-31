@@ -235,21 +235,26 @@ Styled Detail.jsx. Repositioned elements in Detail.jsx. Added minor style change
 Made minor style changes to improve responsiveness. Deleted videogames from DB through PgAdmin4. Added Reset button to Form.jsx. Changed inputs background color in Form.jsx. Changed buttons styles in Form.jsx. Made minor style changes in other components. Reordered inputs in Form.jsx. 
 --- git commit -m "Added Reset button to Form.jsx. Restyled Form.jsx Made minor style changes in other components."
 
-Next step: 
-- Pagination.jsx. Check if I am not rendering a hardcoded array of 13. It shpuld change the number of buttons when filtering by genre. Check currentPage in redux and Home and Pagination components. Eg filter by arcade: there should be less pages.  
-- Testing
-
-
-
-
-- Record a presentation to upload to Youtube and to be prepared for the PI presentation in Henry. CHeck diagrams: VideogamesClientFlow.png (https://app.diagrams.net/). Back-end: previous project general diagram. 
-- Deploy.
-
 
 Ideas for the future: 
 - style the Form.jsx window alert. 
 - Dark/light themes toggle. 
 - Responsive for phone. 
+- Record a presentation to upload to Youtube and to be prepared for the PI presentation in Henry. CHeck diagrams: VideogamesClientFlow.png (https://app.diagrams.net/). Back-end: previous project general diagram. 
+- Deploy.
 
-Bugs. 
+Bugs:
 - Form.jsx genres controlled by localState even if the user goes directly to /form. Render all videogames in Home after creating a new one (without refreshing the page). 
+Commented numberOfPages = 13 in Pagination to stop using a hardcoded array. 
+
+Implemented Form.test.js. Created tests for all validateFunctions.js. 
+--- git commit -m "Implemented Form.test.js. Fixed minor bug in Pagination.jsx."
+
+Next step: 
+- Test in back-end. 
+- Test in DB. 
+
+
+
+
+

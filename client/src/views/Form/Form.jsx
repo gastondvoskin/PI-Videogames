@@ -94,7 +94,7 @@ const Form = () => {
     // *** SUBMIT ***
     const handleSubmit = (event) => {
         event.preventDefault();
-        const errorMessage = validateSubmit(vg, errors); // '' or "Please... "
+        const errorMessage = validateSubmit(vg, errors); // null or "Please..."
         if (errorMessage) {
             window.alert(errorMessage);  
         } else {
