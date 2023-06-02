@@ -244,6 +244,7 @@ Ideas for the future:
 - Deploy.
 
 Bugs:
+- After creating a vg, I should be able to enter the detail without refreshing. To achieve that, I should provide my created vg the proper id or dispatch again all the vg. 
 - Form.jsx genres controlled by localState even if the user goes directly to /form. Render all videogames in Home after creating a new one (without refreshing the page). 
 Commented numberOfPages = 13 in Pagination to stop using a hardcoded array. 
 
@@ -251,10 +252,10 @@ Implemented Form.test.js. Created tests for all validateFunctions.js.
 --- git commit -m "Implemented Form.test.js. Fixed minor bug in Pagination.jsx."
 
 Next step: 
-- Test in back-end. 
+- Test in back-end: controllers.js. Test including promise. Research in Jest documentation and with ChatGPT. 
 - Test in DB. 
 
-
-
+Back-end. Tests that came with the blank project: replaced "Recipe" for "Videogame". Created a new folder: __tests__ to start my own tests. Replaced describe for xdescribe in old tests in back-end and commented both files.  
+--- git commit -m "Commented back-end tests."
 
 
