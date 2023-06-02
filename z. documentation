@@ -257,8 +257,8 @@ Next step:
 
 Made a backup of the whole project with all the dependencies (+1 GB) in external harddrive. 
 Cloned the repository in Macbook. 
-Added REAME_NEW.txt file to ckech git push and git pull. 
---- git commit -m "Added REAME_NEW.txt file to ckech git push and git pull."
+Added REDAME_NEW.txt file to ckech git push and git pull. 
+--- git commit -m "Added README_NEW.txt file to ckech git push and git pull."
 
 
 
