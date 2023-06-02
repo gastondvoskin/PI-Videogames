@@ -258,4 +258,13 @@ Next step:
 Back-end. Tests that came with the blank project: replaced "Recipe" for "Videogame". Created a new folder: __tests__ to start my own tests. Replaced describe for xdescribe in old tests in back-end and commented both files.  
 --- git commit -m "Commented back-end tests."
 
+Made a backup of the whole project with all the dependencies (+1 GB) in external harddrive. 
+Cloned the repository in Macbook. 
+Added REAME_NEW.txt file to ckech git push and git pull. 
+--- git commit -m "Added REAME_NEW.txt file to ckech git push and git pull."
+
+
+
+
+
 
