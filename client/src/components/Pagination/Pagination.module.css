@@ -31,3 +31,21 @@
     background-color: rgb(95, 209, 219);
     color: black;
 }
+
+.arrows {
+    margin-left: 10px;
+    margin-right: 10px;
+    /* background: red; */
+}
+
+.disabled {
+    background-color: var(--mygrey4);
+    color: var(--mygrey);
+    font-size: 14px;
+}
+
+.disabled:hover {
+    background-color: var(--mygrey4);
+    color: var(--mygrey);
+    font-size: 14px;
+}

@@ -284,3 +284,8 @@ Back-end. Replaced index.js for a standard configuration.
 About.jsx. Added back-end flow diagram. 
 Made minor refactoring in the back-end. 
 --- git commit -m "Replaced index.js in the back-end to get a standard and simple configuration. Added a back-end flow diagram in About.jsx. Made minor refactoring in the back-end."
+
+
+Replaced fieldset with div in Form.jsx. 
+Added Previos page and Next page in Pagination. Duplicated Pagination in Home (above and below Cards). 
+--- git commit -m "Added Previous, Next, First, Last in Pagination. Made minor changes"

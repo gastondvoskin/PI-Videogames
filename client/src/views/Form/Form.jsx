@@ -235,8 +235,8 @@ const Form = () => {
                 </label>
 
                 {/* PLATFORMS */}
-                <fieldset className={styles.platformsContainer}>
-                    <legend>PLATFORMS *{' '} </legend>
+                <legend>PLATFORMS *{' '} </legend>
+                <div className={styles.platformsContainer}>
                     {vg.platforms?.map((platform, index) => {
                         return (
                             <div className={styles.platformsSubContainer} key={index}>
@@ -268,12 +268,11 @@ const Form = () => {
                         )
                     })}
                     {errors.platforms && <p className={styles.errorMessage}>{errors.platforms}</p>}
-
-                </fieldset>
+                </div>
 
                 {/* GENRES */}
-                <fieldset className={styles.checkboxContainer}>
-                    <legend>GENRES *{' '}</legend>
+                <legend>GENRES *{' '}</legend>
+                <div className={styles.checkboxContainer}>
                     <div className={styles.checkboxSubcontainer}>
                         {allGenres.map((genre, index) => {
                             return (
@@ -291,7 +290,7 @@ const Form = () => {
                         })}
                     </div>
                     {errors.genres && <p className={styles.errorMessage}>{errors.genres}</p>}
-                </fieldset>
+                </div>
 
                 <div className={styles.buttonsContainer}>
                     {/* SUBMIT */}
