@@ -278,3 +278,9 @@ Quick time player. Record secreen with audio. Options to select the audio source
 Form.jsx. handleAutocomplete updated it to avoid changing platforms. 
 App.js. Added comment "accessory" to the lines that I don't need for this webpage. 
 --- git commit -m "Added Recorrido.txt"
+
+
+Back-end. Replaced index.js for a standard configuration. 
+About.jsx. Added back-end flow diagram. 
+Made minor refactoring in the back-end. 
+--- git commit -m "Replaced index.js in the back-end to get a standard and simple configuration. Added a back-end flow diagram in About.jsx. Made minor refactoring in the back-end."

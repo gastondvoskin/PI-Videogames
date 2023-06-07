@@ -17,6 +17,9 @@ module.exports = (sequelize) => {
       background_image: {
         type: DataTypes.STRING,
         allowNull: false,
+        /* validate: {
+          is: /^image\/(jpeg|png|gif)$/, // accepts JPEG, PNG, and GIF formats
+        }, */
       },
       platforms: {                      // array of objects. I need each's object property name. eg PlayStation 5, Xbox Series S/X, etc. 
         type: DataTypes.ARRAY(DataTypes.STRING),

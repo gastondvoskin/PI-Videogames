@@ -2,9 +2,11 @@ const { Videogame, Genre } = require('../db.js');
 
 
 const postVg = async (name, background_image, platforms, released, rating, description, genres) => {
-    // 'NIY: Esta ruta recibirá todos los datos necesarios para crear un videojuego y relacionarlo con sus géneros solicitados. Toda la información debe ser recibida por body. Debe crear un videojuego en la base de datos, y este debe estar relacionado con sus géneros indicados (al menos uno).'
-    // validate all the required data to create a videogame was received.
+
+    // simple validatations. There are more validations in the front-end before submitting the Form. 
     if (!name) throw Error('The request is missing the name field');
+    // The result of adding a validation that does not exist in the front-end is that the window.alert says "Videogame added to DB" and the videogame will appear in Home.jsx if not refreshing, but the videogame was not actually added to the DB but to the currentVg property in redux. Then, when refreshing, the videogame will not be rendered.
+    // if (name.length > 4) throw Error('The name cannot have more than 4 characters');        
     if (!background_image) throw Error('The request is missing the background_image field');
     if (!platforms.length) throw Error('The videogame must have at least one platform');
     if (!released) throw Error('The request is missing the released field');
@@ -17,8 +19,8 @@ const postVg = async (name, background_image, platforms, released, rating, descr
     });
     const genresFromDb = await Genre.findAll({where: {name: genres}});
     await vgInstance.addGenres(genresFromDb);
-    const vgCreated = {name, background_image, platforms, released, rating, description, genres};
-    return vgCreated;
+    // const vgCreated = {name, background_image, platforms, released, rating, description, genres};
+    // return vgCreated;
 };
 
 

@@ -1,3 +1,5 @@
+// REQUIRE: ROUTER from express AND HANDLERS
+const { Router } = require('express');
 const {
     handleGetVg,
     handleGetVgById, 
@@ -5,17 +7,20 @@ const {
     handlePostVg 
 } = require('../handlers/handlers.js');
 
-const { Router } = require('express');
-// Importar todos los routers;
 
+// ROUTER()
 const router = Router();
 
-// in the case I got more routes, create new routes files and replace rouse.get or router.post for router.use to modularize. 
+
+// ROUTES
+// To add many more routes, modularize: create new routes files and replace rouse.get or router.post for router.use. 
 router.get('/videogames/:idVideogame', handleGetVgById);
 router.get('/videogames', handleGetVg);
 router.get('/genres', handleGetGenres);
 router.post('/videogames', handlePostVg);
 
+
+// EXPORTS
 module.exports = router;
 
 

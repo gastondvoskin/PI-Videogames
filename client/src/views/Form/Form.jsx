@@ -119,7 +119,7 @@ const Form = () => {
     };
 
     // *** AUTOCOMPLETE ***
-    const handleAutocomplete = (event) => {
+    const handleAutocomplete1 = (event) => {
         const autocompletedVg = {
             name: "Example name to autocomplete", 
             image: "https://media.rawg.io/media/screenshots/5c4/5c41cb3b0d15ef0974f930898cedbc6c.jpg", 
@@ -134,6 +134,19 @@ const Form = () => {
         // const updatedGenresBoxes = [...genresBoxes];
         // updatedGenresBoxes[1] = true;
         // setGenresBoxes(updatedGenresBoxes);
+    };
+
+    const handleAutocomplete2 = (event) => {
+        const autocompletedVg = {
+            name: "Other EXAMPLE", 
+            image: "https://media.rawg.io/media/games/562/562553814dd54e001a541e4ee83a591c.jpg", 
+            description: "Unleash your inner hero in an expansive open world filled with breathtaking landscapes, epic battles, and captivating quests. Customize your character, master unique abilities, and forge alliances in a rich, immersive storyline. Experience the thrill of intense combat, unravel deep mysteries, and shape your destiny in this unforgettable action-adventure RPG set in a stunningly detailed and dynamic world.", 
+            released: "2013-01-01", 
+            rating: "4.05", 
+            platforms: ["Mac", "Linux"], 
+            genres: []
+        };
+        setVg(autocompletedVg);
     };
 
 
@@ -287,8 +300,11 @@ const Form = () => {
                     {/* RESET */}
                     <button className={styles.resetButton} type="button" onClick={handleReset}>X</button>
 
-                    {/* AUTOCOMPLETE DEV */}
-                    <button className={styles.autocompleteButton} type="button" onClick={handleAutocomplete}>↴</button>
+                    {/* AUTOCOMPLETE DEV 1 */}
+                    <button className={styles.autocompleteButton} type="button" onClick={handleAutocomplete1}>↴1</button>
+
+                    {/* AUTOCOMPLETE DEV 2 */}
+                    <button className={styles.autocompleteButton} type="button" onClick={handleAutocomplete2}>↴2</button>
                 </div>
 
             </form>

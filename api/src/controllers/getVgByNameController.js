@@ -20,9 +20,12 @@ const getVgByName = async (name) => {
             through: {attributes: []}       // [] to exclude junction table. See eager loading. 
         }]
     });
+
     // may be modularized with a cleaner function
     const dbVgByNameClean = dbData.map((vg) => {
         const { id, name, background_image, platforms, released, rating, Genres } = vg;
+        console.log('Genres: ', Genres);
+
         return {
             id, 
             name, 
@@ -33,18 +36,18 @@ const getVgByName = async (name) => {
             genres: Genres.map(genre => genre.name)
         }
     }); 
-    console.log('dbVgByNameClean.length: ', dbVgByNameClean.length);
+    // console.log('dbVgByNameClean.length: ', dbVgByNameClean.length);
 
 
     // data from rawg
     const API_URL = `https://api.rawg.io/api/games?key=${API_KEY}&search=${name}`;
     const apiData = await axios.get(API_URL);
     const apiVgByNameRawFirstFilt = apiData.data.results;
-    console.log('apiVgByNameRawFirstFilt: ', apiVgByNameRawFirstFilt);
+    // console.log('apiVgByNameRawFirstFilt: ', apiVgByNameRawFirstFilt);
 
     // second filter to unify criteria with db search
     const apiVgByNameRawSecondFilt = apiVgByNameRawFirstFilt.filter(vg => { 
-        return vg.name.toLowerCase().includes(name.toLowerCase())
+        return vg.name.toLowerCase().includes(name.toLowerCase());
     });
     // in case rawg doesn't find any videogame with the provided name, apiVgByNameRaw will be []
     // what happens if name, background_image, etc are empty for a rawg mistake? Should I verify?
@@ -60,16 +63,16 @@ const getVgByName = async (name) => {
             genres: genres.map(genre => genre.name),
         }
     });
-    console.log('apiVgByNameClean.length: ', apiVgByNameClean.length);
+    // console.log('apiVgByNameClean.length: ', apiVgByNameClean.length);
 
     // concat db with rawg
     const allVgByName = [...dbVgByNameClean, ...apiVgByNameClean];
-    console.log('allVgByName.length: ', allVgByName.length);
+    // console.log('allVgByName.length: ', allVgByName.length);
 
     // slice up to 15 videogames
     const numberOfResults = 15; 
     const fifteenVgByNameSlice = allVgByName.slice(0,numberOfResults); 
-    console.log('fifteenVgByNameSlice.length: ', fifteenVgByNameSlice.length);
+    // console.log('fifteenVgByNameSlice.length: ', fifteenVgByNameSlice.length);
 
     // return 15 videogames or return a message in case the array is empty. 
     return fifteenVgByNameSlice.length ? 

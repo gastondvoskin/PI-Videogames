@@ -74,6 +74,16 @@
 }
 
 
+/* DIAGRAMS */
+.diagramsContainer {
+    
+}
+
+.backDiagram {
+    width: 95%;
+}
+
+
 /* CONTACT */
 .link {
     color: var(--mylightblue3);
@@ -88,5 +98,9 @@
 @media screen and (max-width:768px) {
     .mainContainer {
         font-size: 16px;
+    }
+
+    .diagramsContainer {
+        display: none;
     }
 }

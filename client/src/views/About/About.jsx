@@ -5,7 +5,7 @@ import nodeJsLogo from "../../assets/logosAbout/nodeJsLogo.webp";
 import expressJsLogo from "../../assets/logosAbout/expressJsLogo.svg";
 import sequelizeLogo from "../../assets/logosAbout/sequelizeLogo.png";
 import { useState } from "react";
-
+import backDiagram from "../../assets/diagrams/videogamesBackFlow.jpg"
 
 import styles from "./About.module.css";
 
@@ -19,7 +19,8 @@ const About = () => {
     const [ view, setView ] = useState({
         technologies: false,
         functionalities: false,
-        contact: false
+        contact: false,
+        diagrams: false
     });
 
     const handleView = (event) => {
@@ -35,46 +36,6 @@ const About = () => {
                 <p>My name is Gastón Dvoskin, and I am a full-stack web developer. This project was created in 2023 as part of my studies at Soy Henry Accademy.</p> 
                 <p>In this section, you will discover the key features of the webpage and the technologies I employed to build it.</p>
             </div>
-            
-
-            {/* TECNOLOGIES */}
-            <section className={styles.sectionContainer}>
-                <div className={styles.subtitleAndButtonContainer}>
-                    <h2 className={styles.subtitle}>TECHNOLOGIES</h2>
-                    <button className={styles.viewButton} name="technologies" onClick={handleView}>{view.technologies ? HIDE_ICON : SHOW_ICON}</button>
-                </div>
-                {view.technologies && 
-                <div className={styles.dataContainer}>
-                    <p>The main tecnologies used for this project were: {/* Javascript, React, Redux, NodeJS, Express and Sequelize */}</p>
-
-                    <div className={styles.allLogosContainer}>
-                        <div className={styles.logoContainer}>
-                            <img className={styles.logo} src={jsLogo} alt="jsLogo"/>
-                            <h4>Javascript</h4>
-                        </div>
-                        <div className={styles.logoContainer}>
-                            <img className={styles.logo} src={reactLogo} alt="reactLogo"/>
-                            <h4>React</h4>
-                        </div>
-                        <div className={styles.logoContainer}>
-                            <img className={styles.logo} src={reduxLogo} alt="reduxLogo"/>
-                            <h4>Redux</h4>
-                        </div>
-                        <div className={styles.logoContainer}>
-                            <img className={styles.logo} src={nodeJsLogo} alt="nodeLogo"/>
-                            <h4>NodeJS</h4>
-                        </div>
-                        <div className={styles.logoContainer}>
-                            <img className={styles.logo} src={expressJsLogo} alt="expressLogo"/>
-                            <h4>Express</h4>
-                        </div>
-                        <div className={styles.logoContainer}>
-                            <img className={styles.logo} src={sequelizeLogo} alt="sequelizeLogo"/>
-                            <h4>Sequelize</h4>
-                        </div>
-                    </div>                
-                </div>}
-            </section>
             
 
             {/* FUNCTIONALITIES */}
@@ -114,6 +75,61 @@ const About = () => {
                 </div>}
             </section>
 
+            {/* TECHNOLOGIES */}
+            <section className={styles.sectionContainer}>
+                <div className={styles.subtitleAndButtonContainer}>
+                    <h2 className={styles.subtitle}>TECHNOLOGIES</h2>
+                    <button className={styles.viewButton} name="technologies" onClick={handleView}>{view.technologies ? HIDE_ICON : SHOW_ICON}</button>
+                </div>
+                {view.technologies && 
+                <div className={styles.dataContainer}>
+                    <p>The main tecnologies used for this project were: {/* Javascript, React, Redux, NodeJS, Express and Sequelize */}</p>
+
+                    <div className={styles.allLogosContainer}>
+                        <div className={styles.logoContainer}>
+                            <img className={styles.logo} src={jsLogo} alt="jsLogo"/>
+                            <h4>Javascript</h4>
+                        </div>
+                        <div className={styles.logoContainer}>
+                            <img className={styles.logo} src={reactLogo} alt="reactLogo"/>
+                            <h4>React</h4>
+                        </div>
+                        <div className={styles.logoContainer}>
+                            <img className={styles.logo} src={reduxLogo} alt="reduxLogo"/>
+                            <h4>Redux</h4>
+                        </div>
+                        <div className={styles.logoContainer}>
+                            <img className={styles.logo} src={nodeJsLogo} alt="nodeLogo"/>
+                            <h4>NodeJS</h4>
+                        </div>
+                        <div className={styles.logoContainer}>
+                            <img className={styles.logo} src={expressJsLogo} alt="expressLogo"/>
+                            <h4>Express</h4>
+                        </div>
+                        <div className={styles.logoContainer}>
+                            <img className={styles.logo} src={sequelizeLogo} alt="sequelizeLogo"/>
+                            <h4>Sequelize</h4>
+                        </div>
+                    </div>                
+                </div>}
+            </section>
+            
+            {/* DEVELOPMENT DIAGRAMS */}
+            <section className={`${styles.sectionContainer} ${styles.diagramsContainer}`}>
+                <div className={styles.subtitleAndButtonContainer}>
+                    <h2 className={styles.subtitle}>DEVELOPMENT DIAGRAMS</h2>
+                    <button className={styles.viewButton} name="diagrams" onClick={handleView}>{view.diagrams ? HIDE_ICON : SHOW_ICON}</button>
+                </div>
+                {view.diagrams && 
+                <div className={styles.dataContainer}>
+                    <img className={styles.backDiagram} src={backDiagram} alt="diagram" />
+                    <p>Thank you for visiting my webpage and exploring the wide range of available videogames</p>               
+                </div>}
+            </section>
+
+
+            
+
 
             {/* CONTACT */}
             <section className={styles.sectionContainer}>
@@ -129,6 +145,7 @@ const About = () => {
                     <p>Once again, thank you for your visit!</p>                
                 </div>}
             </section>
+
         </div>
     );
 };
