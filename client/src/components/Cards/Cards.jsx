@@ -31,6 +31,7 @@ const Cards = (props) => {
                 !currentVg.length ? 
                 <Loading />
                 : renderedVg.map((vg, index) => {
+                    console.log(vg.background_image);
                     return (
                         <Card 
                             key={index}

@@ -127,15 +127,13 @@ const Form = () => {
             released: "2000-11-11", 
             rating: "2.57", 
             platforms: ["Mac", "PlayStation", "My own platform"], 
-            genres: ["Action", "Simulation", "Family"]
+            genres: []
         };
         setVg(autocompletedVg);
 
-        const updatedGenresBoxes = [...genresBoxes];
-        updatedGenresBoxes[2] = true;
-        updatedGenresBoxes[5] = true;
-        updatedGenresBoxes[14] = true;
-        setGenresBoxes(updatedGenresBoxes);
+        // const updatedGenresBoxes = [...genresBoxes];
+        // updatedGenresBoxes[1] = true;
+        // setGenresBoxes(updatedGenresBoxes);
     };
 
 

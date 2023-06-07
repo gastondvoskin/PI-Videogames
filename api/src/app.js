@@ -1,6 +1,6 @@
 const express = require('express');
-const cookieParser = require('cookie-parser');
-const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');    // accessory
+const bodyParser = require('body-parser');        // accessory in express > 4.16
 const morgan = require('morgan');
 const router = require('./routes/indexRouter.js');
 
@@ -8,11 +8,11 @@ require('./db.js');
 
 const server = express();
 
-server.name = 'API';
+server.name = 'API';    // accessory
 
-server.use(bodyParser.urlencoded({ extended: true, limit: '50mb' }));
-server.use(bodyParser.json({ limit: '50mb' }));
-server.use(cookieParser());
+server.use(bodyParser.urlencoded({ extended: true, limit: '50mb' }));     // accessory in express > 4.16
+server.use(bodyParser.json({ limit: '50mb' }));           // accessory in express > 4.16
+server.use(cookieParser());       // accessory
 server.use(morgan('dev'));
 server.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', 'http://localhost:3000'); // update to match the domain you will make the request from

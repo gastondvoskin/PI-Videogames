@@ -247,6 +247,7 @@ Bugs:
 - After creating a vg, I should be able to enter the detail without refreshing. To achieve that, I should provide my created vg the proper id or dispatch again all the vg. 
 - Form.jsx genres controlled by localState even if the user goes directly to /form. Render all videogames in Home after creating a new one (without refreshing the page). 
 Commented numberOfPages = 13 in Pagination to stop using a hardcoded array. 
+- Cards.jsx. When changin the page, it shouldn't render the image until it is the right one. 
 
 Implemented Form.test.js. Created tests for all validateFunctions.js. 
 --- git commit -m "Implemented Form.test.js. Fixed minor bug in Pagination.jsx."
@@ -264,7 +265,16 @@ Added REDAME_NEW.txt file to ckech git push and git pull.
 --- git commit -m "Added README_NEW.txt file to ckech git push and git pull."
 
 
+---------------------------------------------------------------------------------------------------------------
+Macbook (not iMac). 
+api. npm i. Created .env (with the same information of iMac). Changed to force: true. 
+database. Created videogames database in postgreSQL. 
+client. 
 
 
-
-
+added "Recorrido.txt" to make a demo in spanish. 
+Video. shift cmd 5 (without sound).
+Quick time player. Record secreen with audio. Options to select the audio source. 
+Form.jsx. handleAutocomplete updated it to avoid changing platforms. 
+App.js. Added comment "accessory" to the lines that I don't need for this webpage. 
+--- git commit -m "Added Recorrido.txt"

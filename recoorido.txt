@@ -1,0 +1,43 @@
+Landing.
+Landing. Botón para ingresar a la Home. 
+
+Home, Paginado, Filtros, Ordenamiento. 
+Home. Renderiza los primeros 150 resultados de la api rawg y los resultados de mi base de datos. Cada videojuego muestra una imagen, el título, el rating y los géneros. 
+La Home tiene un paginado que muestra 15 resultados por página. 
+La Home permite filtrar resultados por nombre, arrojando hasta 15 resultados, ubicando primero los de la base de datos. 
+En la Home también se pueden aplicar filtros combinados por creador y por género, y ordenar los resultados de cualquier filtro de forma alfabética y según el rating del videojuego. Además se pueden resetear todos los filtros. 
+
+Detalle. 
+Haciendo click sobre cuaalquier videojuego, cambiamos a la vista del Detalle del videojuego seleccionado. 
+La vista del videjuego muestra el título, la descripción, la imagen y dalgunos datos concretos: id, ating, fecha de publicación, géneros y plataformas. 
+
+Nav, Footer. 
+Volviendo a la Home, podemos ver que en todas vistas, exceptuando la Landing, podemos ver un Nav y un Footer.
+El Nav contiene tres links para cambiar a las distintas vistas: Home, Admin y About. Además, tiene un logo que también lleva a la Home. 
+El Footer tiene el nombre del desarrollador de la página y sus links a GitHub y Linkedin, que se abren en páginas en blanco. 
+
+Admin. 
+La vista de Admin nos permite crear un videojuego nuevo que se agrega a la base de datos y luego puede renderizarse, filtrarse, ordenarse y acceder a su detalle como con cualquier otro videojuego. 
+El formulario tiene todos los campos validados. A medida que se hace un cambio y hay un error, el error se renderiza inmediatamente. Además, hay una validación final al hacer submit que muestra si hubo un error y chequea que ningún campo haya quedado vacío. Este error se valida al final para que el usuario no reciba mensajes de error antes de realizar cambios. 
+A la derecha hay una preview del videojuego que se está creando. 
+Al final del Form hay tres botones: uno de submit, uno de resetear el formulario y otro de llenado automático con valores preestablecidos para probar rápidamente el formulario. 
+
+About. 
+Muestra en tres secciones las tecnologías utilizadas para el proyecto, las funcionalidades principales y las formas de contactar con el desarrollador de la página. 
+
+Error. 
+Página de error cuando no existe la URL. 
+
+Funcionalidades demostración: 
+- Validaciones del Form. Creación de un videjuego. Renderizado del videojuego, filtros y ordenamiento. 
+- Paginado, búsqueda por nombre, filtros combinados, ordenamiento, mensaje de no encontrado, reseteo. 
+
+Responsiveness para dispositivos más pequeños (no para celulares).
+Componentes achicando el viewport. 
+
+Otros. 
+Loading mientras se cargan los videojuegos y el detalle de un videjuego. /devloading
+
+
+
+Código. 
