@@ -302,3 +302,7 @@ Admin. Replaced const genres = oldValue === false with !oldValue. Added checked=
 Back: postVgController and handler. Adapted to send the videogame (instead of a "Created videogame" message) so in the Front-end I have access to the id. 
 Admin. Updated handleSubmit to dispatch updateWithNewVg with the id, so it is not necessary to refresh the page in order to enter to the Detail view. 
 --- git commit -m "Renamed Form as Admin. Fixed checkboxes. Fixed handlePostVg (back-end) and handleSubmit to dispatch the action updateWithNewVg with the id. Improved variables names and added comments. Updated readme.txt and renamed the previous one as Instructions.txt. Updated videogamesFrontFlow diagram and added it to About.jsx."
+
+
+Styled arrows in Pagination. Replaced hardcoded colors with css variables. Fixed minor issue with lastPageArrow. Restyled submitSearch in Filters. Resized autocomplete buttons in Admin. 
+--- git commit -m "Restyled Pagination arrows, Filters submitSearch and Admin autocompleteButtons." 

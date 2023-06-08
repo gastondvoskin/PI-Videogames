@@ -12,7 +12,7 @@
     margin: 5px;
     margin-top: 20px;
     padding: 8px;
-    background-color: rgb(89, 89, 89);
+    background-color: var(--mygrey2);
     color: white;
     height: 100%;
     /* border: 2px solid rgb(95, 209, 219); */
@@ -23,29 +23,31 @@
 
 .button:hover {
     background-color: rgb(139, 183, 187);
+    background-color: var(--mygrey4);
     color: black;
     font-size: 15px;
 }
 
 .isActive {
-    background-color: rgb(95, 209, 219);
+    background-color: var(--mylightblue2);
     color: black;
 }
 
 .arrows {
-    margin-left: 10px;
-    margin-right: 10px;
-    /* background: red; */
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.arrowButton {
+    background-color: var(--mygrey3); 
 }
 
 .disabled {
-    background-color: var(--mygrey4);
+    background-color: var(--mygrey3opaque);
     color: var(--mygrey);
-    font-size: 14px;
 }
 
 .disabled:hover {
-    background-color: var(--mygrey4);
+    background-color: var(--mygrey3opaque);
     color: var(--mygrey);
-    font-size: 14px;
 }

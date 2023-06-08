@@ -217,14 +217,14 @@
     width: 50px;
     border-radius: 100%;
     border: solid white 4px;
-    font-size: 25px;
+    font-size: 20px;
     margin: 30px;
 }
 
 .autocompleteButton:hover {
     background-color: var(--mygrey4);
     color: black;
-    font-size: 35px;
+    font-size: 25px;
     height: 60px;
     width: 60px;
 }

@@ -65,6 +65,7 @@ const Pagination = (props) => {
                 <button 
                     className={`
                         ${styles.button}
+                        ${styles.arrowButton}
                         ${currentPageNumber === 1
                             ? styles.disabled
                             : ""}
@@ -78,6 +79,7 @@ const Pagination = (props) => {
                 <button 
                     className={`
                         ${styles.button}
+                        ${styles.arrowButton}
                         ${currentPageNumber === 1
                             ? styles.disabled
                             : ""}
@@ -114,6 +116,7 @@ const Pagination = (props) => {
                 <button 
                     className={`
                         ${styles.button}
+                        ${styles.arrowButton}
                         ${currentPageNumber === numberOfPages
                             ? styles.disabled
                             : ""}
@@ -127,12 +130,13 @@ const Pagination = (props) => {
                 <button 
                     className={`
                         ${styles.button}
+                        ${styles.arrowButton}
                         ${currentPageNumber === numberOfPages
                             ? styles.disabled
                             : ""}
                         `}
                     onClick={handleLastPage}
-                    disabled={currentPageNumber === 1}
+                    disabled={currentPageNumber === numberOfPages}
                     >
                     {'>>'}
                 </button>
