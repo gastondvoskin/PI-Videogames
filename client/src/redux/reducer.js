@@ -6,15 +6,14 @@ const initialState = {
     filteredByCreator: [],
     filteredByGenre: [],
     currentVg: [],
-    pageNumber: 1,
+    currentPageNumber: 1,
     genres: []
-}
+};
 
 const rootReducer = (state = initialState, action) => {
     switch (action.type) {
 
         case GET_ALL_VG: {
-            // console.log('state: ', state)
             const allVg = action.payload;
             return {
                 ...state, 
@@ -28,9 +27,8 @@ const rootReducer = (state = initialState, action) => {
         };
 
         case SEARCH_BY_NAME: {
-            // console.log('inside SEARCH_BY_NAME case');
             const filteredByName = action.payload;
-            // console.log('filteredByName: ', filteredByName);
+
             return {
                 ...state,
                 currentVg: filteredByName
@@ -46,17 +44,13 @@ const rootReducer = (state = initialState, action) => {
         };
 
         case FILTER_BY_CREATOR: {
-            // console.log('in FILTER_BY_CREATOR case');
             const creator = action.payload;
-            // console.log('creator in FILTER_BY_CREATOR case: ', creator);
-
-            // console.log('delayed state.filteredByCreator.length', state.filteredByCreator.length);
 
             let filteredByCreator;
 
             if (creator === 'all') {
                 filteredByCreator = [...state.allVg];
-            } else if (creator === 'client') {
+            } else if (creator === 'admin') {
                 filteredByCreator = [...state.allVg].filter(vg => {
                     return isNaN(vg.id)
                 })
@@ -70,12 +64,9 @@ const rootReducer = (state = initialState, action) => {
                 return state.filteredByGenre.includes(vg)
             });
 
-            // console.log('delayed state.filteredByCreator.length', state.filteredByCreator.length);
-            // new
             if (!currentVg.length) {
                 currentVg = "No videogames were found with the provided filters."
             };
-
 
             return {
                 ...state,
@@ -86,7 +77,6 @@ const rootReducer = (state = initialState, action) => {
 
 
         case FILTER_BY_GENRE: {
-            // console.log('inside FILTER_BY_GENRE case');
             const genre = action.payload;
             console.log('genre in FILTER_BY_GENRE: ', genre);
 
@@ -105,7 +95,6 @@ const rootReducer = (state = initialState, action) => {
                 return state.filteredByCreator.includes(vg)
             });
 
-            // new
             if (!currentVg.length) {
                 currentVg = "No videogames were found with the provided filters."
             };
@@ -121,8 +110,6 @@ const rootReducer = (state = initialState, action) => {
 
 
         case SORT_BY_ALPHABET: {
-            // console.log('here in SORT_BY_ALPHABET case')
-            // console.log('state 1: ', state)
             const order = action.payload;       // 'a_z' or 'z_a'
             const compareFunction = ((a, b) => {
                 const nameA = a.name.toUpperCase();
@@ -134,11 +121,7 @@ const rootReducer = (state = initialState, action) => {
 
             // sort changes the array in place. Then we make a copy of state.currentVg
             const sortedAz = [...state.currentVg].sort(compareFunction);
-            // console.log('sortedAz: ', sortedAz);
-            // console.log('state 2: ', state);
-            // console.log('order in reducer: ', order);
             const sortedVg = order === 'a_z' ? sortedAz : [...sortedAz].reverse();
-            // console.log('sortedVg: ', sortedVg);
 
             return {
                 ...state,
@@ -148,7 +131,6 @@ const rootReducer = (state = initialState, action) => {
 
 
         case SORT_BY_RATING: {
-            // console.log('here in SORT_BY_RATING case');
             const order = action.payload;       // 'ratingAsc' or 'ratingDesc'
             const compareFunction = ((a, b) => {
                 return a.rating - b.rating;
@@ -165,10 +147,10 @@ const rootReducer = (state = initialState, action) => {
 
 
         case UPDATE_PAGE_NUMBER: {
-            const pageNumber = action.payload;
+            const currentPageNumber = action.payload;
             return {
                 ...state,
-                pageNumber
+                currentPageNumber
             };
         };
 

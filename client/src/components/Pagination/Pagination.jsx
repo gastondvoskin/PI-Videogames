@@ -6,9 +6,9 @@ import { updatePageNumber } from "../../redux/actions";
 const Pagination = (props) => {
     const dispatch = useDispatch();
 
-    /* currentPage is required in this component only to know which page is active, so the corresponding button has a different className and style */
-    const currentPage = Number(useSelector(state => state.pageNumber));
-    console.log('currentPage: ', currentPage);
+    /* currentPageNumber is required in this component only to know which page is active, so the corresponding button has a different className and style */
+    const currentPageNumber = Number(useSelector(state => state.currentPageNumber));
+    // console.log('currentPageNumber: ', currentPageNumber);
 
     let { numberOfPages } = props;
 
@@ -16,36 +16,36 @@ const Pagination = (props) => {
     /* numberOfPages = 13; */
 
     const pageNumbersArray = [];
-    for (let pageNumber = 1; pageNumber <= numberOfPages; pageNumber++) {
-        pageNumbersArray.push(pageNumber);
+    for (let i = 1; i <= numberOfPages; i++) {
+        pageNumbersArray.push(i);
     };
     // console.log('pageNumbersArray: ', pageNumbersArray);        // eg [1, 2, 3, 4, 5]
 
 
     /* HANDLE FIRST PAGE */
     const handleFirstPage = () => {
-        if(currentPage > 1) {
+        if(currentPageNumber > 1) {
             dispatch(updatePageNumber(1));
         };
     };
 
     /* HANDLE PREV */
     const handlePrev = () => {
-        if(currentPage > 1) {
-            dispatch(updatePageNumber(currentPage - 1));
+        if(currentPageNumber > 1) {
+            dispatch(updatePageNumber(currentPageNumber - 1));
         };
     };
 
     /* HANDLE NEXT */
     const handleNext = () => {
-        if(currentPage < numberOfPages) {
-            dispatch(updatePageNumber(currentPage + 1));
+        if(currentPageNumber < numberOfPages) {
+            dispatch(updatePageNumber(currentPageNumber + 1));
         };
     };
 
     /* HANDLE LAST PAGE */
     const handleLastPage = () => {
-        if(currentPage < numberOfPages) {
+        if(currentPageNumber < numberOfPages) {
             dispatch(updatePageNumber(numberOfPages));
         };
     };
@@ -53,23 +53,24 @@ const Pagination = (props) => {
 
     /* HANDLE UPDATE */
     const handleUpdatePageNumber = (event) => {
-        const pageNumber = event.target.value;
-        dispatch(updatePageNumber(pageNumber));
+        const clickedPageNumber = event.target.value;
+        dispatch(updatePageNumber(clickedPageNumber));
     };
 
 
     return (
         <div className={styles.mainContainer}>
+            {/* ARROWS */}
             <div className={styles.arrows}>
                 <button 
                     className={`
                         ${styles.button}
-                        ${currentPage === 1
+                        ${currentPageNumber === 1
                             ? styles.disabled
                             : ""}
                         `}
                     onClick={handleFirstPage}
-                    disabled={currentPage === 1}
+                    disabled={currentPageNumber === 1}
                     >
                     {'<<'}
                 </button>
@@ -77,24 +78,25 @@ const Pagination = (props) => {
                 <button 
                     className={`
                         ${styles.button}
-                        ${currentPage === 1
+                        ${currentPageNumber === 1
                             ? styles.disabled
                             : ""}
                         `}
                     onClick={handlePrev}
-                    disabled={currentPage === 1}
+                    disabled={currentPageNumber === 1}
                     >
                     {'<'}
                 </button>
             </div>
 
+            {/* PAGES BUTTONS */}
             {pageNumbersArray.map((pageNumber) => {
                 return (
                     <button 
                         className=
                             {`
                                 ${styles.button} 
-                                ${pageNumber === currentPage 
+                                ${pageNumber === currentPageNumber 
                                     ? styles.isActive 
                                     : ""}
                             `}
@@ -107,16 +109,17 @@ const Pagination = (props) => {
                 )
             })}
 
+            {/* ARROWS */}
             <div className={styles.arrows}>
                 <button 
                     className={`
                         ${styles.button}
-                        ${currentPage === numberOfPages
+                        ${currentPageNumber === numberOfPages
                             ? styles.disabled
                             : ""}
                         `}
                     onClick={handleNext}
-                    disabled={currentPage === numberOfPages}
+                    disabled={currentPageNumber === numberOfPages}
                     >
                     {'>'}
                 </button>
@@ -124,12 +127,12 @@ const Pagination = (props) => {
                 <button 
                     className={`
                         ${styles.button}
-                        ${currentPage === numberOfPages
+                        ${currentPageNumber === numberOfPages
                             ? styles.disabled
                             : ""}
                         `}
                     onClick={handleLastPage}
-                    disabled={currentPage === 1}
+                    disabled={currentPageNumber === 1}
                     >
                     {'>>'}
                 </button>

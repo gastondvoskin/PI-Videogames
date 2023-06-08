@@ -37,7 +37,3 @@ Componentes achicando el viewport.
 
 Otros. 
 Loading mientras se cargan los videojuegos y el detalle de un videjuego. /devloading
-
-
-
-Código. 

@@ -1,5 +1,5 @@
 import { Routes, Route, useLocation } from "react-router-dom";
-import { Landing, Home, Detail, Form, Error404 } from "./views/viewsIndex.js";
+import { Landing, Home, Detail, Admin, Error404 } from "./views/viewsIndex.js";
 import Nav from "./components/Nav/Nav.jsx";
 import Loading from "./components/Loading/Loading.jsx";
 import About from "./views/About/About.jsx";
@@ -21,7 +21,7 @@ const App = () => {
         <Route path="/" element={<Landing />} />
         <Route path="/home" element={<Home />} />
         <Route path="/detail/:id" element={<Detail />} />
-        <Route path="/admin" element={<Form />} />
+        <Route path="/admin" element={<Admin />} />
         <Route path="/about" element={<About />} />
         <Route path="/devloading" element={<Loading />} />
         <Route path="/devfilters" element={<Filters />} />

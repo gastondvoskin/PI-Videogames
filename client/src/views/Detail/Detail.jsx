@@ -10,7 +10,7 @@ import noImage from "../../assets/noImage.png";
 
 const Detail = () => {
     const { id } = useParams();
-    // NIY: refactor vgDetail to initialize with empty properties, so I will need less validations. 
+
     const [ vgDetail, setVgDetail ] = useState({});     // {} instead of null to validate object properties
     const [ errorState, setErrorState ] = useState('');
 
@@ -28,6 +28,7 @@ const Detail = () => {
 
         return () => {
             setVgDetail({});
+            setErrorState('');
         }
     }, [id]);
 
@@ -41,7 +42,7 @@ const Detail = () => {
         errorState 
             ? errorState === 'ERR_BAD_REQUEST' 
                 ? <Error404 />
-                : <div>Error 404. Not connected to server.</div>
+                : <div>Error 503. Not connected to server.</div>
             : !Object.keys(vgDetail).length  
                 ? <Loading />
                 /* MAIN CONTAINER */
@@ -64,12 +65,6 @@ const Detail = () => {
                             >
                         </div>
                     }
-
-                    {/* LEFT CONTAINER */}
-                    <div className={styles.leftContainer}>
-                        
-                    </div>
-
 
 
                     {/* IMAGE AND DATA CONTAINER */}
@@ -133,11 +128,6 @@ const Detail = () => {
                         </div>
                     </div>
     
-
-
-                    
-
-
                 </div>
     );
 };

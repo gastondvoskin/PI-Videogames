@@ -12,7 +12,7 @@ const Home = () => {
     const dispatch = useDispatch();
 
     // DATA FROM GLOBAL STATE
-    // to avoid a dispatch each time the componen mounts
+    // to avoid a dispatch each time the component mounts
     const allVg = useSelector(state => state.allVg);
     const genres = useSelector(state => state.genres);
     const currentVg = useSelector(state => state.currentVg);
@@ -20,6 +20,7 @@ const Home = () => {
     // USE EFFECT WITH DISPATCH
     useEffect(() => {
         // to avoid a dispatch each time the component mounts
+        // NIY Add a condition to check if the last VG has an id with typeof different to Number, so if allVg has only a videogame created in the Admin view, the dispatch is sent even though allVg is not an empty array. 
         if (!allVg.length) dispatch(getAllVg());
         if(!genres.length) dispatch(getGenres());
     }, [dispatch, allVg, genres]);
@@ -31,19 +32,15 @@ const Home = () => {
     const currentVgLength = currentVg.length;       // eg 150
     // console.log('currentVgLength: ', currentVgLength);
     const numberOfPages = Math.ceil(currentVgLength / VG_PER_PAGE);     // eg Math.ceil (150 / 15) = 10
-
+    
 
     // RETURN
     return (
         <div className={styles.mainContainer}>
             <Filters />
-            {
-                typeof currentVg !== 'string' && <Pagination numberOfPages={numberOfPages}/>
-            }
+            {typeof currentVg !== 'string' && <Pagination numberOfPages={numberOfPages}/>}
             <Cards VG_PER_PAGE={VG_PER_PAGE} />
-            {
-                typeof currentVg !== 'string' && <Pagination numberOfPages={numberOfPages}/>
-            }
+            {typeof currentVg !== 'string' && <Pagination numberOfPages={numberOfPages}/>}
         </div>
     );
 };

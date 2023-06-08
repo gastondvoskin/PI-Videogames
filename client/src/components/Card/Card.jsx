@@ -33,9 +33,9 @@ const Card = ({id, name, background_image, genres, rating}) => {
                         ? <span>No genres provided</span>
                         : genres.map((genre, index) => {
                             return(
-                                genres.length - 1 === index ?
-                                <span key={index}>{genre}</span>
-                                : <span key={index}>{`${genre} | `}</span>
+                                genres.length - 1 === index 
+                                    ? <span key={index}>{genre}</span>
+                                    : <span key={index}>{`${genre} | `}</span>
                             ) 
                         })
                     }

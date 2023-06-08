@@ -1,4 +1,4 @@
-import styles from "./Form.module.css";
+import styles from "./Admin.module.css";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getGenres } from "../../redux/actions";
@@ -9,37 +9,40 @@ import validationFunctions, { validateGenres, validatePlatforms, validateSubmit 
 // import hardcodedGenres from "../../hardcodedResources/hardcodedGenres.js";
 // import hardcodedPlatforms from "../../hardcodedResources/hardcodedPlatforms";
 
-const Form = () => {
+const Admin = () => {
 
-    // *** ALLGENRES ***
+    // *** ALL GENRES -> useSelector and useEffect (dispatch(getGenres()) ***
+    const allGenres = useSelector(state => state.genres);       // before dispatch(getGenres()) -> []; after dispatch -> ['Indie', "Strategy'...]
+    // console.log('allGenres: ', allGenres);
     const dispatch = useDispatch();
-    const allGenres = useSelector(state => state.genres);
     useEffect(() => {
-        // in case the user types by hand the "/form" route 
-        if (!allGenres.length) dispatch(getGenres());
+        if (!allGenres.length) {
+            dispatch(getGenres());
+        } 
     }, [dispatch, allGenres]);
-
 
     // *** LOCAL STATE ***
     const emptyVg = {name: '', image: '', description: '', released: '', rating: '', platforms: [''], genres: []};
     const emptyErrors = {name: '', image: '', description: '', released: '', rating: '', platforms: '', genres: ''};
-    const emptyGenresBoxes = allGenres.map(genre => false);
-
-    const [ vg, setVg ] = useState(emptyVg);
+    const emptyArray = [];
+    const [ newVg, setNewVg ] = useState(emptyVg);
     const [ errors, setErrors ] = useState(emptyErrors);
-    let [ genresBoxes, setGenresBoxes ] = useState(emptyGenresBoxes); 
-
+    const [ genresBoxes, setGenresBoxes ] = useState(emptyArray);   // before useEffect(setGenresBoxes(emptyGenresBoxes)) with arrDependencies[allGenres] -> []; after useEffect -> [false, false...]
     // console.log('genresBoxes: ', genresBoxes);
-    // console.log('vg.genres: ', vg.genres);
+
+    useEffect(() => {
+        if (allGenres.length) {
+            const emptyGenresBoxes = allGenres.map(genre => false);
+            setGenresBoxes(emptyGenresBoxes);
+        }
+    }, [allGenres]);
 
 
     // *** HANDLECHANGE ***
     const handleChange = (event) => {
-        // console.log('validationFunctions: ', validationFunctions);
-        const { value } = event.target;       // name: name, image, description...
+        const { value } = event.target; 
         const property = event.target.name;
-        // console.log('validationFunctions[name]: ', validationFunctions[name]);
-        setVg({...vg, [property]: value}); 
+        setNewVg({...newVg, [property]: value}); 
         const errorMessage = validationFunctions[property](value);
         setErrors({...errors, [property]: errorMessage});
     };
@@ -49,24 +52,22 @@ const Form = () => {
     const handlePlatformsChange = (event) => {
         const { value } = event.target;
         const index = Number(event.target.id);
-        const firsPartOfPlatforms = vg.platforms.slice(0, index);     // array
-        // console.log('firsPartOfPlatforms: ', firsPartOfPlatforms);
-        const lastPartOfPlatforms = vg.platforms.slice(index + 1);
-        // console.log('lastPartOfPlatforms: ', lastPartOfPlatforms);
+        const firsPartOfPlatforms = newVg.platforms.slice(0, index);     // array
+        const lastPartOfPlatforms = newVg.platforms.slice(index + 1);
         const platforms = [...firsPartOfPlatforms, value, ...lastPartOfPlatforms];
-        setVg({...vg, platforms});
+        setNewVg({...newVg, platforms});
         const errorMessage = validatePlatforms(platforms);
         setErrors({...errors, platforms: errorMessage});
     };
 
     const handleAddPlatform = (event) => { 
-        setVg({...vg, platforms: [...vg.platforms, '']});
+        setNewVg({...newVg, platforms: [...newVg.platforms, '']});
     };
 
     const handleDeletePlatform = (event) => {
         const index = Number(event.target.id);
-        const platforms = vg.platforms.filter((_platform, i) => i !== index);
-        setVg({...vg, platforms: vg.platforms.filter((_platform, i) => i !== index)});
+        const platforms = newVg.platforms.filter((_platform, i) => i !== index);
+        setNewVg({...newVg, platforms: newVg.platforms.filter((_platform, i) => i !== index)});
         const errorMessage = validatePlatforms(platforms);
         setErrors({...errors, platforms: errorMessage});
     };
@@ -77,11 +78,12 @@ const Form = () => {
         const index = event.target.id; 
         const genreName = event.target.name;
         const oldValue = genresBoxes[index];
-        const genres = oldValue === false 
-        ? [...vg.genres, genreName] 
-        : [...vg.genres.filter(genre => genre !== genreName)];
+        // console.log('oldValue: ', oldValue);
+        const genres = !oldValue        /* oldValue is undefined at the beggining. Then it is true or false */        
+            ? [...newVg.genres, genreName] 
+            : [...newVg.genres.filter(genre => genre !== genreName)];
 
-        setVg({...vg, genres});
+        setNewVg({...newVg, genres});
         const errorMessage = validateGenres(genres);
         setErrors({...errors, genres: errorMessage});
 
@@ -94,27 +96,33 @@ const Form = () => {
     // *** SUBMIT ***
     const handleSubmit = (event) => {
         event.preventDefault();
-        const errorMessage = validateSubmit(vg, errors); // null or "Please..."
+        const errorMessage = validateSubmit(newVg, errors); // null or "Please..."
         if (errorMessage) {
             window.alert(errorMessage);  
         } else {
-            const newVg = {...vg, background_image: vg.image}
+            /* NIY: replace for action */
+            const newVgToSubmit = {...newVg, background_image: newVg.image}
             const API_URL = "http://localhost:3001/videogames"
-            axios.post(API_URL, newVg)
-                .then((response) => {console.log(response)})
+            axios
+                .post(API_URL, newVgToSubmit)
+                .then((response) => {
+                    const newVgWithId = {id: response.data.id, ...newVgToSubmit};
+                    dispatch(updateWithNewVg(newVgWithId));
+                    window.alert("Videogame added to the Database");
+                    setNewVg(emptyVg);
+                    const emptyGenresBoxes = allGenres.map(genre => false);
+                    setGenresBoxes(emptyGenresBoxes);
+                })
                 .catch((error) => {console.log(error)})
-            dispatch(updateWithNewVg(newVg));
-            window.alert("Videogame added to the Database");
-            setVg(emptyVg);
-            setGenresBoxes(emptyGenresBoxes);
         };
     };
 
 
     // *** RESET ***
     const handleReset = (event) => {
-        setVg(emptyVg);
+        setNewVg(emptyVg);
         setErrors(emptyErrors);
+        const emptyGenresBoxes = allGenres.map(genre => false);
         setGenresBoxes(emptyGenresBoxes);
     };
 
@@ -127,13 +135,14 @@ const Form = () => {
             released: "2000-11-11", 
             rating: "2.57", 
             platforms: ["Mac", "PlayStation", "My own platform"], 
-            genres: []
+            genres: [allGenres[12], allGenres[16]]
         };
-        setVg(autocompletedVg);
+        setNewVg(autocompletedVg);
 
-        // const updatedGenresBoxes = [...genresBoxes];
-        // updatedGenresBoxes[1] = true;
-        // setGenresBoxes(updatedGenresBoxes);
+        let updatedGenresBoxes = allGenres.map(genre => false);
+        updatedGenresBoxes[12] = true;
+        updatedGenresBoxes[16] = true;
+        setGenresBoxes(updatedGenresBoxes);
     };
 
     const handleAutocomplete2 = (event) => {
@@ -144,9 +153,13 @@ const Form = () => {
             released: "2013-01-01", 
             rating: "4.05", 
             platforms: ["Mac", "Linux"], 
-            genres: []
+            genres: [allGenres[3]]
         };
-        setVg(autocompletedVg);
+        setNewVg(autocompletedVg);
+
+        let updatedGenresBoxes = allGenres.map(genre => false);
+        updatedGenresBoxes[3] = true;
+        setGenresBoxes(updatedGenresBoxes);
     };
 
 
@@ -167,7 +180,7 @@ const Form = () => {
                         <input 
                             className={`${styles.input} ${styles.nameInput}`}
                             name="name"
-                            value={vg.name}
+                            value={newVg.name}
                             onChange={handleChange}
                             placeholder='Name...'
                             autoFocus={true}
@@ -182,7 +195,7 @@ const Form = () => {
                             className={`${styles.input} ${styles.dateInput}`}
                             type="date"  /* date format depends on OS settings */
                             name="released"
-                            value={vg.released}
+                            value={newVg.released}
                             onChange={handleChange}
                             max="9999-12-31"
                         />
@@ -196,7 +209,7 @@ const Form = () => {
                             className={`${styles.input} ${styles.ratingInput}`}
                             type="number"
                             name="rating"
-                            value={vg.rating}
+                            value={newVg.rating}
                             onChange={handleChange}
                             placeholder='1.00-5.00'
                             step="0.1"
@@ -212,7 +225,7 @@ const Form = () => {
                     <textarea 
                         className={styles.input}
                         name="image"
-                        value={vg.image}
+                        value={newVg.image}
                         onChange={handleChange}
                         placeholder='https://...'
                         rows="1"
@@ -226,7 +239,7 @@ const Form = () => {
                     <textarea 
                         className={styles.input}
                         name="description"
-                        value={vg.description}
+                        value={newVg.description}
                         onChange={handleChange}
                         placeholder='Max 1000 characters'
                         rows="5"
@@ -237,7 +250,7 @@ const Form = () => {
                 {/* PLATFORMS */}
                 <legend>PLATFORMS *{' '} </legend>
                 <div className={styles.platformsContainer}>
-                    {vg.platforms?.map((platform, index) => {
+                    {newVg.platforms?.map((platform, index) => {
                         return (
                             <div className={styles.platformsSubContainer} key={index}>
                                 <input 
@@ -249,7 +262,7 @@ const Form = () => {
                                     onChange={handlePlatformsChange}
                                     placeholder={`Platform ${index + 1}...`}
                                 />
-                                <button 
+                                {index !== 0 && <button 
                                     id={index}
                                     className={styles.deletePlatformButton} 
                                     type="button" 
@@ -257,6 +270,8 @@ const Form = () => {
                                     >
                                     -
                                 </button>
+                                }
+                                
                                 <button 
                                     className={styles.addPlatformButton} 
                                     type="button" 
@@ -270,27 +285,32 @@ const Form = () => {
                     {errors.platforms && <p className={styles.errorMessage}>{errors.platforms}</p>}
                 </div>
 
+
                 {/* GENRES */}
-                <legend>GENRES *{' '}</legend>
-                <div className={styles.checkboxContainer}>
-                    <div className={styles.checkboxSubcontainer}>
-                        {allGenres.map((genre, index) => {
-                            return (
-                                <label className={styles.genreLabel} key={index}>
-                                    {genre}
-                                    <input className={styles.genreInput}
-                                        type="checkbox"
-                                        id={index}
-                                        name={genre}
-                                        checked={genresBoxes[index]}
-                                        onChange={handleGenresChange}
-                                    />
-                                </label>
-                            )
-                        })}
+                <label className={styles.label}>GENRES *{' '}
+                    <div className={styles.checkboxContainer}>
+                        <div className={styles.checkboxSubcontainer}>
+                            {allGenres.map((genre, index) => {
+                                return (
+                                    <label className={styles.genreLabel} key={index}>
+                                        {genre}
+                                        <input 
+                                            className={styles.genreInput}
+                                            type="checkbox"
+                                            id={index}
+                                            name={genre}
+                                            checked={genresBoxes[index] || false}   /* || false to avoid initialization with undefined  */
+                                            onChange={handleGenresChange}
+                                            >
+                                        </input>
+                                    </label>
+                                )
+                            })}
+                        </div>
+                        {errors.genres && <p className={styles.errorMessage}>{errors.genres}</p>}
                     </div>
-                    {errors.genres && <p className={styles.errorMessage}>{errors.genres}</p>}
-                </div>
+                </label>
+
 
                 <div className={styles.buttonsContainer}>
                     {/* SUBMIT */}
@@ -312,18 +332,18 @@ const Form = () => {
             {/* PREVIEW */}
             <div className={styles.preview}>
                 <h2>PREVIEW</h2>
-                <p>Name: {errors.name ? errors.name : vg.name}</p>
-                {errors.image ? <p>{errors.image}</p> : <img className={styles.imagePreview} src={vg.image} alt="Videogame not found"/>}
-                <p>Description: {errors.description ? errors.description : vg.description}</p>
-                <p>Released: {errors.released ? errors.released : vg.released}</p>
-                <p>Rating: {errors.rating ? errors.rating : vg.rating}</p>
+                <p>Name: {errors.name ? errors.name : newVg.name}</p>
+                {errors.image ? <p>{errors.image}</p> : <img className={styles.imagePreview} src={newVg.image} alt="Videogame not found"/>}
+                <p>Description: {errors.description ? errors.description : newVg.description}</p>
+                <p>Released: {errors.released ? errors.released : newVg.released}</p>
+                <p>Rating: {errors.rating ? errors.rating : newVg.rating}</p>
                 
                 <p>Platforms: {''}
                     {errors.platforms 
                         ? <p>{errors.image}</p> 
-                        : vg.platforms.map((plaftorm, index) => {
+                        : newVg.platforms.map((plaftorm, index) => {
                             return(
-                                vg.platforms.length - 1 === index ?
+                                newVg.platforms.length - 1 === index ?
                                 <span key={index}>{plaftorm}</span>
                                 : <span key={index}>{`${plaftorm} | `}</span>
                             ) 
@@ -334,9 +354,9 @@ const Form = () => {
                 <p>Genres: {''}
                     {errors.genres 
                         ? <p>{errors.genres}</p> 
-                        : vg.genres.map((genre, index) => {
+                        : newVg.genres.map((genre, index) => {
                             return(
-                                vg.genres.length - 1 === index ?
+                                newVg.genres.length - 1 === index ?
                                 <span key={index}>{genre}</span>
                                 : <span key={index}>{`${genre} | `}</span>
                             ) 
@@ -349,5 +369,5 @@ const Form = () => {
     );
 };
 
-export default Form; 
+export default Admin; 
 

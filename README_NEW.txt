@@ -1,1 +1,0 @@
-This is a file to check git push and git pull. 

@@ -57,8 +57,8 @@ const handlePostVg = async (req, res) => {
     try {
         const { name, background_image, platforms, released, rating, description, genres } = req.body;
         const vgCreated = await postVg(name, background_image, platforms, released, rating, description, genres);
-        // res.status(201).send(vgCreated); 
-        res.status(201).send("Videogame added to database.");
+        res.status(201).send(vgCreated); 
+        // res.status(201).send("Videogame added to database.");
     } catch (error) {
         console.log('catch inside of handlePostVg');
         res.status(400).send({error: error.message});           /* 400 for client errors such as invalid inputs */

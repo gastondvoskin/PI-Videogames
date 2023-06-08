@@ -8,22 +8,26 @@ import styles from "./Filters.module.css";
 // import hardcodedGenres from "../../hardcodedGenres";
 
 const Filters = () => {
+    /* LOCAL STATE */
     const [ vgName, setVgName ] = useState('');
     const [ creator, setCreator ] = useState('');
     const [ genre, setGenre ] = useState('');
     const [ order, setOrder ] = useState('');
 
+    /* USEDISPATCH */
     const dispatch = useDispatch();
 
+    /* GENRES */
     const genres = useSelector(state => state.genres);
 
-    // add searchbar input and button handlers. 
+    /* HANDLE SEARCH INPUT */
     const handleSearchInput = (event) => {
         const inputValue = event.target.value;
         setVgName(inputValue);
         dispatch(updatePageNumber(1));
     };
 
+    /* HANDLE SEARCH SUBMIT */
     const handleSearchSubmit = (event) => {
         event.preventDefault();
         dispatch(searchByName(vgName));
@@ -33,20 +37,9 @@ const Filters = () => {
         setOrder('');
         dispatch(updatePageNumber(1));
     };
-
-    const handleResetFilters = (event) => {
-        event.preventDefault();
-        dispatch(resetFilters());
-        setVgName('');
-        setCreator('');
-        setGenre('');
-        setOrder(''); 
-        dispatch(updatePageNumber(1));
-    };
-
     
+    /* HANDLE FILTER BY CREATOR */
     const handleFilterByCreator = (event) => {
-        // console.log('inside handleFilterByCreator handler');
         const creator = event.target.value;
         // setCreator takes some time
         setCreator(creator);
@@ -57,8 +50,8 @@ const Filters = () => {
         dispatch(updatePageNumber(1));
     };
 
+    /* HANDLE FILTER BY GENRE */
     const handleFilterByGenre = (event) => {
-        // console.log('inside handleFilterByCreator handler');
         const genre = event.target.value;
         setGenre(genre);
         dispatch(filterByGenre(genre));
@@ -67,6 +60,7 @@ const Filters = () => {
         dispatch(updatePageNumber(1));
     };
 
+    /* HANDLE SORT */
     const handleSort = (event) => {
         const order = event.target.value;
         setOrder(order); 
@@ -78,7 +72,20 @@ const Filters = () => {
         dispatch(updatePageNumber(1));
     };
 
+    /* HANDLE RESET */
+    const handleResetFilters = (event) => {
+        event.preventDefault();
+        dispatch(resetFilters());
+        setVgName('');
+        setCreator('');
+        setGenre('');
+        setOrder(''); 
+        dispatch(updatePageNumber(1));
+    };
+    
 
+
+    /* RETURN */
     return (    
         <div className={styles.mainContainer}>
 
@@ -104,10 +111,8 @@ const Filters = () => {
             </form>
 
             {/* FILTERS AND SORTS */}
-            <div
-                className={styles.filtersAndSortsContainer}
-                >
-                
+            <div className={styles.filtersAndSortsContainer}>
+                {/* CREATOR */}
                 <select 
                     className={styles.creatorSelect}
                     name="filterByCreator"
@@ -116,10 +121,11 @@ const Filters = () => {
                 >
                     <option disabled value="">Creator</option>
                     <option value="all">All</option>
-                    <option value="client">Client</option>
+                    <option value="admin">Admin</option>
                     <option value="api">API</option>
                 </select> 
 
+                {/* GENRE */}
                 <select 
                     className={styles.genreSelect}
                     name="filterByGenre"
@@ -142,6 +148,7 @@ const Filters = () => {
                 </select> 
             
                 
+                {/* SORT */}
                 <select 
                     className={styles.sortSelect}
                     name="Sort" 
@@ -155,6 +162,8 @@ const Filters = () => {
                     <option value="ratingDesc">Rating ↓</option> 
                 </select>   
                 
+
+                {/* RESET */}
                 <button
                     className={styles.resetButton}
                     onClick={handleResetFilters}
@@ -164,7 +173,6 @@ const Filters = () => {
                 
             </div>
 
-            
         </div>
     );
 };

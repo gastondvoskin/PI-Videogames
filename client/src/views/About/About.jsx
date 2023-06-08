@@ -6,7 +6,7 @@ import expressJsLogo from "../../assets/logosAbout/expressJsLogo.svg";
 import sequelizeLogo from "../../assets/logosAbout/sequelizeLogo.png";
 import { useState } from "react";
 import backDiagram from "../../assets/diagrams/videogamesBackFlow.jpg"
-
+import frontDiagram from "../../assets/diagrams/videogamesFrontFlow.jpg";
 import styles from "./About.module.css";
 
 const About = () => {
@@ -122,14 +122,12 @@ const About = () => {
                 </div>
                 {view.diagrams && 
                 <div className={styles.dataContainer}>
+                    <p>Server</p>
                     <img className={styles.backDiagram} src={backDiagram} alt="diagram" />
-                    <p>Thank you for visiting my webpage and exploring the wide range of available videogames</p>               
+                    <p>Client</p>
+                    <img className={styles.backDiagram} src={frontDiagram} alt="diagram" />
                 </div>}
             </section>
-
-
-            
-
 
             {/* CONTACT */}
             <section className={styles.sectionContainer}>

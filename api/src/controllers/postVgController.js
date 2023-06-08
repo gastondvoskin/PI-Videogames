@@ -19,8 +19,10 @@ const postVg = async (name, background_image, platforms, released, rating, descr
     });
     const genresFromDb = await Genre.findAll({where: {name: genres}});
     await vgInstance.addGenres(genresFromDb);
+    console.log('vgInstance: ', vgInstance);
     // const vgCreated = {name, background_image, platforms, released, rating, description, genres};
     // return vgCreated;
+    return vgInstance;
 };
 
 

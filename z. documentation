@@ -287,5 +287,18 @@ Made minor refactoring in the back-end.
 
 
 Replaced fieldset with div in Form.jsx. 
-Added Previos page and Next page in Pagination. Duplicated Pagination in Home (above and below Cards). 
+Added Previous page and Next page in Pagination. Duplicated Pagination in Home (above and below Cards). 
 --- git commit -m "Added Previous, Next, First, Last in Pagination. Made minor changes"
+
+
+Replaced "client" with "admin" in Filters.jsx and in reducer.js. 
+Replaced the name Form.jsx with Admin.jsx and updated the imports and exports. 
+Replaced pageNumber with currentPageNumber in reducer, Pagination and Cards.
+Deleted some unnecessary console.logs. 
+Added some comments to improve the readiblity. 
+Updated README.txt
+Admin. Replaced vg with newVg. 
+Admin. Replaced const genres = oldValue === false with !oldValue. Added checked={genresBoxes[index] || false} to avoid having an undefined value at the beginning. 
+Back: postVgController and handler. Adapted to send the videogame (instead of a "Created videogame" message) so in the Front-end I have access to the id. 
+Admin. Updated handleSubmit to dispatch updateWithNewVg with the id, so it is not necessary to refresh the page in order to enter to the Detail view. 
+--- git commit -m "Renamed Form as Admin. Fixed checkboxes. Fixed handlePostVg (back-end) and handleSubmit to dispatch the action updateWithNewVg with the id. Improved variables names and added comments. Updated readme.txt and renamed the previous one as Instructions.txt. Updated videogamesFrontFlow diagram and added it to About.jsx."
