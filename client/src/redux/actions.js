@@ -4,10 +4,11 @@ import axios from 'axios';
 
 
 export const getAllVg = () => {
-    const API_URL = 'http://localhost:3001/videogames';
+    // const API_URL = 'http://localhost:3001/videogames';  /* old */
+    const API_URL = '/videogames';  /* new */
     return async (dispatch) => {
         try {
-            const response = await axios.get(API_URL);
+            const response = await axios.get(API_URL); 
             const allVg = response.data;
             dispatch({ 
                 type: GET_ALL_VG, 
@@ -21,7 +22,9 @@ export const getAllVg = () => {
 };
 
 export const searchByName = (vgName) => {
-    const API_URL = `http://localhost:3001/videogames?name=${vgName}`;
+    // const API_URL = `http://localhost:3001/videogames?name=${vgName}`;  /* old */
+    const API_URL = `/videogames?name=${vgName}`;    /* new */
+
     return async (dispatch) => {
         try {
             const response = await axios.get(API_URL);
@@ -83,7 +86,8 @@ export const updatePageNumber = (page) => {
 
 export const getGenres = () => {
     return async (dispatch) => {
-        const API_URL = 'http://localhost:3001/genres';
+        // const API_URL = 'http://localhost:3001/genres';  /* old */
+        const API_URL = '/genres';  /* new */
         const response = await axios.get(API_URL);
         const genres = response.data;
         dispatch({

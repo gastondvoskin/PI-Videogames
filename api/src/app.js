@@ -4,7 +4,7 @@ const cookieParser = require('cookie-parser');    // accessory
 const bodyParser = require('body-parser');        // accessory in express > 4.16
 const morgan = require('morgan');
 const router = require('./routes/indexRouter.js');
-
+const cors = require('cors'); /* new */
 
 // EXPRESS()
 const app = express();
@@ -18,8 +18,11 @@ app.use(morgan('dev'));
 
 
 // MIDDLEWARE: CORS CONFIGURATION
+app.use(cors()); /* new */
+
 app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', 'http://localhost:3000'); // update to match the domain you will make the request from
+  /* res.header('Access-Control-Allow-Origin', 'http://localhost:3000'); */ // update to match the domain you will make the request from    /* old */
+  res.header('Access-Control-Allow-Origin', '*');   /* new. In the future, replace * with the production URL */
   res.header('Access-Control-Allow-Credentials', 'true');
   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
   res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');

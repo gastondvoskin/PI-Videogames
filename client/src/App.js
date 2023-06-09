@@ -14,6 +14,7 @@ const App = () => {
   const renderNavAndFooter = location.pathname !== '/' && location.pathname !== '/devexperiment';
   /* const renderNavAndFooter = location.pathname === '/home' || location.pathname === '/detail' || location.pathname === '/admin' || location.pathname === '/about' || location.pathname === '/home'; */
 
+
   return (
     <div>
       {renderNavAndFooter && <Nav />}

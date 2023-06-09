@@ -101,8 +101,9 @@ const Admin = () => {
             window.alert(errorMessage);  
         } else {
             /* NIY: replace for action */
-            const newVgToSubmit = {...newVg, background_image: newVg.image}
-            const API_URL = "http://localhost:3001/videogames"
+            const newVgToSubmit = {...newVg, background_image: newVg.image}; 
+            /* const API_URL = "http://localhost:3001/videogames"; */ /* old */
+            const API_URL = "/videogames"; /* new */
             axios
                 .post(API_URL, newVgToSubmit)
                 .then((response) => {

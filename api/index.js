@@ -3,7 +3,7 @@ const { sequelize } = require('./src/db.js');
 
 sequelize.sync({ force: false }).then(() => {
   console.log('Connected to DB');
-  app.listen(3001, () => {
+  app.listen(process.env.PORT, () => {
     console.log('Listening on port 3001'); // eslint-disable-line no-console
   });
 });

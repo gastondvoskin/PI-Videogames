@@ -16,15 +16,17 @@ const Detail = () => {
 
     useEffect(() => {
         /* setVgDetail(dbHardcodedObject); */
-        axios.get(`http://localhost:3001/videogames/${id}`)
-        .then(response => response.data)
-        .then(data => {
-            setVgDetail(data); 
-        })
-        .catch(error => {
-            // console.log(error);
-            setErrorState(error.code); 
-        })
+        /* const API_URL = `http://localhost:3001/videogames/${id}`; */   /* old */
+        const API_URL = `/videogames/${id}`;   /* new */
+        axios.get(API_URL)
+            .then(response => response.data)
+            .then(data => {
+                setVgDetail(data); 
+            })
+            .catch(error => {
+                // console.log(error);
+                setErrorState(error.code); 
+            });
 
         return () => {
             setVgDetail({});
