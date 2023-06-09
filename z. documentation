@@ -309,20 +309,27 @@ Styled arrows in Pagination. Replaced hardcoded colors with css variables. Fixed
 Deployment. 
 Deployment videos: 
 General information: https://vimeo.com/510792531/20d64d4a98 (heroku is not free anymore, I can use Railway). 
+Demo in github: https://github.com/dierodz/workshop-heroku
 Railway for back: https://www.youtube.com/watch?v=ewoIdVjakns&feature=youtu.be&ab_channel=AgustinNavarroGaldon 
 Vercel for front: https://www.youtube.com/watch?v=yxLOBFXSkv0&feature=youtu.be&ab_channel=AgustinNavarroGaldon / Replace api calls (localhost)
 Client
 
-a. Prepared client for production: 
-- npm install dotenv. 
-- Created .env file. 
-- index.js -> axios.defaults.baseURL = process.env.REACT_APP_API || "http://localhost:3001/" 
-- action.js, Detail.js and Admin.js -> deleted http//localhost:3001 in all API calls with axios. 
-
-b. Prepared api for production: 
+a. Prepared api for production: 
 - .env -> Added PORT = 3001 and DB_NAME = videogames 
 - index.js -> replaced 3001 with process.env.PORT 
 - db.js -> Added process.env.NODE_ENV === "production" ? ... and imported DB_NAME 
 - app.js -> const cors = require('cors'); app.use(cors()); res.header('Access-Control-Allow-Origin', '*'); 
 
+b. Prepared client for production: 
+- npm install dotenv. 
+- Created .env file. 
+- index.js -> axios.defaults.baseURL = process.env.REACT_APP_API || "http://localhost:3001/" 
+- action.js, Detail.js and Admin.js -> deleted http//localhost:3001 in all API calls with axios. 
+
+
 --- git commit -m "Prepared client and api for deployment."
+
+
+api. package.json -> npm i nodemon -P
+Railway: login with github. Created a new project. Deploy from GitHub repo. Configure GitHub app. gastondvoskin. Only select respositories (PI Videogames), install and authorize. Insert password. Deploy fromGithub repo. Select VI Videogames. Deploy now. 
+--- git commit -m "installed nodemon in api"

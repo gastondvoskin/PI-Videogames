@@ -1,9 +1,11 @@
 const app = require('./src/app.js');
 const { sequelize } = require('./src/db.js');
 
+const PORT = process.env.PORT;
+
 sequelize.sync({ force: false }).then(() => {
   console.log('Connected to DB');
-  app.listen(process.env.PORT, () => {
+  app.listen(PORT, () => {
     console.log('Listening on port 3001'); // eslint-disable-line no-console
   });
 });
