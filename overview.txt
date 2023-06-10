@@ -1,5 +1,5 @@
 ENGLISH
-Hello! My name is Gaston Dvoskin, and I'm a full stack web developer. Welcome to the overview of my personal website called "Videogames," which I created during my studies at Henry Bootcamp.
+Hello! My name is Gaston Dvoskin, and I'm a full stack web developer. Welcome to the overview of my website called "Videogames," which I created during my studies at Henry Bootcamp.
 
 This landing page serves as the entry point to the website. To navigate to the home page, simply click the "Start" button. Once you're there, you'll find a collection of videogames retrieved from both my database and an external API. You can search for games by name, apply filters based on the creator and genre, combine multiple filters, and even sort the results. To explore the entire collection, pagination options are available.
 
