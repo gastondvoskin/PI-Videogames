@@ -360,7 +360,8 @@ API_KEY (copy from .env)
 Vercel: 
 - Sign up. Continue with github. Authorize vercel. 
 - Select a Git namespace. Add a GitHub account. gastondvoskin. only select repositories (PI Videogames), install and authorize. gastondvoskin. 
-- Pi videogames import. root-directory: client. Framework: Create react app. Environment variables: !!!!!! Deploy. 
+- Pi videogames import. root-directory: client. Framework: Create react app. Settings, Environment variables: REACT_APP_API (copy paste from Railway, delete the last slash of the endpoint). Deploy. 
+- Open Graph to set the preview (optional).
 
 // .env and db.js -> DB_HOST = localhost ; DB_PORT = 5433 
 
@@ -369,4 +370,5 @@ Vercel:
 deployed front-end: https://pi-videogames-alpha-umber.vercel.app/
 deployed back-end: https://pi-videogames-production-ae5c.up.railway.app/
 --- git commit -m "Updated .env in client"
+Deleted final slash (/) in client .env
 --- git commit -m "Updated .env in client b"

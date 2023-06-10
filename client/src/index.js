@@ -15,8 +15,6 @@ import axios from 'axios';  /* new */
 
 const domNode = document.getElementById('root');
 const root = createRoot(domNode);
-console.log('here:', process.env.REACT_APP_API);
-
 
 axios.defaults.baseURL = process.env.REACT_APP_API || "http://localhost:3001";   /* new */
 // console.log('process.env: ', process.env);
