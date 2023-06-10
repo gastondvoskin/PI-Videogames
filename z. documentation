@@ -365,3 +365,6 @@ Vercel:
 // .env and db.js -> DB_HOST = localhost ; DB_PORT = 5433 
 
 --- git commit -m "Deployed api in Railway and client in Vercel. Added documentation about deployment"
+
+deployed front-end: https://pi-videogames-alpha-umber.vercel.app/
+deployed back-end: https://pi-videogames-production-ae5c.up.railway.app/
