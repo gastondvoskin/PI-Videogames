@@ -65,6 +65,14 @@
     height:100px;
 }
 
+/* VIDEO */
+.video {
+    border: white solid 2px;
+    /* width:560px; */
+    /* height:315px; */
+    width: 840px;
+    height: 473px;
+}
 
 /* FUNCTIONALITIES */
 .functionalityContainer {
@@ -102,5 +110,11 @@
 
     .diagramsContainer {
         display: none;
+    }
+
+    .video {
+        border: white solid 0px;
+        width:336px;
+        height:189px;
     }
 }

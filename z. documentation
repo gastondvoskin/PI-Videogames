@@ -378,3 +378,6 @@ deployed back-end: https://pi-videogames-production-ae5c.up.railway.app/
 
 Added Overview Youtube video to readme.txt and updated overview.txt. 
 --- git commit -m "Added Overview Youtube video to readme.txt and updated overview.txt."
+
+Added Overview video to About.jsx. 
+--- git commit -m "Added overview youtube video to About.jsx."

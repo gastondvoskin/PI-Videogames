@@ -17,6 +17,7 @@ const About = () => {
     console.log(SHOW_ICON)
 
     const [ view, setView ] = useState({
+        overview: false,
         technologies: false,
         functionalities: false,
         contact: false,
@@ -36,6 +37,25 @@ const About = () => {
                 <p>My name is Gastón Dvoskin, and I am a full-stack web developer. This project was created in 2023 as part of my studies at Soy Henry Accademy.</p> 
                 <p>In this section, you will discover the key features of the webpage and the technologies I employed to build it.</p>
             </div>
+            
+            {/* OVERVIEW */}
+            <section className={styles.sectionContainer}>
+                <div className={styles.subtitleAndButtonContainer}>
+                    <h2 className={styles.subtitle}>OVERVIEW VIDEO</h2>
+                    <button className={styles.viewButton} name="overview" onClick={handleView}>{view.overview ? HIDE_ICON : SHOW_ICON}</button>
+                </div>
+                {view.overview && 
+                    <iframe className={styles.video}
+                        src="https://www.youtube.com/embed/trnyhUCFNfE" 
+                        title="YouTube video player" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen="allowfullscreen"
+                        >
+                    </iframe>
+                }
+            </section>
+
             
 
             {/* FUNCTIONALITIES */}
