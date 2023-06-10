@@ -367,8 +367,13 @@ Vercel:
 
 --- git commit -m "Deployed api in Railway and client in Vercel. Added documentation about deployment"
 
-deployed front-end: https://pi-videogames-alpha-umber.vercel.app/
-deployed back-end: https://pi-videogames-production-ae5c.up.railway.app/
 --- git commit -m "Updated .env in client"
 Deleted final slash (/) in client .env
 --- git commit -m "Updated .env in client b"
+Added REACT_APP_API as environment variable in Vercel. Now the deployed client can contact the deployed api. 
+--- git commit -m "Updated .env in client c"
+
+deployed front-end: https://pi-videogames-git-main-gastondvoskin.vercel.app
+deployed back-end: https://pi-videogames-production-ae5c.up.railway.app/
+
+Next step: Overview video. 

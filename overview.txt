@@ -1,3 +1,23 @@
+ENGLISH
+Hello! My name is Gaston Dvoskin, and I'm a full stack web developer. Welcome to the overview of my personal website called "Videogames," which I created during my studies at Henry Bootcamp.
+
+This landing page serves as the entry point to the website. To navigate to the home page, simply click the "Start" button. Once you're there, you'll find a collection of videogames retrieved from both my database and an external API. You can search for games by name, apply filters based on the creator and genre, combine multiple filters, and even sort the results. To explore the entire collection, pagination options are available.
+
+Upon clicking on a specific videogame, you'll be taken to its detailed view. The navigation bar at the top provides easy access to different sections of the website, and a footer is present throughout.
+
+Now, let's dive into the Admin view. Here, all the input fields are validated using JavaScript. On the right-hand side, you'll find a preview, and at the bottom, there are options to submit or reset the form. To streamline this overview, two autocomplete buttons have been added. In case of any errors, they will be displayed until resolved.
+
+Once a videogame is created, you can access its detailed view and apply filters just like any other game.
+
+Lastly, there's an About section that provides information about the website's functionalities, the main technologies used, diagrams illustrating the flow of the webpage, and contact details. You can visit the GitHub repository or connect with me on LinkedIn.
+
+Thank you for visiting my website! Your feedback will be really appreciated as it helps me improve. Also, if you have any questions or need assistance, feel free to contact me. Once again thank you, and I hope you enjoy the website. Bye bye!  
+
+
+
+
+
+ESPAÑOL
 Landing.
 Landing. Botón para ingresar a la Home. 
 

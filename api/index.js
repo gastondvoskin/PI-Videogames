@@ -5,7 +5,7 @@ require('dotenv').config();
 // const PORT = 3001;   /* old */
 const PORT = process.env.PORT; /* new */
 
-sequelize.sync({ force: false }).then(() => {
+sequelize.sync({ force: true }).then(() => {
   console.log('Connected to DB');
   app.listen(PORT, () => {
     console.log(`Listening on port ${PORT}`); // eslint-disable-line no-console
