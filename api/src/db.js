@@ -5,45 +5,52 @@ const GenreModel = require("./models/Genre.js");            // function
 
 
 // NEW SEQUELIZE()
-const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME } = process.env;
+const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME, DB_PORT } = process.env;
+// console.log(DB_PORT)
 // new. beginning
 
-let sequelize = 
-  process.env.NODE_ENV === "production"
-    ? new Sequelize({
-      // production configuration
-      database: DB_NAME,
-      dialect: "posgres",
-      host: DB_HOST,
-      port: 5433, /* check */
-      username: DB_USER,
-      password: DB_PASSWORD,
-      pool: {
-        max: 3,
-        min: 1,
-        idle: 10000
-      },
-      dialectOptions: {
-        ssl: {
-          require: true,
-          rejectUnauthorized: false
-        },
-        keepAlive: true
-      }
-    })
-    : new Sequelize(
-      // development configuration
-      `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/videogames`, 
-      {logging: false}
-);
+// let sequelize = 
+//   process.env.NODE_ENV === "production"
+//     ? new Sequelize({
+//       // production configuration
+//       database: DB_NAME,
+//       dialect: "postgres",
+//       host: DB_HOST,
+//       /* port: 5433, /* check */ 
+//       port: DB_PORT,
+//       username: DB_USER,
+//       password: DB_PASSWORD,
+//       pool: {
+//         max: 3,
+//         min: 1,
+//         idle: 10000
+//       },
+//       dialectOptions: {
+//         ssl: {
+//           require: true,
+//           rejectUnauthorized: false
+//         },
+//         keepAlive: true
+//       }
+//     })
+//     : new Sequelize(
+//       // development configuration
+//       `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/videogames`, 
+//       {logging: false}
+// );
 
 // new. end
 
 // replaced for deploy: 
-// const sequelize = new Sequelize(
-//   `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/videogames`, 
-//   {logging: false}
-// );
+// console.log(DB_HOST)
+// console.log(DB_PORT)
+
+const sequelize = new Sequelize(
+  `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}`, 
+  {logging: false}
+);
+
+
 
 VideogameModel(sequelize);
 GenreModel(sequelize);

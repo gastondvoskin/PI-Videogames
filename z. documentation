@@ -308,6 +308,7 @@ Styled arrows in Pagination. Replaced hardcoded colors with css variables. Fixed
 
 Deployment. 
 Deployment videos: 
+General information: https://www.youtube.com/watch?v=3-sIQuWbf9s&ab_channel=HugoSciangula
 General information: https://vimeo.com/510792531/20d64d4a98 (heroku is not free anymore, I can use Railway). 
 Demo in github: https://github.com/dierodz/workshop-heroku
 Railway for back: https://www.youtube.com/watch?v=ewoIdVjakns&feature=youtu.be&ab_channel=AgustinNavarroGaldon 
@@ -331,5 +332,36 @@ b. Prepared client for production:
 
 
 api. package.json -> npm i nodemon -P
-Railway: login with github. Created a new project. Deploy from GitHub repo. Configure GitHub app. gastondvoskin. Only select respositories (PI Videogames), install and authorize. Insert password. Deploy fromGithub repo. Select VI Videogames. Deploy now. 
 --- git commit -m "installed nodemon in api"
+
+
+
+Railway: 
+- login with github. 
+- Create a new project, Provision postgreSQL. Connect, available variables, copy the variable values for the next step. 
+- New window. Create a new project. Deploy from GitHub repo. Configure GitHub app. gastondvoskin. Only select respositories (PI Videogames), install and authorize. Insert password. Deploy fromGithub repo. Select PI Videogames. Add variables. 
+- Copy paste variables from postgreSQL project in Railway to PI Videogames project in Railway. 
+
+-> DATABASE_URL -> postgresql://postgres:Tb5yIFUGZguqoTnL1cL5@containers-us-west-205.railway.app:6438/railway
+DB_USER -> PGUSER -> postgres
+DB_PASSWORD -> PGPASSWORD -> Tb5yIFUGZguqoTnL1cL5
+DB_HOST -> PGHOST -> containers-us-west-205.railway.app
+DB_PORT -> PGPORT -> 6438
+DB_NAME -> PGDATABASE -> railway
+API_KEY (copy from .env)
+
+- Settings. Root directory: /api -> ok
+- Deploy now (or redeploy). 
+
+- Buildpacks: NodeJs and https://github.com/timanovsky/subdir-heroku-buildpack. 
+- Settings, generate domain. 
+
+
+Vercel: 
+- Sign up. Continue with github. Authorize vercel. 
+- Select a Git namespace. Add a GitHub account. gastondvoskin. only select repositories (PI Videogames), install and authorize. gastondvoskin. 
+- Pi videogames import. root-directory: client. Framework: Create react app. Environment variables: !!!!!! Deploy. 
+
+// .env and db.js -> DB_HOST = localhost ; DB_PORT = 5433 
+
+--- git commit -m "Deployed api in Railway and client in Vercel. Added documentation about deployment"
