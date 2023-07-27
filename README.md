@@ -1,51 +1,86 @@
-## Overview
-https://www.youtube.com/watch?time_continue=1&v=trnyhUCFNfE&embeds_referring_euri=http%3A%2F%2Flocalhost%3A3000%2F&source_ve_path=Mjg2NjY&feature=emb_logo&ab_channel=Gast%C3%B3nDvoskin
-https://youtu.be/trnyhUCFNfE
+<!-- https://www.markdownguide.org/ -->
+<!-- Dillinger -->
 
-## Goals of the project
-This project was created in 2023 as part of my studies at Soy Henry Bootcamp. These were the goals of the project: 
-1. Render videogames
+## Overview
+In this project, created in 2023 as part of my studies at Soy Henry Bootcamp, I aimed to render videogames from a database and the rawg API, providing basic information about each game. The application allows users to explore videogames, apply filters and sorting options, view detailed information about any game, and even add new games to the database.
+
+- 🌐 To take a tour through the app by yourself, visit the **[deployed project](https://pi-videogames-gastondvoskin.vercel.app)**.
+
+- 🎬 To take a tour through the app by watching the video overview, click on the image below: 
+
+[![video Overview](client/src/assets/overviewImages/overviewImg1.png)](https://www.youtube.com/watch?v=trnyhUCFNfE&ab_channel=GastónDvoskin)
+
+## Goals of the Project
+- Render videogames
+
 Render videogames from my database and from rawg API. You will see the basic information of each videogame
 In the Home component you will see all the videogames from my database and, for performance reasons, the first 150 videogames from rawg.
 The results are shown by pages, displaying 15 videogames in each page.
-2. Filter and sort
+- Filter and sort
+
 Filter all videogames by name, including my database and the +800.000 from rawg API.
 Filter videogames by creator and genres, combining both filters. These filters apply to all my database and the first 150 from rawg API.
 Sort the videogame results based on selected criteria: alphabetically or by rating.
 Reset all filters to their default settings.
-3. View more details
+- View more details
+
 Access detailed information of any videogame, including the complete description, rating, release date, genres, platforms and id.
-4. Add a new videogame
+- Add a new videogame
+
 Add a new videogame to my database.
 The videogame will be created through a form in the Admin section.
 Render the added videogame as any of the other ones.
 
-
 ## Used technologies
-JavaScript, React, Redux, NodeJS, Express, Sequelize.
+The project is built using the following technologies:
+- JavaScript
+- React
+- Redux 
+- NodeJS
+- Express
+- Sequelize
 
-## Requisites for local exectution
-1. Install PostgreSQL. 
-2. Create a Database with the name 'Videogames'.
-4. Create an account in rawg API. 
-3. Inside ./api directory create a .env file with your credentails, as shown below: 
-PORT = 3001 
+## Requirements for local execution
+To run the project locally, ensure the following steps are completed:
+1. Install PostgreSQL.
+2. Create a Database named 'Videogames'.
+3. Create an account on the rawg API.
+4. Inside the /api directory, create a .env file containing your credentials as shown below:
+```shell
+PORT = 3001
 DB_USER = yourPostgresUser
 DB_PASSWORD = yourPostgresPassword
 DB_HOST = localhost
 DB_PORT = yourDbPort
-DB_NAME = videogames 
-API_KEY = yorApiKEY
-Replace yourPostgresUser, yourPostgresPassword, yourDbPort, yorApiKEY for your own credentials. 
+DB_NAME = videogames
+API_KEY = yourApiKey
+```
+Replace yourPostgresUser, yourPostgresPassword, yourDbPort, and yourApiKey with your actual credentials.
 
-## Instalation
-Use npm package to install. 
-Inside /api: npm install
-Inside /client: npm install
+## Installation
+To install the necessary dependencies, use npm package manager:
+- Inside /api: 
+```shell
+npm install
+```
+- Inside /client:
+```shell
+npm install
+```
 
-## Local execution
-Inside /api: npm start
-Inside /client: npm start
+## Local Execution
+To run the application locally, use the following commands:
+- Inside /api: 
+```shell
+npm start
+```
+- Inside /client: 
+```shell
+npm start
+```
 
 ## Contact
-Thank you for visiting my webpage. If you have any questions or would like to provide feedback, please feel free to contact me via https://www.linkedin.com/in/gaston-dvoskin/
+Thank you for visiting my webpage. 
+If you have any questions or would like to provide feedback, please feel free to contact me via: 
+- **[LinkedIn](https://www.linkedin.com/in/gaston-dvoskin)**
+- **<dvoskingaston@gmail.com>**
