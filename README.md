@@ -4,11 +4,11 @@
 ## Overview
 In this project, created in 2023 as part of my studies at Soy Henry Bootcamp, I aimed to render videogames from a database and the rawg API, providing basic information about each game. The application allows users to explore videogames, apply filters and sorting options, view detailed information about any game, and even add new games to the database.
 
-To take a tour through the app by yourself, visit the **[deployed project](https://pi-videogames-gastondvoskin.vercel.app)**.
+- 🌐 To take a tour through the app by yourself, visit the **[deployed project](https://pi-videogames-gastondvoskin.vercel.app)**.
 
-🌐 To take a tour through the app by watching the video overview, click on the image below: 
+- 🎬 To take a tour through the app by watching the video overview, click on the image below: 
 
-🎬 [![video Overview](client/src/assets/overviewImages/overviewImg1.png)](https://www.youtube.com/watch?v=trnyhUCFNfE&ab_channel=GastónDvoskin)
+[![video Overview](client/src/assets/overviewImages/overviewImg1.png)](https://www.youtube.com/watch?v=trnyhUCFNfE&ab_channel=GastónDvoskin)
 
 ## Goals of the Project
 - Render videogames
