@@ -1,12 +1,19 @@
 <!-- https://www.markdownguide.org/ -->
 <!-- Dillinger -->
 
+## Deploy 
+To visit the deployed project, go to <https://pi-videogames-gastondvoskin.vercel.app>
+
+## Verview video
+To take a tour through the app, visit my [![video Overview](https://img.youtube.com/vi/trnyhUCFNfE&ab_channel=GastónDvoskin/0.jpg)](https://www.youtube.com/watch?v=trnyhUCFNfE&ab_channel=GastónDvoskin)
+
 ## Overview
 In this project, created in 2023 as part of my studies at Soy Henry Bootcamp, I aimed to render videogames from a database and the rawg API, providing basic information about each game. The application allows users to explore videogames, apply filters and sorting options, view detailed information about any game, and even add new games to the database.
-[![Video Overview](https://img.youtube.com/vi/trnyhUCFNfE&ab_channel=GastónDvoskin/0.jpg)](https://www.youtube.com/watch?v=trnyhUCFNfE&ab_channel=GastónDvoskin)
-<!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/trnyhUCFNfE?ab_channel=GastónDvoskin" frameborder="0" allowfullscreen></iframe> -->
 
 ![Overview: Home](client/src/assets/overviewImages/overviewImg1.png)
+![Overview: Home](client/src/assets/overviewImages/overviewImg2.png)
+![Overview: Home](client/src/assets/overviewImages/overviewImg3.png)
+![Overview: Home](client/src/assets/overviewImages/overviewImg4.png)
 
 ## Goals of the Project
 - Render videogames
@@ -31,7 +38,12 @@ Render the added videogame as any of the other ones.
 
 ## Used technologies
 The project is built using the following technologies:
-JavaScript, React, Redux, NodeJS, Express, and Sequelize.
+- JavaScript
+- React
+- Redux 
+- NodeJS
+- Express
+- Sequelize
 
 ## Requirements for local execution
 To run the project locally, ensure the following steps are completed:
