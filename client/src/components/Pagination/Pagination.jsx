@@ -8,7 +8,6 @@ const Pagination = (props) => {
 
     /* currentPageNumber is required in this component only to know which page is active, so the corresponding button has a different className and style */
     const currentPageNumber = Number(useSelector(state => state.currentPageNumber));
-    // console.log('currentPageNumber: ', currentPageNumber);
 
     let { numberOfPages } = props;
 

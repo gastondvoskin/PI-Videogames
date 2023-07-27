@@ -14,7 +14,6 @@ const About = () => {
     const LINKEDIN_URL = "https://www.linkedin.com/in/gaston-dvoskin/";
     const SHOW_ICON = String.fromCharCode(9660);
     const HIDE_ICON = String.fromCharCode(9650);
-    console.log(SHOW_ICON)
 
     const [ view, setView ] = useState({
         overview: false,

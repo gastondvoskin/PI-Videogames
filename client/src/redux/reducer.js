@@ -78,7 +78,6 @@ const rootReducer = (state = initialState, action) => {
 
         case FILTER_BY_GENRE: {
             const genre = action.payload;
-            console.log('genre in FILTER_BY_GENRE: ', genre);
 
             let filteredByGenre;
 
@@ -86,7 +85,6 @@ const rootReducer = (state = initialState, action) => {
                 filteredByGenre = [...state.allVg];
             } else {
                 filteredByGenre = [...state.allVg].filter(vg => {
-                    console.log('vg.genres: ', vg.genres);
                     return vg.genres.includes(genre);
                 })
             }; 

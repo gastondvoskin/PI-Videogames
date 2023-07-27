@@ -5,7 +5,6 @@ import { useState, useEffect } from "react";
 import { Error404 } from "../viewsIndex";
 import Loading from "../../components/Loading/Loading";
 import noImage from "../../assets/noImage.png";
-// import { hardcodedObject, secondHardcodedObject, dbHardcodedObject, hardcodedArray } from "../../hardcodedResources/hardcodedVideogames";
 
 
 const Detail = () => {
@@ -15,16 +14,13 @@ const Detail = () => {
     const [ errorState, setErrorState ] = useState('');
 
     useEffect(() => {
-        /* setVgDetail(dbHardcodedObject); */
-        /* const API_URL = `http://localhost:3001/videogames/${id}`; */   /* old */
-        const API_URL = `/videogames/${id}`;   /* new */
+        const API_URL = `/videogames/${id}`;   
         axios.get(API_URL)
             .then(response => response.data)
             .then(data => {
                 setVgDetail(data); 
             })
             .catch(error => {
-                // console.log(error);
                 setErrorState(error.code); 
             });
 
@@ -33,10 +29,6 @@ const Detail = () => {
             setErrorState('');
         }
     }, [id]);
-
-    // console.log(vgDetail.name)
-    // console.log(Object.keys(vgDetail).length)
-    // console.log('errorState: ', errorState);
 
     const { name, background_image, platforms, released, rating, genres, description } = vgDetail;
 
