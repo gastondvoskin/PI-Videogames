@@ -1,6 +1,6 @@
 ## Overview
 In this project, created in 2023 as part of my studies at Soy Henry Bootcamp, I aimed to render videogames from a database and the rawg API, providing basic information about each game. The application allows users to explore videogames, apply filters and sorting options, view detailed information about any game, and even add new games to the database.
-https://youtu.be/trnyhUCFNfE
+[![Video Overview](https://img.youtube.com/vi/trnyhUCFNfE&ab_channel=GastónDvoskin/0.jpg)](https://www.youtube.com/watch?v=trnyhUCFNfE&ab_channel=GastónDvoskin)
 
 ## Goals of the Project
 1. Render videogames
@@ -29,6 +29,7 @@ To run the project locally, ensure the following steps are completed:
 2. Create a Database named 'Videogames'.
 3. Create an account on the rawg API.
 4. Inside the /api directory, create a .env file containing your credentials as shown below:
+```shell
 PORT = 3001
 DB_USER = yourPostgresUser
 DB_PASSWORD = yourPostgresPassword
@@ -36,17 +37,30 @@ DB_HOST = localhost
 DB_PORT = yourDbPort
 DB_NAME = videogames
 API_KEY = yourApiKey
+```
 Replace yourPostgresUser, yourPostgresPassword, yourDbPort, and yourApiKey with your actual credentials.
 
 ## Installation
 To install the necessary dependencies, use npm package manager:
-1. Inside /api: npm install
-2. Inside /client: npm install
+1. Inside /api: 
+```shell
+npm install
+```
+2. Inside /client:
+```shell
+npm install
+```
 
 ## Local Execution
 To run the application locally, use the following commands:
-1. Inside /api: npm start
-2. Inside /client: npm start
+1. Inside /api: 
+```shell
+npm start
+```
+2. Inside /client: 
+```shell
+npm start
+```
 
 ## Contact
 Thank you for visiting my webpage. 
