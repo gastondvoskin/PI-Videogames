@@ -3,13 +3,12 @@
 
 ## Overview
 In this project, created in 2023 as part of my studies at Soy Henry Bootcamp, I aimed to render videogames from a database and the rawg API, providing basic information about each game. The application allows users to explore videogames, apply filters and sorting options, view detailed information about any game, and even add new games to the database.
-To take a tour through the app by yourself, visit the [deployed project](https://pi-videogames-gastondvoskin.vercel.app).
-To take a tour through the app by watching the video overview, click on the image below. 
+
+To take a tour through the app by yourself, visit the **[deployed project](https://pi-videogames-gastondvoskin.vercel.app)**.
+
+To take a tour through the app by watching the video overview, click on the image below: 
+
 [![video Overview](client/src/assets/overviewImages/overviewImg1.png)](https://www.youtube.com/watch?v=trnyhUCFNfE&ab_channel=GastónDvoskin)
-<!-- ![Overview: Home](client/src/assets/overviewImages/overviewImg1.png) -->
-<!-- ![Overview: Home](client/src/assets/overviewImages/overviewImg2.png)
-![Overview: Home](client/src/assets/overviewImages/overviewImg3.png)
-![Overview: Home](client/src/assets/overviewImages/overviewImg4.png) -->
 
 ## Goals of the Project
 - Render videogames
@@ -82,4 +81,6 @@ npm start
 
 ## Contact
 Thank you for visiting my webpage. 
-If you have any questions or would like to provide feedback, please feel free to contact me via <https://www.linkedin.com/in/gaston-dvoskin> or <dvoskingaston@gmail.com>
+If you have any questions or would like to provide feedback, please feel free to contact me via: 
+- **[Linkedin](https://www.linkedin.com/in/gaston-dvoskin)**
+- **<dvoskingaston@gmail.com>**
