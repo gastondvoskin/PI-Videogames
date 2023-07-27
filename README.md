@@ -1,6 +1,8 @@
 ## Overview
 In this project, created in 2023 as part of my studies at Soy Henry Bootcamp, I aimed to render videogames from a database and the rawg API, providing basic information about each game. The application allows users to explore videogames, apply filters and sorting options, view detailed information about any game, and even add new games to the database.
-[![Video Overview](https://img.youtube.com/vi/trnyhUCFNfE&ab_channel=GastónDvoskin/0.jpg)](https://www.youtube.com/watch?v=trnyhUCFNfE&ab_channel=GastónDvoskin)
+<!-- [![Video Overview](https://img.youtube.com/vi/trnyhUCFNfE&ab_channel=GastónDvoskin/0.jpg)](https://www.youtube.com/watch?v=trnyhUCFNfE&ab_channel=GastónDvoskin) -->
+<iframe width="560" height="315" src="https://www.youtube.com/embed/trnyhUCFNfE&ab_channel=GastónDvoskin" frameborder="0" allowfullscreen></iframe>
+
 
 ## Goals of the Project
 1. Render videogames
