@@ -28,7 +28,6 @@ const Admin = () => {
     const [ newVg, setNewVg ] = useState(emptyVg);
     const [ errors, setErrors ] = useState(emptyErrors);
     const [ genresBoxes, setGenresBoxes ] = useState(emptyArray);   // before useEffect(setGenresBoxes(emptyGenresBoxes)) with arrDependencies[allGenres] -> []; after useEffect -> [false, false...]
-    // console.log('genresBoxes: ', genresBoxes);
 
     useEffect(() => {
         if (allGenres.length) {
@@ -78,7 +77,6 @@ const Admin = () => {
         const index = event.target.id; 
         const genreName = event.target.name;
         const oldValue = genresBoxes[index];
-        // console.log('oldValue: ', oldValue);
         const genres = !oldValue        /* oldValue is undefined at the beggining. Then it is true or false */        
             ? [...newVg.genres, genreName] 
             : [...newVg.genres.filter(genre => genre !== genreName)];

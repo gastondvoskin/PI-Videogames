@@ -5,7 +5,6 @@ const { API_KEY } = process.env;
 
 
 const getVgById = async (id) => {
-    // console.log('id: ', id);
     // console.log('isNaN(id): ', isNaN(id))
     
     const source = isNaN(id) ? 'db' : 'rawg';

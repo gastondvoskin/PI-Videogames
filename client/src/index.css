@@ -1,7 +1,7 @@
-body {
-  height: 95vh;
-  width: 95vw;
-  margin: 30px;
+html, body {
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
   color: rgba(255, 255, 255, 0.855);
   text-align: center;
   font-family: arial;

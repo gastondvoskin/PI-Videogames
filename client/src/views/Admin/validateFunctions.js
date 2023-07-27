@@ -1,5 +1,4 @@
 const validateName = (value) => {
-    // console.log(0);
     if (value === '') return "Required field"; 
     if (value.length > 100) return "Max 100 characters"; 
     return '';
@@ -25,9 +24,7 @@ const validateDescription = (value) => {
 
 const validateReleased = (value) => {
     const valueDate = new Date(value);
-    // console.log('valueDate: ', valueDate);      // valueDate:  Wed Jan 10 0001 20:06:12 GMT-0353 (hora estándar de Argentina) (Object)
     const valueYear = valueDate.getFullYear();
-    // console.log('valueYear: ', valueYear);        // 2020 (number)
     const minYear = 1950;
     const maxYear = new Date().getFullYear();
 
@@ -38,11 +35,8 @@ const validateReleased = (value) => {
 };
 
 const validateRating = (value) => {
-    // console.log('typeof value: ', typeof value);   // string
     const decimal = value.split(".")[1];
-    // console.log('decimal: ', decimal);
     const decimalCount = decimal ? decimal.length : 0; 
-    // console.log('decimalCount: ', decimalCount);
     const valueParsed = Number(value);
 
     if (value === '') return "Required field";
@@ -53,7 +47,6 @@ const validateRating = (value) => {
 };
 
 export const validateGenres = (updatedGenres) => {
-    // console.log(updatedGenres);
     if (!updatedGenres.length) return "Chose at least one genre.";
     return "";
 };

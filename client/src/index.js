@@ -7,21 +7,12 @@ import { Provider } from 'react-redux';
 import store from './redux/store';
 
 
-import axios from 'axios';  /* new */
-// import * as dotenv from "dotenv";    /* new */
-// dotenv.config();     /* new */
-// import "dotenv/config";      /* new */
-
+import axios from 'axios'; 
 
 const domNode = document.getElementById('root');
 const root = createRoot(domNode);
-console.log('process.env.REACT_APP_API : ', process.env.REACT_APP_API); 
 
-
-axios.defaults.baseURL = process.env.REACT_APP_API || "http://localhost:3001";   /* new */
-// console.log('process.env: ', process.env);
-// console.log('process.env.REACT_APP_API: ', process.env.REACT_APP_API);      // undefined
-// console.log('process.env.REACT_APP_API || "http://localhost:3001" : ', process.env.REACT_APP_API || "http://localhost:3001");           // http://localhost:3001
+axios.defaults.baseURL = process.env.REACT_APP_API || "http://localhost:3001"; 
 
 root.render(
     <Provider store={store}>
