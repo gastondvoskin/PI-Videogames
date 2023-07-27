@@ -6,9 +6,9 @@ In this project, created in 2023 as part of my studies at Soy Henry Bootcamp, I 
 
 To take a tour through the app by yourself, visit the **[deployed project](https://pi-videogames-gastondvoskin.vercel.app)**.
 
-To take a tour through the app by watching the video overview, click on the image below: 
+🌐 To take a tour through the app by watching the video overview, click on the image below: 
 
-[![video Overview](client/src/assets/overviewImages/overviewImg1.png)](https://www.youtube.com/watch?v=trnyhUCFNfE&ab_channel=GastónDvoskin)
+🎬 [![video Overview](client/src/assets/overviewImages/overviewImg1.png)](https://www.youtube.com/watch?v=trnyhUCFNfE&ab_channel=GastónDvoskin)
 
 ## Goals of the Project
 - Render videogames
@@ -82,5 +82,5 @@ npm start
 ## Contact
 Thank you for visiting my webpage. 
 If you have any questions or would like to provide feedback, please feel free to contact me via: 
-- **[Linkedin](https://www.linkedin.com/in/gaston-dvoskin)**
+- **[LinkedIn](https://www.linkedin.com/in/gaston-dvoskin)**
 - **<dvoskingaston@gmail.com>**
