@@ -4,11 +4,12 @@ import logo from "../../assets/logo.png";
 
 const Nav = () => {
   return (
-    <div className={styles.mainContainer}>
-      <nav className={styles.navContainer}>
-        <Link to="/home">
-          <img className={styles.logo} src={logo} alt="Home" />
-        </Link>
+    <nav className={styles.navContainer}>
+      <Link to="/home">
+        <img className={styles.logo} src={logo} alt="Home" />
+      </Link>
+
+      <div className={styles.linksContainer}>
         <NavLink
           to="/home"
           className={({ isActive }) =>
@@ -35,8 +36,8 @@ const Nav = () => {
         >
           ABOUT
         </NavLink>
-      </nav>
-    </div>
+      </div>
+    </nav>
   );
 };
 
