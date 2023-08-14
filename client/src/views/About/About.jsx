@@ -134,7 +134,7 @@ const About = () => {
             </section>
             
             {/* DEVELOPMENT DIAGRAMS */}
-            <section className={`${styles.sectionContainer} ${styles.diagramsContainer}`}>
+            <section className={styles.sectionContainer}>
                 <div className={styles.subtitleAndButtonContainer}>
                     <h2 className={styles.subtitle}>DEVELOPMENT DIAGRAMS</h2>
                     <button className={styles.viewButton} name="diagrams" onClick={handleView}>{view.diagrams ? HIDE_ICON : SHOW_ICON}</button>
