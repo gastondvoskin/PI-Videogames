@@ -157,8 +157,8 @@ const About = () => {
                 {view.contact && 
                 <div className={styles.dataContainer}>
                     <p>Thank you for visiting my webpage and exploring the wide range of available videogames</p> 
-                    <p>You can find the web repository on my <a className={styles.link} href={GITHUB_URL} target="_blank">GitHub</a>.</p>
-                    <p>If you have any questions or would like to provide feedback, please feel free to contact me via <a className={styles.link} href={LINKEDIN_URL} target="_blank">Linkedin</a>.</p> 
+                    <p>You can find the web repository on my <a className={styles.link} href={GITHUB_URL} target="_blank" rel="noreferrer">GitHub</a>.</p>
+                    <p>If you have any questions or would like to provide feedback, please feel free to contact me via <a className={styles.link} href={LINKEDIN_URL} target="_blank" rel="noreferrer">Linkedin</a>.</p> 
                     <p>Once again, thank you for your visit!</p>                
                 </div>}
             </section>
