@@ -9,9 +9,10 @@ html, body {
   
   background-color: black;
   background-image: url("../src/assets/backgrounds/texturedBg.jpg");
-  background-position: center;
   background-size:cover;
-  /* background-repeat: no-repeat; */  
+  background-position: center;
+  background-repeat: no-repeat;  
+  background-attachment: fixed;
 }
 
 

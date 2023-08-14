@@ -33,7 +33,7 @@ const About = () => {
             {/* WELCOME */}
             <div className={styles.introductionContainer}>
                 <h1>Welcome to my Videogames webpage!</h1> 
-                <p>My name is Gastón Dvoskin, and I am a full-stack web developer. This project was created in 2023 as part of my studies at Soy Henry Accademy.</p> 
+                <p>My name is Gastón Dvoskin, and I am a full-stack web developer. This project was created in 2023 as part of my studies at Soy Henry Academy.</p> 
                 <p>In this section, you will discover the key features of the webpage and the technologies I employed to build it.</p>
             </div>
             
