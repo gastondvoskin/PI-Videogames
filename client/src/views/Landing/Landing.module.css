@@ -1,18 +1,14 @@
 .mainContainer {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content:flex-start;
-    
-    /* padding-right: 10%; */
-    padding-top: 5%;
-    align-items: center;
-    background-color: black;
-    background-image: url("../../assets/backgrounds/altBg.gif");
-    background-position: center;
-    background-size: 120%;
+  height: 100vh;
+  width: 100vw; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url("../../assets/backgrounds/altBg.gif");
+  background-position: center;
+  background-size: 120%;  /* 120% to avoid rendering the "Click and hold" */
 }
-
 
 .logo {
   width: 250px;
@@ -21,31 +17,30 @@
   border-radius: 70px;
 }
 
-
 .navLink {
-    text-decoration: none;
-    font-size: 35px;
-    background-color: var(--mylightblue2);
-    border: 5px solid var(--mywhite);
-    color: var(--myblack);
-    border-radius: 70px;
-    padding: 20px;
-    animation: pulse 2s infinite;
+  text-decoration: none;
+  font-size: 35px;
+  background-color: var(--mylightblue2);
+  border: 5px solid var(--mywhite);
+  color: var(--myblack);
+  border-radius: 70px;
+  padding: 20px;
+  animation: pulse 2s infinite;
 }
 
 @keyframes pulse {
-    0% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(1.1);
-    }
-    100% {
-      transform: scale(1);
-    }
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 .navLink:hover {
-    font-size: 45px;
-    background-color: var(--mylightblue);
+  font-size: 45px;
+  background-color: var(--mylightblue);
 }

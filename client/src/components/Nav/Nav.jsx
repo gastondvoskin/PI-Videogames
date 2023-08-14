@@ -22,10 +22,10 @@ const Nav = () => {
                 </NavLink>
 
                 <NavLink
-                    to="/admin"
+                    to="/create"
                     className={({ isActive }) => (isActive ? styles.activeLink : styles.normalLink)}
                 >
-                    ADMIN
+                    CREATE
                 </NavLink>
 
                 <NavLink

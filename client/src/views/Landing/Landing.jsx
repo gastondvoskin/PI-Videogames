@@ -12,7 +12,6 @@ const Landing = () => {
 
             {/* BUTTON */}
             <NavLink to="/home" className={styles.navLink}>START!</NavLink>
-
         </div>
     );
 };

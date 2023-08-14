@@ -7,7 +7,7 @@ This landing page serves as the entry point to the website. To navigate to the h
 
 Upon clicking on a specific videogame, you'll be taken to its detailed view. The navigation bar at the top provides easy access to different sections of the website, and a footer is present throughout.
 
-Now, let's dive into the Admin view. Here, all the input fields are validated using JavaScript. On the right-hand side, you'll find a preview, and at the bottom, there are options to submit or reset the form. To streamline this overview, two autocomplete buttons have been added. In case of any errors, they will be displayed until resolved.
+Now, let's dive into the Create view. Here, all the input fields are validated using JavaScript. On the right-hand side, you'll find a preview, and at the bottom, there are options to submit or reset the form. To streamline this overview, two autocomplete buttons have been added. In case of any errors, they will be displayed until resolved.
 
 Once a videogame is created, you can access its detailed view and apply filters just like any other game.
 
@@ -35,11 +35,11 @@ La vista del videjuego muestra el título, la descripción, la imagen y dalgunos
 
 Nav, Footer. 
 Volviendo a la Home, podemos ver que en todas vistas, exceptuando la Landing, podemos ver un Nav y un Footer.
-El Nav contiene tres links para cambiar a las distintas vistas: Home, Admin y About. Además, tiene un logo que también lleva a la Home. 
+El Nav contiene tres links para cambiar a las distintas vistas: Home, Create y About. Además, tiene un logo que también lleva a la Home. 
 El Footer tiene el nombre del desarrollador de la página y sus links a GitHub y Linkedin, que se abren en páginas en blanco. 
 
-Admin. 
-La vista de Admin nos permite crear un videojuego nuevo que se agrega a la base de datos y luego puede renderizarse, filtrarse, ordenarse y acceder a su detalle como con cualquier otro videojuego. 
+Create. 
+La vista de Create nos permite crear un videojuego nuevo que se agrega a la base de datos y luego puede renderizarse, filtrarse, ordenarse y acceder a su detalle como con cualquier otro videojuego. 
 El formulario tiene todos los campos validados. A medida que se hace un cambio y hay un error, el error se renderiza inmediatamente. Además, hay una validación final al hacer submit que muestra si hubo un error y chequea que ningún campo haya quedado vacío. Este error se valida al final para que el usuario no reciba mensajes de error antes de realizar cambios. 
 A la derecha hay una preview del videojuego que se está creando. 
 Al final del Form hay tres botones: uno de submit, uno de resetear el formulario y otro de llenado automático con valores preestablecidos para probar rápidamente el formulario. 
