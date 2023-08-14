@@ -33,7 +33,7 @@ const About = () => {
             {/* WELCOME */}
             <div className={styles.introductionContainer}>
                 <h1>Welcome to my Videogames webpage!</h1> 
-                <p>My name is Gastón Dvoskin, and I am a full-stack web developer. This project was created in 2023 as part of my studies at Soy Henry Accademy.</p> 
+                <p>My name is Gastón Dvoskin, and I am a full-stack web developer. This project was created in 2023 as part of my studies at Soy Henry Academy.</p> 
                 <p>In this section, you will discover the key features of the webpage and the technologies I employed to build it.</p>
             </div>
             
@@ -134,7 +134,7 @@ const About = () => {
             </section>
             
             {/* DEVELOPMENT DIAGRAMS */}
-            <section className={`${styles.sectionContainer} ${styles.diagramsContainer}`}>
+            <section className={styles.sectionContainer}>
                 <div className={styles.subtitleAndButtonContainer}>
                     <h2 className={styles.subtitle}>DEVELOPMENT DIAGRAMS</h2>
                     <button className={styles.viewButton} name="diagrams" onClick={handleView}>{view.diagrams ? HIDE_ICON : SHOW_ICON}</button>
