@@ -1,4 +1,4 @@
-import styles from "./Admin.module.css";
+import styles from "./Create.module.css";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getGenres } from "../../redux/actions";
@@ -9,7 +9,7 @@ import validationFunctions, { validateGenres, validatePlatforms, validateSubmit 
 // import hardcodedGenres from "../../hardcodedResources/hardcodedGenres.js";
 // import hardcodedPlatforms from "../../hardcodedResources/hardcodedPlatforms";
 
-const Admin = () => {
+const Create = () => {
 
     // *** ALL GENRES -> useSelector and useEffect (dispatch(getGenres()) ***
     const allGenres = useSelector(state => state.genres);       // before dispatch(getGenres()) -> []; after dispatch -> ['Indie', "Strategy'...]
@@ -318,11 +318,13 @@ const Admin = () => {
                     {/* RESET */}
                     <button className={styles.resetButton} type="button" onClick={handleReset}>X</button>
 
+
                     {/* AUTOCOMPLETE DEV 1 */}
                     <button className={styles.autocompleteButton} type="button" onClick={handleAutocomplete1}>↴1</button>
 
                     {/* AUTOCOMPLETE DEV 2 */}
-                    <button className={styles.autocompleteButton} type="button" onClick={handleAutocomplete2}>↴2</button>
+                    {/* <button className={styles.autocompleteButton} type="button" onClick={handleAutocomplete2}>↴2</button> */}
+                    
                 </div>
 
             </form>
@@ -368,5 +370,5 @@ const Admin = () => {
     );
 };
 
-export default Admin; 
+export default Create; 
 

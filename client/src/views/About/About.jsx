@@ -88,7 +88,7 @@ const About = () => {
                     <h3>4. Add a new videogame</h3>
                     <ul className={styles.functionalityContainer}>
                         <li>Add a new videogame to my database.</li>
-                        <li>The videogame will be created through a form in the Admin section.</li>
+                        <li>The videogame will be created through a form in the Create section.</li>
                         <li>Render the added videogame as any of the other ones.</li>
                     </ul>                
                 </div>}

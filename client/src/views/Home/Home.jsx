@@ -20,7 +20,7 @@ const Home = () => {
     // USE EFFECT WITH DISPATCH
     useEffect(() => {
         // to avoid a dispatch each time the component mounts
-        // NIY Add a condition to check if the last VG has an id with typeof different to Number, so if allVg has only a videogame created in the Admin view, the dispatch is sent even though allVg is not an empty array. 
+        // NIY Add a condition to check if the last VG has an id with typeof different to Number, so if allVg has only a videogame created in the Create view, the dispatch is sent even though allVg is not an empty array. 
         if (!allVg.length) dispatch(getAllVg());
         if(!genres.length) dispatch(getGenres());
     }, [dispatch, allVg, genres]);
