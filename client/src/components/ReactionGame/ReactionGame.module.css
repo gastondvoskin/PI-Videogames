@@ -1,0 +1,16 @@
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 400px;
+  justify-content: center;
+  align-items: center;
+  /* background-color: pink; */
+}
+
+.target {
+  width: 250px;
+  height: 50px;
+  cursor: pointer;
+  font-size: 50px;
+}
