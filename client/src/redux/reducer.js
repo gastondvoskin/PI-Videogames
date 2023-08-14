@@ -50,7 +50,7 @@ const rootReducer = (state = initialState, action) => {
 
             if (creator === 'all') {
                 filteredByCreator = [...state.allVg];
-            } else if (creator === 'admin') {
+            } else if (creator === 'db') {
                 filteredByCreator = [...state.allVg].filter(vg => {
                     return isNaN(vg.id)
                 })

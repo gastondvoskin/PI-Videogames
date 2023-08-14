@@ -121,7 +121,7 @@ const Filters = () => {
                 >
                     <option disabled value="">Creator</option>
                     <option value="all">All</option>
-                    <option value="admin">Admin</option>
+                    <option value="db">Database</option>
                     <option value="api">API</option>
                 </select> 
 
