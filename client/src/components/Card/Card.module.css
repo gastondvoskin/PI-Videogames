@@ -1,47 +1,44 @@
 /* NAVLINK */
-
 .NavLink {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 /* MAINCONTAINER */
 .mainContainer {
-    background-color:black;
-    background-color: var(--mygrey3);
-    border: 4px solid var(--mylightblue2);
-    margin: 30px;
-    width: 250px;
-    height: 330px;
-    border-radius: 5%;
-    color: var(--mygrey4);
+  background-color: black;
+  background-color: var(--mygrey3);
+  border: 4px solid var(--mylightblue2);
+  margin: 30px;
+  width: 250px;
+  height: 330px;
+  border-radius: 5%;
+  color: var(--mygrey4);
 }
 
 .mainContainer:hover {
-    text-decoration: none;
-    color: var(--mylightblue);
-    width: 255px;
-    height: 340px;
-    border: 4px solid rgb(95, 209, 219);
+  color: var(--mylightblue);
+  box-shadow: 0 0 30px var(--mylightblue2); 
+  /* rotate: 1 1 0 90deg; */
 }
 
 /* TITLE */
-.title{
-    font-size: 20px;
-    margin-bottom: 0px;
+.title {
+  font-size: 20px;
+  margin-bottom: 0px;
 }
 
 /* IMAGE */
 .image {
-    width: 230px;
-    width: 100%;
-    height: 160px;
-    border-radius:10px;
+  width: 230px;
+  width: 100%;
+  height: 160px;
+  border-radius: 10px;
 }
 
 .rating {
-    font-size: 14px;
+  font-size: 14px;
 }
 
 .genres {
-    font-size: 14px;
-} 
+  font-size: 14px;
+}
