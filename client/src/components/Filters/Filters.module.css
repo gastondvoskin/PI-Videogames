@@ -5,30 +5,29 @@
   align-items: center;
   width: 100%;
   justify-content: center;
-  /* background-color: red; */
 }
 
 /* SEARCHBAR */
 .searchbarContainer {
   display: flex;
   direction: row;
-  position: relative;
+  justify-content: space-between;
+  align-items: center;
   width: 350px;
-  height: 30px;
+  height: 40px;
   border-radius: 5px;
   background-color: black;
   border: 2px solid var(--mygrey4);
   color: white;
-  justify-content: space-between;
 }
 
 .searchInput {
   width: 310px;
-  height: 28px;
   border-radius: 5px;
-  background-color: black;
+  background-color: transparent;
   border: transparent;
   color: white;
+  font-size: 18px;
 }
 
 .searchInput::placeholder {
@@ -51,9 +50,7 @@
   border: none;
   border-radius: 5px;
   margin-right: 2px;
-  /* margin-left: 10px; */
   cursor: pointer;
-
 }
 
 .searchSubmitButton:hover {
@@ -76,12 +73,14 @@
 .genreSelect,
 .sortSelect,
 .resetButton {
+  width: 150px;
   background-color: black;
   border: 2px solid var(--mygrey4);
   color: var(--mygrey4);
   height: 100%;
   border-radius: 5px;
   margin: 5px;
+  font-size: 18px;
 }
 
 .creatorSelect:hover,
@@ -97,4 +96,18 @@
 }
 
 @media screen and (max-width: 768px) {
+  .searchbarContainer {
+    width: 250px;
+  }
+  .searchInput {
+    font-size: 14px;
+  }
+  .creatorSelect,
+  .genreSelect,
+  .sortSelect,
+  .resetButton {
+    width: 75px;
+    margin: 5px;
+    font-size: 14px;
+  }
 }

@@ -8,7 +8,8 @@
   align-items: center;
 }
 
-.button {
+.button, .pageButtonSmallDevice {   
+    /* two classNames to avoid the hover in small device */
   margin: 5px;
   margin-top: 20px;
   padding: 8px;
