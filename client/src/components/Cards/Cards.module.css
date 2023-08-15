@@ -1,9 +1,13 @@
+.loadingContainer {
+    display: flex;
+    justify-content: center;
+}
+
 .mainContainer {
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: 25px;
-  justify-content: center;
-  /* background-color: red; */
+  display: grid;
+  grid-template-columns: repeat(4, 300px);
+  margin: 0 auto;
+  width: fit-content;
 }
 
 .loadingContainer {
@@ -14,4 +18,16 @@
   color: var(--myred2);
   margin-top: 100px;
   margin-bottom: 400px;
+}
+
+
+@media screen and (max-width: 1280px) {
+  .mainContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 10px;
+  }
 }

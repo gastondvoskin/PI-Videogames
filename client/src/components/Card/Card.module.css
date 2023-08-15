@@ -5,40 +5,42 @@
 
 /* MAINCONTAINER */
 .mainContainer {
-  background-color: black;
   background-color: var(--mygrey3);
   border: 4px solid var(--mylightblue2);
-  margin: 30px;
-  width: 250px;
-  height: 330px;
+  margin: 10px;
+  width: 270px;
+  height: 220px;
   border-radius: 5%;
   color: var(--mygrey4);
 }
 
 .mainContainer:hover {
   color: var(--mylightblue);
-  box-shadow: 0 0 30px var(--mylightblue2); 
+  box-shadow: 0 0 15px white;
   /* rotate: 1 1 0 90deg; */
-}
-
-/* TITLE */
-.title {
-  font-size: 20px;
-  margin-bottom: 0px;
 }
 
 /* IMAGE */
 .image {
-  width: 230px;
   width: 100%;
-  height: 160px;
-  border-radius: 10px;
+  height: 150px;
+  border-radius: 8px 8px 0px 0px;
 }
 
-.rating {
-  font-size: 14px;
+/* TITLE */
+.title {
+  height: 35px;
+  margin: 10px 5px 10px 5px;
+  font-size: 18px;
 }
 
-.genres {
+/* .rating {
   font-size: 14px;
+  margin: 0;
+} */
+
+/* .genres {
+  margin: 0px 5px 0px 5px;
+  font-size: 13px;
 }
+ */

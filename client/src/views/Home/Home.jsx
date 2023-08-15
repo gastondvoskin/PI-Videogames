@@ -25,7 +25,7 @@ const Home = () => {
   }, [dispatch, allVg, genres]);
 
   // VG_PER_PAGE AND numberOfPages
-  const VG_PER_PAGE = 10;
+  const VG_PER_PAGE = 8;
   const currentVgLength = currentVg.length; // eg 150
   // console.log('currentVgLength: ', currentVgLength);
   const numberOfPages = Math.ceil(currentVgLength / VG_PER_PAGE); // eg Math.ceil (150 / 15) = 10
