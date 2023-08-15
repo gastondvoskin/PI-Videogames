@@ -28,7 +28,7 @@ const Home = () => {
     
     
     // VG_PER_PAGE AND numberOfPages
-    const VG_PER_PAGE = 15;
+    const VG_PER_PAGE = 10;
     const currentVgLength = currentVg.length;       // eg 150
     // console.log('currentVgLength: ', currentVgLength);
     const numberOfPages = Math.ceil(currentVgLength / VG_PER_PAGE);     // eg Math.ceil (150 / 15) = 10
@@ -40,7 +40,6 @@ const Home = () => {
             <Filters />
             {typeof currentVg !== 'string' && <Pagination numberOfPages={numberOfPages}/>}
             <Cards VG_PER_PAGE={VG_PER_PAGE} />
-            {typeof currentVg !== 'string' && <Pagination numberOfPages={numberOfPages}/>}
         </div>
     );
 };

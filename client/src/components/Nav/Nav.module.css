@@ -1,11 +1,12 @@
 /* NAV CONTAINER */
+
 .navContainer {
   display: flex;
   flex-direction: row;
   width: 700px;
+  height: 50px;
   justify-content: space-between;
   align-items: center;
-  height: 50px;
   margin: 20px auto 50px;        /* auto to center in x axis */
   border: 5px solid var(--mylightblue2);
   border-radius: 20px;
