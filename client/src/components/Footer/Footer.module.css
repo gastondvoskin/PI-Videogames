@@ -9,6 +9,7 @@
   border: 5px solid var(--mylightblue2);
   border-radius: 15px;
   background-color: var(--mygrey4);
+  flex-shrink: 0; /* Prevent the footer from shrinking */
 }
 
 .text {
@@ -32,18 +33,6 @@
   height: 31px;
 }
 
-/* @media screen and (max-width: 1280px) {
-  .mainContainer {
-    width: 1200px;
-  }
-}
-
-@media screen and (max-width: 1023px) {
-  .mainContainer {
-    width: 600px;
-  }
-}
- */
 
 @media screen and (max-width: 767px) {
   .text {

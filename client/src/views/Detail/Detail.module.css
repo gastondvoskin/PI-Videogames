@@ -9,7 +9,7 @@
     width:100%;
     align-items:center;
     background-color: var(--mygrey2opaque);
-    
+    flex: 1;
 }
 
 .name {
