@@ -24,22 +24,26 @@ const Cards = (props) => {
     typeof currentVg === "string" ? (
       <h1 className={styles.notFoundText}>{currentVg}</h1>
     ) : (
-      <div className={styles.mainContainer}>
+      <div>
         {!currentVg.length ? (
-          <Loading />
+          <div className={styles.loadingContainer}>
+            <Loading />
+          </div>
         ) : (
-          renderedVg.map((vg, index) => {
-            return (
-              <Card
-                key={index}
-                id={vg.id}
-                name={vg.name}
-                background_image={vg.background_image}
-                genres={vg.genres}
-                rating={vg.rating}
-              />
-            );
-          })
+          <div className={styles.mainContainer}>
+            {renderedVg.map((vg, index) => {
+              return (
+                <Card
+                  key={index}
+                  id={vg.id}
+                  name={vg.name}
+                  background_image={vg.background_image}
+                  genres={vg.genres}
+                  rating={vg.rating}
+                />
+              );
+            })}
+          </div>
         )}
       </div>
     )

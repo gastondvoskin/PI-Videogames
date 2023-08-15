@@ -25,10 +25,10 @@ const Card = ({ id, name, background_image, genres, rating }) => {
         )}
 
         {/* RATING */}
-        <p className={styles.rating}>{`☆ ${rating}`}</p>
+        {/* <p className={styles.rating}>{`☆ ${rating}`}</p> */}
 
         {/* GENRES */}
-        <p className={styles.genres}>
+        {/* <p className={styles.genres}>
           {!genres?.length ? (
             <span>No genres provided</span>
           ) : (
@@ -40,7 +40,7 @@ const Card = ({ id, name, background_image, genres, rating }) => {
               );
             })
           )}
-        </p>
+        </p> */}
       </div>
     </NavLink>
   );
