@@ -90,6 +90,7 @@ const Pagination = (props) => {
         return (
           <button
             className={`
+                                ${styles.pageButtonLargeDevice} 
                                 ${styles.button} 
                                 ${
                                   pageNumber === currentPageNumber
@@ -105,6 +106,11 @@ const Pagination = (props) => {
           </button>
         );
       })}
+
+      {/* PAGE BUTTON FOR SMALL DEVICE */}
+      <div className={`${styles.pageButtonSmallDevice} ${styles.button} ${styles.isActive}`}>
+        {`${currentPageNumber} / ${numberOfPages}`}
+      </div>
 
       {/* ARROWS */}
       <div className={styles.arrows}>

@@ -31,6 +31,10 @@
   color: black;
 }
 
+.pageButtonSmallDevice {
+  display: none;
+}
+
 .arrows {
   margin-left: 15px;
   margin-right: 15px;
@@ -48,4 +52,13 @@
 .disabled:hover {
   background-color: var(--mygrey3opaque);
   color: var(--mygrey);
+}
+
+@media screen and (max-width: 1024px) {
+  .pageButtonLargeDevice {
+    display: none;
+  }
+  .pageButtonSmallDevice {
+    display: flex;
+  }
 }
