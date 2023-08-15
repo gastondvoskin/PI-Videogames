@@ -43,8 +43,9 @@
 .text {
   position: absolute;
   bottom: 50px;
-  left: 150px;
+  left: 120px;
   animation: pulse 2s infinite;
+  font-size: 60px;
 }
 
 @keyframes pulse {
@@ -56,5 +57,24 @@
   }
   100% {
     transform: scale(1);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .circle {
+    width: 200px;
+    height: 200px;
+    /* padding: 50px; */
+  }
+  .logo {
+    width: 150px;
+  }  
+  .logo:hover {
+    width: 170px;
+  }  
+  .text {
+    bottom: 10px;
+    left: 85px;
+    font-size: 35px;
   }
 }
