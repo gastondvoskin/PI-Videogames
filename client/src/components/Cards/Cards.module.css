@@ -1,16 +1,17 @@
 .mainContainer {
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 25px;
-    justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 25px;
+  justify-content: center;
+  /* background-color: red; */
 }
 
 .loadingContainer {
-    font-size: 55px;
+  font-size: 55px;
 }
 
 .notFoundText {
-    color: var(--myred2);
-    margin-top: 100px;
-    margin-bottom: 400px;
+  color: var(--myred2);
+  margin-top: 100px;
+  margin-bottom: 400px;
 }
