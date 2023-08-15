@@ -7,13 +7,14 @@ import Footer from "./components/Footer/Footer.jsx";
 import Filters from "./components/Filters/Filters.jsx";
 import Pagination from "./components/Pagination/Pagination.jsx";
 import ReactionGame from "./components/ReactionGame/ReactionGame.jsx";
+import "./App.css";
 
 const App = () => {
   const location = useLocation();
   const renderNavAndFooter = location.pathname !== '/';
 
   return (
-    <div>
+    <div className="app">
       {renderNavAndFooter && <Nav />}
       <Routes>
         <Route path="/" element={<Landing />} />

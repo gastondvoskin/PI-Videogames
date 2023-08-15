@@ -1,30 +1,49 @@
 .mainContainer {
   height: 100vh;
-  width: 100vw; 
+  width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   background-image: url("../../assets/backgrounds/altBg.gif");
   background-position: center;
-  background-size: 120%;  /* 120% to avoid rendering the "Click and hold" */
+  background-size: 120%; /* 120% to avoid rendering the "Click and hold" */
+  overflow: hidden;
+}
+
+.linkContainer {
+  text-decoration: none;
+}
+
+.circle {
+  position: relative;
+  width: 350px;
+  height: 350px;
+  padding: 50px;
+  background-color: white;
+  border-radius: 100%;
+  color: var(--mylightblue2);
+  animation: pulse 2s infinite;
+}
+
+.circle:hover {
+  background-color: var(--mylightblue2);
+  color: white;
 }
 
 .logo {
-  width: 250px;
-  margin-bottom: 25%;
-  padding: 30px;
-  border-radius: 70px;
+  width: 200px;
+  animation: pulse 2s infinite;
 }
 
-.navLink {
-  text-decoration: none;
-  font-size: 35px;
-  background-color: var(--mylightblue2);
-  border: 5px solid var(--mywhite);
-  color: var(--myblack);
-  border-radius: 70px;
-  padding: 20px;
+.logo:hover {
+  width: 230px;
+}
+
+.text {
+  position: absolute;
+  bottom: 50px;
+  left: 150px;
   animation: pulse 2s infinite;
 }
 
@@ -38,9 +57,4 @@
   100% {
     transform: scale(1);
   }
-}
-
-.navLink:hover {
-  font-size: 45px;
-  background-color: var(--mylightblue);
 }
