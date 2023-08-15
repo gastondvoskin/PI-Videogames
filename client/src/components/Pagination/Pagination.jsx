@@ -108,7 +108,7 @@ const Pagination = (props) => {
       })}
 
       {/* PAGE BUTTON FOR SMALL DEVICE */}
-      <div className={`${styles.pageButtonSmallDevice} ${styles.button} ${styles.isActive}`}>
+      <div className={`${styles.pageButtonSmallDevice} ${styles.isActive}`}>
         {`${currentPageNumber} / ${numberOfPages}`}
       </div>
 
