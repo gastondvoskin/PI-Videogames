@@ -9,12 +9,6 @@ const Footer = () => {
 
   return (
     <footer className={styles.mainContainer}>
-      <a href={GITHUB_URL} target="_blank">
-        <img className={styles.githubLogo} src={githubTransp} alt="GitHub" />
-      </a>
-
-      <h3 className={styles.text}>Developed by Gastón Dvoskin</h3>
-
       <a href={LINKEDIN_URL} target="_blank">
         <img
           className={styles.linkedinLogo}
@@ -22,6 +16,13 @@ const Footer = () => {
           alt="Linkedin"
         />
       </a>
+
+      <h3 className={styles.text}>Developed by Gastón Dvoskin</h3>
+
+      <a href={GITHUB_URL} target="_blank">
+        <img className={styles.githubLogo} src={githubTransp} alt="GitHub" />
+      </a>
+      
     </footer>
   );
 };
