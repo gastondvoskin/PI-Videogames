@@ -38,7 +38,7 @@ const getAllVg = async () => {
     // data from rawg
     const BASE_API_URL = `https://api.rawg.io/api/games?key=${API_KEY}`;
     const numberOfResultsPerPage = 40;            // number of results from rawg
-    const numberOfResultsExpected = 40;           // 150
+    const numberOfResultsExpected = 150;           // 150
     const numberOfRequestsRequired = Math.ceil(numberOfResultsExpected/numberOfResultsPerPage);        // Math.ceil(150/40) // 4
 
     // requests to rawg will be saved in apiPromises
