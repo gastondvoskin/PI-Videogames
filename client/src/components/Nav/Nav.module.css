@@ -1,15 +1,13 @@
-/* NAV CONTAINER */
-
 .navContainer {
   display: flex;
   flex-direction: row;
-  width: 700px;
+  width: 90%;
   height: 50px;
   justify-content: space-between;
   align-items: center;
-  margin: 20px auto 50px;        /* auto to center in x axis */
+  margin: 20px auto 50px; /* auto to center in x axis */
   border: 5px solid var(--mylightblue2);
-  border-radius: 20px;
+  border-radius: 15px;
   background-color: var(--mygrey4);
 }
 
@@ -51,13 +49,14 @@
 }
 
 /* MEDIA QUERIES */
-@media screen and (max-width: 768px) {
-  .logo {
-    display: none;
-  }
-
-  .mainContainer {
-    margin: 5px;
-    margin-bottom: 30px;
+/* @media screen and (max-width: 1023px) {
+  .navContainer {
+    width: 600px;
   }
 }
+
+@media screen and (max-width: 767px) {
+  .navContainer {
+    width: 300px;
+  }
+} */
