@@ -1,20 +1,25 @@
 .navContainer {
   display: flex;
   flex-direction: row;
-  width: 90%;
-  height: 50px;
+  height: 70px;
   justify-content: space-between;
   align-items: center;
-  margin: 20px auto 50px; /* auto to center in x axis */
-  border: 5px solid var(--mylightblue2);
-  border-radius: 15px;
+  margin-bottom: 50px; 
+  /* margin: 10px auto 50px; */ /* auto to center in x axis */
+  /* border: 5px solid var(--mylightblue2);
+  border-radius: 15px; */
   background-color: var(--mygrey4);
+  background-color: black;
 }
 
 /* LOGO */
 .logo {
-  height: 60px;
-  margin-left: 15px;
+  height: 50px;
+  margin-left: 35px;
+  margin-top: 5px;
+  border-radius: 100%;
+  background-color: white;
+  padding: 2px;
 }
 
 /* LINKS CONTAINER */
@@ -22,30 +27,27 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-right: 15px;
+  margin-right: 35px;
 }
 
 /* LINKS */
 .normalLink {
   text-decoration: none;
   margin: 30px;
-  color: black;
+  color: white;
   font-size: 18px;
 }
 
 .normalLink:hover {
-  text-decoration: none;
   color: var(--mylightblue2);
 }
 
 .activeLink {
   text-decoration: none;
   margin: 30px;
-  color: rgb(95, 209, 219);
   color: var(--mylightblue2);
   font-weight: bold;
   font-size: 18px;
-  /* border-bottom: solid 2px; */
 }
 
 /* MEDIA QUERIES */

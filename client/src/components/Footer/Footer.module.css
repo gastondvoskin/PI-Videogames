@@ -1,38 +1,39 @@
 .mainContainer {
   display: flex;
   flex-direction: row;
-  width: 90%;
-  height: 50px;
+  height: 70px;
   justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
-  margin: 15px auto;
-  border: 5px solid var(--mylightblue2);
-  border-radius: 15px;
   background-color: var(--mygrey4);
+  background-color: black;
   flex-shrink: 0; /* Prevent the footer from shrinking */
 }
 
 .text {
-  font-size: 16px;
-  color: black;
+  font-size: 14px;
+  color: var(--mygrey4);
+  margin: 0px 10px;
 }
 
-.githubLogo {
-  height: 55px;
-}
-
-.githubLogo:hover {
-  height: 60px;
-}
 
 .linkedinLogo {
-  height: 28px;
+  height: 40px;
+  margin: 0px 10px;
 }
 
 .linkedinLogo:hover {
-  height: 31px;
+  height: 43px;
 }
 
+.githubLogo {
+  margin: 0px 10px;
+  height: 50px;
+}
+
+.githubLogo:hover {
+  height: 54px;
+}
 
 @media screen and (max-width: 767px) {
   .text {
