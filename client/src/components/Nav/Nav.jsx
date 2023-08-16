@@ -1,45 +1,19 @@
 import { Link, NavLink } from "react-router-dom";
 import styles from "./Nav.module.css";
 import logo from "../../assets/logo.png";
+import NavMenu from "../NavMenu/NavMenu";
 
 const Nav = () => {
   return (
-    
-      <nav className={styles.navContainer}>
-        <Link to="/home">
-          <img className={styles.logo} src={logo} alt="Home" />
-        </Link>
-
-        <div className={styles.linksContainer}>
-          <NavLink
-            to="/home"
-            className={({ isActive }) =>
-              isActive ? styles.activeLink : styles.normalLink
-            }
-          >
-            HOME
-          </NavLink>
-
-          <NavLink
-            to="/create"
-            className={({ isActive }) =>
-              isActive ? styles.activeLink : styles.normalLink
-            }
-          >
-            CREATE
-          </NavLink>
-
-          <NavLink
-            to="/about"
-            className={({ isActive }) =>
-              isActive ? styles.activeLink : styles.normalLink
-            }
-          >
-            ABOUT
-          </NavLink>
-        </div>
-      </nav>
-    
+    <nav className={styles.navContainer}>
+      <Link to="/home">
+        <img className={styles.logo} src={logo} alt="Home" />
+      </Link>
+      <div className={styles.linksContainer}>
+        <NavMenu />
+      </div>
+      <button className={styles.bars} onClick={()=> {console.log('hola')}}>☰</button>
+    </nav>
   );
 };
 
