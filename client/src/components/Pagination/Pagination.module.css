@@ -11,12 +11,11 @@
 .button, .pageButtonSmallDevice {   
     /* two classNames to avoid the hover in small device */
   margin: 5px;
-  margin-top: 20px;
   padding: 8px;
   background-color: var(--mygrey2);
   color: white;
   height: 100%;
-  border: 2px solid black;
+  border: 1px solid black;
   border-radius: 5px;
   font-size: 14px;
 }

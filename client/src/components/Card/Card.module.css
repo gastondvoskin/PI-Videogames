@@ -6,12 +6,13 @@
 /* MAINCONTAINER */
 .mainContainer {
   background-color: var(--mygrey3);
-  border: 4px solid var(--mylightblue2);
+  border: 02px solid var(--mylightblue2);
   margin: 10px;
   width: 270px;
-  height: 220px;
+  height: 200px;
   border-radius: 5%;
   color: var(--mygrey4);
+  /* background-color: green; */
 }
 
 .mainContainer:hover {
@@ -25,13 +26,17 @@
   width: 100%;
   height: 150px;
   border-radius: 8px 8px 0px 0px;
+  /* display: none; */
 }
 
 /* TITLE */
 .title {
-  height: 35px;
-  margin: 10px 5px 10px 5px;
-  font-size: 18px;
+  /* height: 35px; */
+  margin: 10px; 
+  font-size: 16px;
+  white-space: nowrap;
+  overflow: hidden; 
+  text-overflow: ellipsis; 
 }
 
 /* .rating {

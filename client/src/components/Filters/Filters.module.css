@@ -17,7 +17,7 @@
   height: 30px;
   border-radius: 5px;
   background-color: black;
-  border: 2px solid var(--mygrey4);
+  border: 1px solid var(--mygrey4);
   color: white;
 }
 
@@ -75,7 +75,7 @@
 .resetButton {
   width: 150px;
   background-color: black;
-  border: 2px solid var(--mygrey4);
+  border: 1px solid var(--mygrey4);
   color: var(--mygrey4);
   height: 100%;
   border-radius: 5px;
