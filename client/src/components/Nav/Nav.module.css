@@ -5,16 +5,12 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px; 
-  /* margin: 10px auto 50px; */ /* auto to center in x axis */
-  /* border: 5px solid var(--mylightblue2);
-  border-radius: 15px; */
-  background-color: var(--mygrey4);
   background-color: black;
 }
 
 /* LOGO */
 .logo {
-  height: 50px;
+  height: 40px;
   margin-left: 35px;
   margin-top: 5px;
   border-radius: 100%;
@@ -23,42 +19,72 @@
 }
 
 /* LINKS CONTAINER */
-.linksContainer {
+.lgMenuContainer { 
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin-right: 35px;
 }
 
-/* LINKS */
-.normalLink {
-  text-decoration: none;
-  margin: 30px;
-  color: white;
-  font-size: 18px;
+.barsMobile {
+  display: none;
 }
 
-.normalLink:hover {
-  color: var(--mylightblue2);
+.smMenuContainer {        /* NEW! */
+  display: none;
 }
 
-.activeLink {
-  text-decoration: none;
-  margin: 30px;
-  color: var(--mylightblue2);
-  font-weight: bold;
-  font-size: 18px;
-}
-
-/* MEDIA QUERIES */
-/* @media screen and (max-width: 1023px) {
+@media screen and (max-width: 600px) {
   .navContainer {
-    width: 600px;
+    display: fixed;
   }
-}
+  .logo {
+    margin-left: 20px;
+  }
 
-@media screen and (max-width: 767px) {
-  .navContainer {
-    width: 300px;
+  .lgMenuContainer {
+    display: none;
   }
-} */
+
+  .barsMobile {
+    /* position: absolute;
+    top: 15px;
+    right: 20px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 40px;
+    margin-right: 20px;
+    background-color: white;
+    color: black;
+    font-size: 25px;
+    border: solid white 2px;
+    border-radius: 100%;
+    cursor: pointer;
+  }
+  
+  .smMenuContainer {
+    display: flex;
+    background-color: black;
+    width: 100vw;
+    height: 100vh;
+    /* background-color: green; */
+  }
+
+  .xMobile {
+    position: absolute;
+    top: 15px;
+    right: 20px; 
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 40px;
+    background-color: white;
+    color: black;
+    font-size: 25px;
+    border: solid white 2px;
+    border-radius: 100%;
+    cursor: pointer;
+  }
+
+}

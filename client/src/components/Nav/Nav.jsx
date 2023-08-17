@@ -1,45 +1,58 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styles from "./Nav.module.css";
 import logo from "../../assets/logo.png";
+import NavMenu from "../NavMenu/NavMenu";
+import { useState } from "react";
 
 const Nav = () => {
+  const [displayMobileMenu, setDisplayMobileMenu] = useState(false);
+  const handleRenderMobileMenu = () => {
+    setDisplayMobileMenu(!displayMobileMenu);
+  };
+
+  /* A second function is necessary to avoid opening the mobile menu in a large device */
+  const closeRenderMobileMenu = () => {
+    setDisplayMobileMenu(false);
+  };
+
   return (
-    
-      <nav className={styles.navContainer}>
-        <Link to="/home">
-          <img className={styles.logo} src={logo} alt="Home" />
-        </Link>
+    <>
+      {!displayMobileMenu ? (
+        <nav className={styles.navContainer}>
+          {/* logo */}
+          <Link to="/home">
+            <img className={styles.logo} src={logo} alt="Home" />
+          </Link>
 
-        <div className={styles.linksContainer}>
-          <NavLink
-            to="/home"
-            className={({ isActive }) =>
-              isActive ? styles.activeLink : styles.normalLink
-            }
-          >
-            HOME
-          </NavLink>
+          {/* large menu container*/}
+          <div className={styles.lgMenuContainer}>
+            <NavMenu />
+          </div>
 
-          <NavLink
-            to="/create"
-            className={({ isActive }) =>
-              isActive ? styles.activeLink : styles.normalLink
-            }
+          {/* mobile bars */}
+          <button
+            className={styles.barsMobile}
+            onClick={handleRenderMobileMenu}
           >
-            CREATE
-          </NavLink>
-
-          <NavLink
-            to="/about"
-            className={({ isActive }) =>
-              isActive ? styles.activeLink : styles.normalLink
-            }
+            ☰
+          </button>
+        </nav>
+      ) : (
+        /* mobileMenu */
+        <div className={styles.smMenuContainer}>
+          {/* mobile X */}
+          <button
+            className={styles.xMobile}
+            onClick={handleRenderMobileMenu}
           >
-            ABOUT
-          </NavLink>
+            X
+          </button>
+          <div>
+            <NavMenu className={styles.mobileLinksContainer} closeRenderMobileMenu={closeRenderMobileMenu} />
+          </div>
         </div>
-      </nav>
-    
+      )}
+    </>
   );
 };
 

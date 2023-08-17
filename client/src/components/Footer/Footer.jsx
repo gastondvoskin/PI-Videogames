@@ -9,11 +9,11 @@ const Footer = () => {
   return (
     <footer className={styles.mainContainer}>
       <h3 className={styles.text}>Developed by Gastón Dvoskin</h3>
-      <a href={LINKEDIN_URL} target="_blank">
+      <a href={LINKEDIN_URL} target="_blank" rel="noreferrer">
         <img className={styles.linkedinLogo} src={linkedin} alt="Linkedin" />
       </a>
 
-      <a href={GITHUB_URL} target="_blank">
+      <a href={GITHUB_URL} target="_blank" rel="noreferrer">
         <img className={styles.githubLogo} src={github} alt="GitHub" />
       </a>
     </footer>
