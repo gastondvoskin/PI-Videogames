@@ -17,4 +17,7 @@
     flex-wrap: wrap;
     align-items: center;
   }
+  .mainContainer {
+    margin-top: 100px;
+  }
 }

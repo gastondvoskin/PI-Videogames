@@ -12,10 +12,7 @@ const MobileNav = () => {
 
   return (
     <nav className={styles.navContainer}>
-      <Link to="/home">
-        <img className={styles.logo} src={logo} alt="Home" />
-      </Link>
-      {/* hamburger */}
+      <Link to="/home"><img className={styles.logo} src={logo} alt="Home" /></Link>
       <button className={styles.barsMobile} onClick={handleClick}>
         {!nav ? <span>☰</span> : <span>X</span>}
       </button>

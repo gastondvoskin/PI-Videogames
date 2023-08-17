@@ -4,7 +4,6 @@ import styles from "./Menu.module.css";
 const Menu = ({handleClick}) => {
   return (
     <div className={styles.linksContainer}>
-      
       <NavLink 
         onClick={handleClick} 
         to="/home"
