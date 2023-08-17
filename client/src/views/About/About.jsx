@@ -40,7 +40,7 @@ const About = () => {
         </p>
         <p>
           In this section, you will discover the key features of the webpage and
-          the technologies I employed to build it.
+          the technologies I employed to build it. The project has been built using pure CSS, and it is fully responsive.  
         </p>
       </div>
 
@@ -94,7 +94,7 @@ const About = () => {
                 from rawg.
               </li>
               <li>
-                The results are shown by pages, displaying 15 videogames in each
+                The results are shown by pages, displaying 8 videogames in each
                 page.
               </li>
             </ul>
