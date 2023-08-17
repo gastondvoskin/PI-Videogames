@@ -1,0 +1,46 @@
+.navContainer {
+  display: none;
+  flex-direction: row;
+  height: 70px;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  background-color: black;
+}
+
+.logo {
+  height: 40px;
+  margin-left: 35px;
+  margin-top: 5px;
+  border-radius: 100%;
+  background-color: white;
+  padding: 2px;
+}
+
+.barsMobile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 40px;
+  margin-right: 20px;
+  background-color: white;
+  color: black;
+  font-size: 25px;
+  border: solid white 2px;
+  border-radius: 100%;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+  .navContainer {
+    display: flex;
+  }
+}
+
+/* .smMenuContainer {
+  display: flex;
+  background-color: black;
+  width: 100vw;
+  height: 100vh;
+} */

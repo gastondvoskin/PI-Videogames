@@ -1,0 +1,25 @@
+.navContainer {
+  display: flex;
+  flex-direction: row;
+  height: 70px;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  background-color: black;
+}
+
+.logo {
+  height: 40px;
+  margin-left: 35px;
+  margin-top: 5px;
+  border-radius: 100%;
+  background-color: white;
+  padding: 2px;
+}
+
+
+@media screen and (max-width: 600px) {
+  .navContainer {
+    display: none;
+  }
+}
