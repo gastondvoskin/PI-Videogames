@@ -5,12 +5,8 @@ import { getGenres } from "../../redux/actions";
 import axios from "axios";
 import { updateWithNewVg } from "../../redux/actions";
 import validationFunctions, { validateGenres, validatePlatforms, validateSubmit } from "./validateFunctions";
-// import { hardcodedSmallArray } from "../../hardcodedResources/hardcodedVideogames.js";
-// import hardcodedGenres from "../../hardcodedResources/hardcodedGenres.js";
-// import hardcodedPlatforms from "../../hardcodedResources/hardcodedPlatforms";
 
 const Create = () => {
-
     // *** ALL GENRES -> useSelector and useEffect (dispatch(getGenres()) ***
     const allGenres = useSelector(state => state.genres);       // before dispatch(getGenres()) -> []; after dispatch -> ['Indie', "Strategy'...]
     // console.log('allGenres: ', allGenres);
