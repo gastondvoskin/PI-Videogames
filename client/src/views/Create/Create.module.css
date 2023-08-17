@@ -268,3 +268,9 @@
     width: 97%;
   }
 }
+
+@media screen and (max-width: 767px) {
+  .mainContainer {
+    margin-top: 100px;
+  }
+}
