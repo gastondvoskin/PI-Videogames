@@ -10,43 +10,46 @@ const Nav = () => {
     setDisplayMobileMenu(!displayMobileMenu);
   };
 
+  /* A second function is necessary to avoid opening the mobile menu in a large device */
+  const closeRenderMobileMenu = () => {
+    setDisplayMobileMenu(false);
+  };
+
   return (
     <>
       {!displayMobileMenu ? (
-        /* large device menu */
         <nav className={styles.navContainer}>
           {/* logo */}
           <Link to="/home">
             <img className={styles.logo} src={logo} alt="Home" />
           </Link>
 
-          {/* large device menu */}
-          <div className={styles.menuContainerLargeDevice}>
+          {/* large menu container*/}
+          <div className={styles.lgMenuContainer}>
             <NavMenu />
           </div>
 
-          {/* mobile bars / X */}
+          {/* mobile bars */}
           <button
             className={styles.barsMobile}
             onClick={handleRenderMobileMenu}
           >
-            ☰{/* {displayMobileMenu ? <span>X</span> : <span>☰</span>} */}
+            ☰
           </button>
-
         </nav>
       ) : (
         /* mobileMenu */
-        <div>
-          {/* mobile bars / X */}
+        <div className={styles.smMenuContainer}>
+          {/* mobile X */}
           <button
-            className={styles.barsMobile}
+            className={styles.xMobile}
             onClick={handleRenderMobileMenu}
           >
             X
           </button>
-          <div className={styles.menuContainerMobile}>
-              <NavMenu />
-            </div>
+          <div>
+            <NavMenu className={styles.mobileLinksContainer} closeRenderMobileMenu={closeRenderMobileMenu} />
+          </div>
         </div>
       )}
     </>

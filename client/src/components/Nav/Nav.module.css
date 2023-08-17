@@ -6,7 +6,6 @@
   align-items: center;
   margin-bottom: 20px; 
   background-color: black;
-  /* margin: 10px auto 50px; */ /* auto to center in x axis */
 }
 
 /* LOGO */
@@ -20,7 +19,7 @@
 }
 
 /* LINKS CONTAINER */
-.menuContainerLargeDevice {           /* media */
+.lgMenuContainer { 
   display: flex;
 }
 
@@ -28,13 +27,11 @@
   display: none;
 }
 
-.menuContainerMobile {
+.smMenuContainer {        /* NEW! */
   display: none;
 }
 
-
-
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 600px) {
   .navContainer {
     display: fixed;
   }
@@ -42,14 +39,40 @@
     margin-left: 20px;
   }
 
-  .menuContainerLargeDevice {
+  .lgMenuContainer {
     display: none;
   }
 
   .barsMobile {
+    /* position: absolute;
+    top: 15px;
+    right: 20px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 40px;
+    margin-right: 20px;
+    background-color: white;
+    color: black;
+    font-size: 25px;
+    border: solid white 2px;
+    border-radius: 100%;
+    cursor: pointer;
+  }
+  
+  .smMenuContainer {
+    display: flex;
+    background-color: black;
+    width: 100vw;
+    height: 100vh;
+    /* background-color: green; */
+  }
+
+  .xMobile {
     position: absolute;
     top: 15px;
-    right: 30px;
+    right: 20px; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -63,13 +86,4 @@
     cursor: pointer;
   }
 
-  .menuContainerMobile {
-    display: flex;
-    background-color: black;
-    width: 100vw;
-    height: 100vh;
-    font-size: 100px;
-    margin-bottom: 50px;
-    color: red;
-  }
 }
