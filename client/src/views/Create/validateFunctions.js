@@ -4,8 +4,7 @@ const validateName = (value) => {
     return '';
 };
 
-const validateImage = (value) => {
-    // const urlRegex = /^(https?:\/\/)?([\w.]+)\.([a-z]{2,6}\.?)(\/[\w.]*)*\/?$/i;    
+const validateImage = (value) => {    
     const urlRegex = /(http)?s?:?(\/\/[^"']*\.(?:png|jpg|jpeg|gif|png|svg))/i
     if (value === '') {
         return "Required field"; 

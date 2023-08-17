@@ -1,44 +1,42 @@
 .mainContainer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    background-color: white;
-    width: 92%;
-    height: 40px;
-    margin: 30px;
-    padding: 10px;
-    align-items: center;
-    border-radius: 25px;
-    border: 5px solid var(--mylightblue2);
+  display: flex;
+  flex-direction: row;
+  height: 70px;
+  justify-content: space-evenly;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--mygrey4);
+  background-color: black;
+  flex-shrink: 0; /* Prevent the footer from shrinking */
 }
 
 .text {
-    font-size: 15px;
-    color:black;
+  font-size: 14px;
+  color: var(--mygrey4);
+  margin: 0px 10px;
 }
 
-.githubLogo {
-    max-height: 50px;
-}
-
-.githubLogo:hover {
-    max-height: 55px;
-}
 
 .linkedinLogo {
-    max-height: 27px;
+  height: 40px;
+  margin: 0px 10px;
 }
 
 .linkedinLogo:hover {
-    max-height: 31px;
+  height: 43px;
 }
 
-@media screen and (max-width: 768px) {
-    .mainContainer {
-        margin: 5px;
-    }
-    .text {
-        /* color: blue; */
-        display: none;
-    }
+.githubLogo {
+  margin: 0px 10px;
+  height: 50px;
+}
+
+.githubLogo:hover {
+  height: 54px;
+}
+
+@media screen and (max-width: 767px) {
+  .text {
+    display: none;
+  }
 }

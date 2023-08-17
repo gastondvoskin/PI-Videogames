@@ -1,3 +1,23 @@
 .mainContainer {
-    margin: 10px;
+  margin: 0px;
+  flex: 1;
+}
+
+.mobileSecondPagination {
+  display: none;
+}
+
+@media screen and (max-width: 767px) {
+  .mobileSecondPagination {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .mainContainer {
+    margin-top: 100px;
+  }
 }

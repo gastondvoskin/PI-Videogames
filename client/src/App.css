@@ -1,0 +1,9 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  /* overflow: hidden; */
+  min-height: 100vh;  /* Ensure at least viewport height */
+  /* background-color: red; */
+}

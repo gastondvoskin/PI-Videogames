@@ -28,7 +28,7 @@ Access detailed information of any videogame, including the complete description
 - Add a new videogame
 
 Add a new videogame to my database.
-The videogame will be created through a form in the Admin section.
+The videogame will be created through a form in the Create section.
 Render the added videogame as any of the other ones.
 
 ## Used technologies
