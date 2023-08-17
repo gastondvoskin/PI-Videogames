@@ -1,41 +1,46 @@
-.navContainer {
-    display: flex;
-    flex-direction: row;
-    height: 70px;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px; 
-    /* margin: 10px auto 50px; */ /* auto to center in x axis */
-    /* border: 5px solid var(--mylightblue2);
-    border-radius: 15px; */
-    background-color: black;
-  }
-    
-  /* LINKS CONTAINER */
+/* LINKS */
+.linksContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 35px;
+}
+
+.normalLink {
+  text-decoration: none;
+  margin: 30px;
+  color: white;
+  font-size: 18px;
+}
+
+.normalLink:hover {
+  color: var(--mylightblue2);
+}
+
+.activeLink {
+  text-decoration: none;
+  margin: 30px;
+  color: var(--mylightblue2);
+  font-weight: bold;
+  font-size: 18px;
+}
+
+@media screen and (max-width: 767px) {
   .linksContainer {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
     margin-right: 35px;
   }
-  
-  /* LINKS */
+
   .normalLink {
-    text-decoration: none;
-    margin: 30px;
-    color: white;
-    font-size: 18px;
+    margin: 0px;
+    font-size: 35px;
   }
-  
-  .normalLink:hover {
-    color: var(--mylightblue2);
-  }
-  
+
   .activeLink {
-    text-decoration: none;
-    margin: 30px;
-    color: var(--mylightblue2);
-    font-weight: bold;
-    font-size: 18px;
+    margin: 0px;
+    font-size: 35px;
   }
-  
+}

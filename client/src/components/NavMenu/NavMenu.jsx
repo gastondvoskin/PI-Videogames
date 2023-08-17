@@ -3,7 +3,7 @@ import styles from "./NavMenu.module.css";
 
 const NavMenu = () => {
   return (
-    <div>
+    <div className={styles.linksContainer}>
       <NavLink
         to="/home"
         className={({ isActive }) =>

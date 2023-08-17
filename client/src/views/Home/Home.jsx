@@ -38,11 +38,10 @@ const Home = () => {
         <Pagination numberOfPages={numberOfPages} />
       )}
       <Cards VG_PER_PAGE={VG_PER_PAGE} />
-      
+
       {typeof currentVg !== "string" && (
         <div className={styles.mobileSecondPagination}>
           <Pagination numberOfPages={numberOfPages} />
-
         </div>
       )}
     </div>
