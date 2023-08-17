@@ -5,7 +5,7 @@
   justify-content: center;
   width: 100%;
   flex: 1;
-  background-color: red;
+  /* background-color: red; */
 }
 
 /* FORM */
@@ -15,7 +15,7 @@
   flex-direction: column;
   align-items: center;
   width: 80%;
-  background-color: green;
+  /* background-color: green; */
 }
 
 .nameAndReleasedAndRatingContainer {
@@ -23,7 +23,7 @@
   flex-direction: row;
   justify-content: center;
   width: 80%;
-  background-color: yellow;
+  /* background-color: yellow; */
 }
 
 .label {
@@ -35,7 +35,7 @@
   align-items: center;
   color: white;
   font-size: 18px;
-  background-color: green;
+  /* background-color: green; */
 }
 
 .input {
@@ -43,11 +43,11 @@
   font-size: 18px;
   padding: 10px;
   margin: 5px;
-  border-radius: 20px;
+  border-radius:10px;
   border: solid white 1px;
   background-color: var(--mygrey3opaque);
   color: var(--mywhite);
-  background-color: violet;
+  /* background-color: violet; */
 }
 
 .nameInput {
@@ -72,7 +72,7 @@
   width: 80%;
   margin: 7px;
   padding: 5px;
-  border-radius: 20px;
+  border-radius:10px;
   border: solid white 1px;
 }
 
@@ -247,25 +247,8 @@
   }
   .preview {
     width: 100%;
-    margin-top: 30px;
   }
 }
-
-
-@media screen and (max-width: 1024px) {
-  
-
-  
-
-  
-
-  
-  /* .preview {
-        display: none;
-    } */
-}
-
-
 
 @media screen and (max-width: 767px) {
   .nameAndReleasedAndRatingContainer {
