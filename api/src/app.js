@@ -22,7 +22,7 @@ app.use(cors()); /* new */
 
 app.use((req, res, next) => {
   /* res.header('Access-Control-Allow-Origin', 'http://localhost:3000'); */ // update to match the domain you will make the request from    /* old */
-  res.header('Access-Control-Allow-Origin', '*');   /* new. In the future, replace * with the production URL */
+  res.header('Access-Control-Allow-Origin', 'https://videogameshub.vercel.app', '*');   /* new. In the future, replace * with the production URL */
   /* res.header('Access-Control-Allow-Origin', 'https://pi-videogames-alpha-umber.vercel.app'); */
   res.header('Access-Control-Allow-Credentials', 'true');
   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
